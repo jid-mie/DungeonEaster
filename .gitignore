@@ -23,3 +23,8 @@
 # OS generated
 .DS_Store
 Thumbs.db
+
+# IDE & AI Assistant configs
+/.agents/
+/.cursor/
+/.vscode/
