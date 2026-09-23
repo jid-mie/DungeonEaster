@@ -1,0 +1,25 @@
+# Unity generated
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+
+# Visual Studio / VS Code / JetBrains Rider
+/.vs/
+/.idea/
+/*.sln
+/*.csproj
+/*.unityproj
+/*.suo
+/*.user
+/*.userprefs
+/*.pid
+/*.tmp
+
+# OS generated
+.DS_Store
+Thumbs.db

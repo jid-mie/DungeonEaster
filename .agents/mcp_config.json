@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "unity": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-unity"
+      ],
+      "env": {
+        "UNITY_PORT": "8080",
+        "UNITY_HOST": "localhost"
+      }
+    },
+    "unity-bridge": {
+      "serverUrl": "http://localhost:8080/mcp"
+    }
+  }
+}
+
