@@ -41,7 +41,7 @@ flowchart LR
 
 ---
 
-## 📖 2. Cốt Truyện & Thế Giới Game (Story & Lore)
+##  2. Cốt Truyện & Thế Giới Game (Story & Lore)
 
 1. **Thức tỉnh trong bóng tối:**  
    Bạn là một con người vô danh, không còn ký ức về quá khứ, tỉnh dậy giữa lòng hầm ngục cổ ngữ âm u với cảm giác đói cào ruột gan. Trên lưng bạn trang bị sẵn một thanh kiếm và một cây cung — những vũ khí mang lại cảm giác thân thuộc kỳ lạ.

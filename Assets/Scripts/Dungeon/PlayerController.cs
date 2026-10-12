@@ -12,6 +12,8 @@ namespace DungeonEater.Dungeon
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerController : MonoBehaviour
     {
+        public static PlayerController Instance { get; private set; }
+
         [Header("Movement")]
         [SerializeField] private float moveSpeed = 5f;
         [SerializeField] private float dashSpeed = 14f;
@@ -21,9 +23,9 @@ namespace DungeonEater.Dungeon
 
         [Header("Health & Stamina")]
         [SerializeField] private float maxHealth = 100f;
-        [SerializeField] private float currentHealth;
+        [SerializeField] private float currentHealth = 100f;
         [SerializeField] private float maxStamina = 100f;
-        [SerializeField] private float currentStamina;
+        [SerializeField] private float currentStamina = 100f;
         [SerializeField] private float staminaRegenRate = 18f;
 
         [Header("Weapon & Combat")]
@@ -37,8 +39,10 @@ namespace DungeonEater.Dungeon
         private float dashTimer = 0f;
         private float dashCooldownTimer = 0f;
         private float invulnerableTimer = 0f;
+        private float attackActionTimer = 0f;
 
         private Rigidbody2D rb;
+        private SpriteRenderer spriteRenderer;
         private Vector2 movementInput;
         private Vector2 lastMoveDirection = Vector2.right;
 
@@ -51,11 +55,20 @@ namespace DungeonEater.Dungeon
 
         private void Awake()
         {
+            Instance = this;
             rb = GetComponent<Rigidbody2D>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
             if (weaponSystem == null) weaponSystem = GetComponentInChildren<WeaponSystem>();
             if (animator == null) animator = GetComponentInChildren<Animator>();
+
             currentHealth = maxHealth;
             currentStamina = maxStamina;
+        }
+
+        private void Start()
+        {
+            if (currentHealth <= 0f) currentHealth = maxHealth;
+            if (currentStamina <= 0f) currentStamina = maxStamina;
         }
 
         private void Update()
@@ -72,7 +85,7 @@ namespace DungeonEater.Dungeon
 
         private void HandleInput()
         {
-            // 8-directional movement input (WASD / Arrows)
+            // Điều khiển 8 hướng WASD
             float moveX = Input.GetAxisRaw("Horizontal");
             float moveY = Input.GetAxisRaw("Vertical");
             movementInput = new Vector2(moveX, moveY).normalized;
@@ -80,8 +93,12 @@ namespace DungeonEater.Dungeon
             if (movementInput.sqrMagnitude > 0.01f)
             {
                 lastMoveDirection = movementInput;
-                // Flip sprite facing direction
-                transform.localScale = new Vector3(moveX > 0 ? 1 : (moveX < 0 ? -1 : transform.localScale.x), 1, 1);
+
+                // Lật hướng nhìn theo trục ngang của hướng di chuyển
+                if (attackActionTimer <= 0f && spriteRenderer != null && Mathf.Abs(moveX) > 0.05f)
+                {
+                    spriteRenderer.flipX = (moveX < 0f);
+                }
             }
 
             if (animator != null)
@@ -90,74 +107,120 @@ namespace DungeonEater.Dungeon
                 animator.SetBool("isDashing", isDashing);
             }
 
-            // Dash (Space)
+            // Dash né đòn (Space)
             if (Input.GetKeyDown(KeyCode.Space) && dashCooldownTimer <= 0f && currentStamina >= staminaCostPerDash && !isDashing)
             {
                 StartDash();
             }
 
-            // Switch Weapon (Q)
+            // Đổi vũ khí Kiếm <-> Cung (Q)
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 SwitchWeapon();
             }
 
-            // Combat inputs
+            // Xử lý các đòn tấn công (Đồng bộ 100% với Hướng Di Chuyển & Nhìn của nhân vật)
             if (!isDashing && weaponSystem != null)
             {
-                // Calculate precise aim direction (Mouse cursor in world space, or last move direction if using keyboard)
-                Vector2 aimDirection = lastMoveDirection;
-                if (Camera.main != null)
-                {
-                    Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    Vector2 mouseDir = ((Vector2)mouseWorldPos - (Vector2)transform.position).normalized;
-                    if (mouseDir.sqrMagnitude > 0.01f)
-                    {
-                        aimDirection = mouseDir;
-                    }
-                }
+                Vector2 attackDirection = GetCurrentAttackDirection();
 
-                // Light Attack: LMB or J
+                // Đòn đánh thường: Chuột trái (LMB) hoặc phím J
                 if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.J))
                 {
-                    // Flip toward attack direction immediately
-                    if (Mathf.Abs(aimDirection.x) > 0.05f)
+                    ApplyFacing(attackDirection);
+                    if (weaponSystem.PerformLightAttack(currentWeapon, attackDirection))
                     {
-                        transform.localScale = new Vector3(aimDirection.x > 0 ? 1 : -1, 1, 1);
+                        TriggerAttackAnimation(false);
                     }
-
-                    if (animator != null) animator.SetTrigger(currentWeapon == WeaponType.Sword ? "swordAttack" : "bowShoot");
-                    weaponSystem.PerformLightAttack(currentWeapon, aimDirection);
                 }
-                // Heavy Attack: RMB or K
+                // Đòn đánh mạnh / Tụ lực: Chuột phải (RMB) hoặc phím K
                 else if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.K))
                 {
-                    if (Mathf.Abs(aimDirection.x) > 0.05f)
+                    ApplyFacing(attackDirection);
+                    if (weaponSystem.PerformHeavyAttack(currentWeapon, attackDirection))
                     {
-                        transform.localScale = new Vector3(aimDirection.x > 0 ? 1 : -1, 1, 1);
+                        TriggerAttackAnimation(false);
                     }
-
-                    if (animator != null) animator.SetTrigger(currentWeapon == WeaponType.Sword ? "swordAttack" : "bowShoot");
-                    weaponSystem.PerformHeavyAttack(currentWeapon, aimDirection);
                 }
-                // Weapon Skill: E
+                // Tuyệt kỹ vũ khí (E)
                 else if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (Mathf.Abs(aimDirection.x) > 0.05f)
+                    ApplyFacing(attackDirection);
+                    if (weaponSystem.PerformSkillAttack(currentWeapon, attackDirection))
                     {
-                        transform.localScale = new Vector3(aimDirection.x > 0 ? 1 : -1, 1, 1);
+                        TriggerAttackAnimation(true);
                     }
-
-                    if (animator != null) animator.SetTrigger(currentWeapon == WeaponType.Sword ? "swordAttack" : "bowShoot");
-                    weaponSystem.PerformSkillAttack(currentWeapon, aimDirection);
                 }
             }
 
-            // Pickup / Interact (F)
+            // Nhặt vật phẩm / Tương tác (F)
             if (Input.GetKeyDown(KeyCode.F))
             {
                 TryInteractOrPickup();
             }
+        }
+
+        /// <summary>
+        /// Xác định hướng ra đòn khớp tuyệt đối với hướng di chuyển của nhân vật (WASD / lastMoveDirection)
+        /// </summary>
+        private Vector2 GetCurrentAttackDirection()
+        {
+            Vector2 rawDir = (movementInput.sqrMagnitude > 0.01f) ? movementInput : lastMoveDirection;
+            float facing = (spriteRenderer != null && spriteRenderer.flipX) ? -1f : 1f;
+
+            // Nếu người chơi di chuyển hoặc dừng lại ở hướng thuần UP hoặc thuần DOWN,
+            // đòn đánh được hơi chếch góc 20 độ theo hướng nhìn ngang (facing * 0.35f)
+            // để mũi tên và vệt kiếm xuất phát chuẩn xác từ bàn tay vung vũ khí thay vì xuyên qua đỉnh đầu/chân.
+            if (Mathf.Abs(rawDir.x) < 0.15f)
+            {
+                return new Vector2(facing * 0.35f, Mathf.Sign(rawDir.y) * 0.94f).normalized;
+            }
+
+            return rawDir.normalized;
+        }
+
+        private void ApplyFacing(Vector2 direction)
+        {
+            if (spriteRenderer != null && Mathf.Abs(direction.x) > 0.05f)
+            {
+                spriteRenderer.flipX = (direction.x < 0f);
+            }
+        }
+
+        private void TriggerAttackAnimation(bool isSkill)
+        {
+            attackActionTimer = 0.22f; // Giữ tư thế ra đòn, giảm trôi nhân vật
+
+            if (animator == null) return;
+
+            if (currentWeapon == WeaponType.Sword)
+            {
+                animator.ResetTrigger("swordAttack");
+                animator.SetTrigger("swordAttack");
+
+                if (isSkill)
+                {
+                    StartCoroutine(WhirlwindSpinVisual(0.25f));
+                }
+            }
+            else
+            {
+                animator.ResetTrigger("bowShoot");
+                animator.SetTrigger("bowShoot");
+            }
+        }
+
+        private System.Collections.IEnumerator WhirlwindSpinVisual(float duration)
+        {
+            float elapsed = 0f;
+            float step = 0.06f;
+            while (elapsed < duration)
+            {
+                if (spriteRenderer != null) spriteRenderer.flipX = !spriteRenderer.flipX;
+                yield return new WaitForSeconds(step);
+                elapsed += step;
+            }
+            if (spriteRenderer != null) spriteRenderer.flipX = (lastMoveDirection.x < 0f);
         }
 
         private void MovePlayer()
@@ -165,6 +228,12 @@ namespace DungeonEater.Dungeon
             if (isDashing)
             {
                 rb.velocity = lastMoveDirection * dashSpeed;
+            }
+            else if (attackActionTimer > 0f)
+            {
+                // Khi vung kiếm: hãm tốc độ (30% moveSpeed) để nhân vật trụ tấn công vững vàng,
+                // không bị trôi tuột vượt qua hiệu ứng vệt kiếm (Slash VFX)
+                rb.velocity = movementInput * (moveSpeed * 0.3f);
             }
             else
             {
@@ -194,6 +263,11 @@ namespace DungeonEater.Dungeon
 
         private void UpdateTimers()
         {
+            if (attackActionTimer > 0f)
+            {
+                attackActionTimer -= Time.deltaTime;
+            }
+
             if (dashTimer > 0f)
             {
                 dashTimer -= Time.deltaTime;
@@ -271,4 +345,3 @@ namespace DungeonEater.Dungeon
         }
     }
 }
-

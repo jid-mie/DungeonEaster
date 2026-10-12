@@ -14,6 +14,7 @@ namespace DungeonEater.Dungeon.Enemies
         [Header("Telegraph & Action Timer")]
         [SerializeField] private float actionCooldown = 3.5f;
         private float actionTimer = 2f;
+        public bool IsExecutingSkill => isExecutingSkill;
         private bool isExecutingSkill = false;
 
         private enum BossState { IdleChase, TelegraphCharge, Charging, TelegraphStomp, Stomping }
@@ -42,6 +43,10 @@ namespace DungeonEater.Dungeon.Enemies
             {
                 case BossState.IdleChase:
                     rb.velocity = dirToPlayer * moveSpeed;
+                    if (spriteRenderer != null && Mathf.Abs(dirToPlayer.x) > 0.05f)
+                    {
+                        spriteRenderer.flipX = (dirToPlayer.x < 0f);
+                    }
                     actionTimer -= Time.deltaTime;
                     if (actionTimer <= 0f)
                     {
@@ -72,6 +77,10 @@ namespace DungeonEater.Dungeon.Enemies
                 case BossState.Charging:
                     stateTimer -= Time.deltaTime;
                     rb.velocity = chargeDirection * chargeSpeed;
+                    if (spriteRenderer != null && Mathf.Abs(chargeDirection.x) > 0.05f)
+                    {
+                        spriteRenderer.flipX = (chargeDirection.x < 0f);
+                    }
                     if (stateTimer <= 0f)
                     {
                         EndSkill();
@@ -101,6 +110,8 @@ namespace DungeonEater.Dungeon.Enemies
         private void ExecuteCharge()
         {
             state = BossState.Charging;
+            isExecutingSkill = true;
+            contactDamage = chargeDamage;
             stateTimer = 0.55f;
             if (spriteRenderer != null) spriteRenderer.color = originalColor;
             SoundManager.Instance?.PlaySwordHeavy();
@@ -137,6 +148,8 @@ namespace DungeonEater.Dungeon.Enemies
         private void EndSkill()
         {
             state = BossState.IdleChase;
+            isExecutingSkill = false;
+            contactDamage = 15f;
             rb.velocity = Vector2.zero;
             if (spriteRenderer != null) spriteRenderer.color = originalColor;
         }

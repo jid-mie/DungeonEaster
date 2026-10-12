@@ -1,0 +1,743 @@
+fileFormatVersion: 2
+guid: 20ae537dc8e5f18c8bccc654cdc6dbbb
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 1
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hunter_Walk_Down_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 819
+        width: 170
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6db2eebafbf9157d0800000000000000
+      internalID: -2931386236869399594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Down_1
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 819
+        width: 171
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56dcb722361b0ca20800000000000000
+      internalID: 3080657184459836773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Down_2
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 819
+        width: 171
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8a095939954c91a0800000000000000
+      internalID: -6801484812841842035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Down_3
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 819
+        width: 170
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e638a22d0534f28c0800000000000000
+      internalID: -4021921927816117394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Down_4
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 819
+        width: 171
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7471723eee76f8830800000000000000
+      internalID: 4075590463504455495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Down_5
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 819
+        width: 171
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43a3c3cc6e29c3940800000000000000
+      internalID: 5277254383338011188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Up_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 614
+        width: 170
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7030d004c78520f40800000000000000
+      internalID: 5693210169623511815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Up_1
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 614
+        width: 171
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72dd9fe4b4db9e490800000000000000
+      internalID: -7716428355377439449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Up_2
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 614
+        width: 171
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08c8658985ea19ba0800000000000000
+      internalID: -6083889926064665472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Up_3
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 614
+        width: 170
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4bff48936ed335c0800000000000000
+      internalID: -4236798305086997683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Up_4
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 614
+        width: 171
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce5452c3fa30e6290800000000000000
+      internalID: -7895369045570664980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Up_5
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 614
+        width: 171
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8ebaee8a3fc1b980800000000000000
+      internalID: -8524804769222836594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Left_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 409
+        width: 170
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 286945da491af90d0800000000000000
+      internalID: -3413832332588312958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Left_1
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 409
+        width: 171
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58a356813cbe92940800000000000000
+      internalID: 5272004061974313605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Left_2
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 409
+        width: 171
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 285c36dbe6526e890800000000000000
+      internalID: -7429209377746991742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Left_3
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 409
+        width: 170
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66c3a366651d41800800000000000000
+      internalID: 582320420850121830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Left_4
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 409
+        width: 171
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 475226e63ca0eaed0800000000000000
+      internalID: -2400969716855069324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Left_5
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 409
+        width: 171
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cf6e67658b67f280800000000000000
+      internalID: -9009614308821274686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Right_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 217
+        width: 170
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9665d97d9aa13370800000000000000
+      internalID: 8300603181551150746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Right_1
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 217
+        width: 171
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6c35c38446c140a0800000000000000
+      internalID: -6899015156584072084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Right_2
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 217
+        width: 171
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e9798cf77f190d80800000000000000
+      internalID: -8284055439372879388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Right_3
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 217
+        width: 170
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 850ee7d8046091710800000000000000
+      internalID: 1664368411611684952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Right_4
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 217
+        width: 171
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 248fa2385dc8704c0800000000000000
+      internalID: -4321330468782147518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Walk_Right_5
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 217
+        width: 171
+        height: 192
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03d8a7ce15ecba380800000000000000
+      internalID: -8958840182468342480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 217
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d533f8bebec7bd00800000000000000
+      internalID: 988485961773168089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 217
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49520be0fdd023fa0800000000000000
+      internalID: -5822576116561336940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 217
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b04a9476da32aaa0800000000000000
+      internalID: -6151289448280997709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hunter_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 217
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7131a8d1c08b55500800000000000000
+      internalID: 384415705384751895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Hunter_Attack_0: 988485961773168089
+      Hunter_Attack_1: -5822576116561336940
+      Hunter_Attack_2: -6151289448280997709
+      Hunter_Attack_3: 384415705384751895
+      Hunter_Walk_Down_0: -2931386236869399594
+      Hunter_Walk_Down_1: 3080657184459836773
+      Hunter_Walk_Down_2: -6801484812841842035
+      Hunter_Walk_Down_3: -4021921927816117394
+      Hunter_Walk_Down_4: 4075590463504455495
+      Hunter_Walk_Down_5: 5277254383338011188
+      Hunter_Walk_Left_0: -3413832332588312958
+      Hunter_Walk_Left_1: 5272004061974313605
+      Hunter_Walk_Left_2: -7429209377746991742
+      Hunter_Walk_Left_3: 582320420850121830
+      Hunter_Walk_Left_4: -2400969716855069324
+      Hunter_Walk_Left_5: -9009614308821274686
+      Hunter_Walk_Right_0: 8300603181551150746
+      Hunter_Walk_Right_1: -6899015156584072084
+      Hunter_Walk_Right_2: -8284055439372879388
+      Hunter_Walk_Right_3: 1664368411611684952
+      Hunter_Walk_Right_4: -4321330468782147518
+      Hunter_Walk_Right_5: -8958840182468342480
+      Hunter_Walk_Up_0: 5693210169623511815
+      Hunter_Walk_Up_1: -7716428355377439449
+      Hunter_Walk_Up_2: -6083889926064665472
+      Hunter_Walk_Up_3: -4236798305086997683
+      Hunter_Walk_Up_4: -7895369045570664980
+      Hunter_Walk_Up_5: -8524804769222836594
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

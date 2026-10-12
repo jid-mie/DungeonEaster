@@ -44,34 +44,25 @@ namespace DungeonEater.Dungeon
 
             if (wave == 1)
             {
-                SpawnEnemy(slimePrefab, new Vector2(-4, 2));
-                SpawnEnemy(slimePrefab, new Vector2(4, 2));
-                SpawnEnemy(sporePrefab, new Vector2(0, 4));
+                // Đợt 1: 2 Slime cận chiến + 1 Nấm Spore tầm xa trong lòng sàn đấu
                 SpawnEnemy(slimePrefab, new Vector2(-2.2f, 0.0f));
                 SpawnEnemy(slimePrefab, new Vector2(2.4f, 0.0f));
-                SpawnEnemy(sporePrefab, new Vector2(0.2f, 0.8f));
+                SpawnEnemy(sporePrefab, new Vector2(0.0f, 0.9f));
             }
             else if (wave == 2)
             {
-                SpawnEnemy(slimePrefab, new Vector2(-5, 1));
-                SpawnEnemy(beetlePrefab, new Vector2(-2, 3));
-                SpawnEnemy(beetlePrefab, new Vector2(2, 3));
-                SpawnEnemy(sporePrefab, new Vector2(5, 2));
+                // Đợt 2: Phối hợp Melee Slime + 2 Kamikaze Beetle bộc phá + 1 Ranged Spore
                 SpawnEnemy(slimePrefab, new Vector2(-2.2f, -0.6f));
-                SpawnEnemy(beetlePrefab, new Vector2(-1.0f, 0.5f));
-                SpawnEnemy(beetlePrefab, new Vector2(1.4f, 0.5f));
-                SpawnEnemy(sporePrefab, new Vector2(2.4f, -0.6f));
+                SpawnEnemy(beetlePrefab, new Vector2(-1.2f, 0.5f));
+                SpawnEnemy(beetlePrefab, new Vector2(1.2f, 0.5f));
+                SpawnEnemy(sporePrefab, new Vector2(2.2f, -0.6f));
             }
             else if (wave == 3)
             {
-                // Boss Wave
-                SpawnEnemy(bossPrefab, new Vector2(0, 3));
-                SpawnEnemy(beetlePrefab, new Vector2(-4, 1));
-                SpawnEnemy(beetlePrefab, new Vector2(4, 1));
-                // Boss Wave - Boss xuất hiện ngay trung tâm đấu trường cổ ngữ
-                SpawnEnemy(bossPrefab, new Vector2(0.2f, 0.2f));
-                SpawnEnemy(beetlePrefab, new Vector2(-2.0f, -1.2f));
-                SpawnEnemy(beetlePrefab, new Vector2(2.2f, -1.2f));
+                // Đợt 3: Trùm Vua Lợn Rừng (King Boar) ở trung tâm + 2 Hộ vệ Bọ bộc phá
+                SpawnEnemy(bossPrefab, new Vector2(0.0f, 0.3f));
+                SpawnEnemy(beetlePrefab, new Vector2(-2.0f, -1.0f));
+                SpawnEnemy(beetlePrefab, new Vector2(2.0f, -1.0f));
             }
         }
 

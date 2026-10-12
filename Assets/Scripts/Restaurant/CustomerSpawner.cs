@@ -61,7 +61,7 @@ namespace DungeonEater.NPC
             {
                 TrySpawnCustomer();
                 // Random interval between customers (5-12 seconds)
-                spawnTimer = Random.Range(5f, 12f);
+                spawnTimer = Random.Range(spawnInterval * 0.7f, spawnInterval * 1.3f);
             }
         }
 

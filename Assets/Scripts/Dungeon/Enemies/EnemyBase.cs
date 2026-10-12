@@ -51,6 +51,12 @@ namespace DungeonEater.Dungeon.Enemies
                     spriteRenderer.color = originalColor;
                 }
             }
+
+            // Tự động lật hướng nhìn theo vận tốc di chuyển ngang (2 hướng Trái / Phải)
+            if (spriteRenderer != null && rb != null && Mathf.Abs(rb.velocity.x) > 0.05f)
+            {
+                spriteRenderer.flipX = (rb.velocity.x < 0f);
+            }
         }
 
         public virtual void TakeDamage(float damage, Vector2 knockback)
