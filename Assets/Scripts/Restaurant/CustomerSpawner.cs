@@ -17,6 +17,7 @@ namespace DungeonEater.NPC
         [SerializeField] private float spawnInterval = 8f;
         [SerializeField] private int maxCustomers = 20;
         [SerializeField] private float shiftDuration = 600f; // 10 minutes
+        [SerializeField] private float customerScale = 0.38f;
 
         private float spawnTimer;
         private float shiftTimer;
@@ -65,6 +66,38 @@ namespace DungeonEater.NPC
             }
         }
 
+        public bool IsShiftActive => isShiftActive;
+        public float RemainingShiftTime => Mathf.Max(0f, shiftTimer);
+        public int CustomersSpawned => customersSpawned;
+        public int MaxCustomers => maxCustomers;
+
+        /// <summary>
+        /// Khách ưu tiên gọi món quán đang có sẵn hoặc nấu được, món hiếm (Đại tiệc) ít khi được gọi.
+        /// </summary>
+        private Recipe PickOrder(CookingSystem cooking)
+        {
+            var recipes = cooking.Recipes;
+            float total = 0f;
+            float[] weights = new float[recipes.Count];
+            for (int i = 0; i < recipes.Count; i++)
+            {
+                Recipe r = recipes[i];
+                bool available = cooking.GetPreparedCount(r.id) > 0 || cooking.CanCook(r);
+                float w = available ? 3f : 1f;
+                if (r.difficulty >= 4 && !available) w = 0.25f;
+                weights[i] = w;
+                total += w;
+            }
+
+            float roll = Random.Range(0f, total);
+            for (int i = 0; i < recipes.Count; i++)
+            {
+                roll -= weights[i];
+                if (roll <= 0f) return recipes[i];
+            }
+            return recipes[recipes.Count - 1];
+        }
+
         private void TrySpawnCustomer()
         {
             // Find an empty table
@@ -96,6 +129,7 @@ namespace DungeonEater.NPC
                 sr.sprite = customerIdleSprites[randIdx];
             }
             sr.sortingOrder = 50;
+            customerObj.transform.localScale = Vector3.one * customerScale;
 
             // Add CustomerAI component
             CustomerAI ai = customerObj.AddComponent<CustomerAI>();
@@ -104,8 +138,7 @@ namespace DungeonEater.NPC
             CookingSystem cooking = CookingSystem.Instance;
             if (cooking != null && cooking.Recipes != null && cooking.Recipes.Count > 0)
             {
-                int recipeIdx = Random.Range(0, cooking.Recipes.Count);
-                Recipe recipe = cooking.Recipes[recipeIdx];
+                Recipe recipe = PickOrder(cooking);
                 float extraPatience = Random.Range(0f, 10f);
                 ai.Initialize(emptyTable, recipe, extraPatience);
             }

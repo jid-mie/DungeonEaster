@@ -231,6 +231,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8878170284342922126, guid: f0e6b0b0a24dd24f993d631fb441e721, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878170284342922126, guid: f0e6b0b0a24dd24f993d631fb441e721, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.55
+      objectReference: {fileID: 0}
     - target: {fileID: 9095585338293573493, guid: f0e6b0b0a24dd24f993d631fb441e721, type: 3}
       propertyPath: m_Name
       value: Player_HunterChef
@@ -329,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfba0278cffa5e1259f2b643cdddeb93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tableId: 1
+  tableId: 4
   customerSeatPoint: {fileID: 0}
   dishRenderer: {fileID: 448782374}
   skewerPlate: {fileID: 21300000, guid: b27f493e00bb3569a8630e1cc49b75aa, type: 3}
@@ -390,7 +398,7 @@ Transform:
   m_GameObject: {fileID: 291822309}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.2, y: -1.8, z: 0}
+  m_LocalPosition: {x: -1.05, y: -1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -476,7 +484,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.1, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1003871087}
@@ -507,7 +515,7 @@ Transform:
   m_GameObject: {fileID: 410459367}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.8, y: 0, z: 0}
+  m_LocalPosition: {x: 5.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -637,7 +645,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.1, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 291822312}
@@ -672,7 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfba0278cffa5e1259f2b643cdddeb93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tableId: 1
+  tableId: 3
   customerSeatPoint: {fileID: 0}
   dishRenderer: {fileID: 1233582707}
   skewerPlate: {fileID: 21300000, guid: b27f493e00bb3569a8630e1cc49b75aa, type: 3}
@@ -733,7 +741,7 @@ Transform:
   m_GameObject: {fileID: 886902500}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2, y: -1.8, z: 0}
+  m_LocalPosition: {x: -3.6, y: -1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -831,7 +839,7 @@ Transform:
   m_GameObject: {fileID: 1003871084}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2, y: 1.2, z: 0}
+  m_LocalPosition: {x: -3.6, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -864,7 +872,7 @@ Transform:
   m_GameObject: {fileID: 1047204116}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.8, y: 0, z: 0}
+  m_LocalPosition: {x: -5.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -994,7 +1002,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.1, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1257235627}
@@ -1078,7 +1086,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.1, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 886902503}
@@ -1113,7 +1121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfba0278cffa5e1259f2b643cdddeb93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tableId: 1
+  tableId: 2
   customerSeatPoint: {fileID: 0}
   dishRenderer: {fileID: 1082474620}
   skewerPlate: {fileID: 21300000, guid: b27f493e00bb3569a8630e1cc49b75aa, type: 3}
@@ -1174,7 +1182,7 @@ Transform:
   m_GameObject: {fileID: 1257235624}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.2, y: 1.2, z: 0}
+  m_LocalPosition: {x: -1.05, y: 0.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1207,7 +1215,7 @@ Transform:
   m_GameObject: {fileID: 1349452177}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.8, z: 0}
+  m_LocalPosition: {x: 0, y: -4.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1469,6 +1477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1462029813}
+  - component: {fileID: 1462029814}
   m_Layer: 0
   m_Name: Restaurant_HUD
   m_TagString: Untagged
@@ -1491,6 +1500,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1462029814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462029812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 800701e10bea5640f8f79a11778634d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serveRange: 1.8
 --- !u!1001 &1604998071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1501,11 +1523,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7654534585511403302, guid: da1af54a096c73fc0bfbe6f8f82ce193, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: 4.3
       objectReference: {fileID: 0}
     - target: {fileID: 7654534585511403302, guid: da1af54a096c73fc0bfbe6f8f82ce193, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: -1.6
       objectReference: {fileID: 0}
     - target: {fileID: 7654534585511403302, guid: da1af54a096c73fc0bfbe6f8f82ce193, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1676,6 +1698,13 @@ MonoBehaviour:
   target: {fileID: 34572392}
   smoothSpeed: 8
   offset: {x: 0, y: 0, z: -10}
+  clampToBounds: 1
+  worldBounds:
+    serializedVersion: 2
+    x: -6
+    y: -4.48
+    width: 12
+    height: 8.96
 --- !u!81 &1891882295
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1719,7 +1748,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.2
+  orthographic size: 3.375
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1811,7 +1840,7 @@ Transform:
   m_GameObject: {fileID: 1930158874}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.8, z: 0}
+  m_LocalPosition: {x: 0, y: 3.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1862,10 +1891,58 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &2100000001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2100000002}
+  - component: {fileID: 2100000003}
+  m_Layer: 0
+  m_Name: Kitchen_Stove
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2100000002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100000001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.9, y: 1.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2100000003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100000001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fac62bdd3294c748c90541e5b1a994f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRange: 1.9
+  interactKey: 102
+  glowSize: {x: 3.2, y: 2.4}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 2100000002}
   - {fileID: 1404783034}
   - {fileID: 1895458730}
   - {fileID: 34572391}

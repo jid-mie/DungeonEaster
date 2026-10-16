@@ -11,6 +11,11 @@ namespace DungeonEater.Dungeon
         [SerializeField] private float smoothSpeed = 8f;
         [SerializeField] private Vector3 offset = new Vector3(0, 0, -10f);
 
+        [Header("Bounds (optional)")]
+        [Tooltip("Giữ khung hình nằm trong vùng bản đồ, tránh lộ viền đen ngoài ảnh nền")]
+        [SerializeField] private bool clampToBounds = false;
+        [SerializeField] private Rect worldBounds = new Rect(-6f, -4.48f, 12f, 8.96f);
+
         [Header("Screen Shake")]
         private float shakeDuration = 0f;
         private float shakeMagnitude = 0f;
@@ -35,6 +40,7 @@ namespace DungeonEater.Dungeon
 
             Vector3 desiredPosition = target.position + offset;
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+            if (clampToBounds) smoothedPosition = ClampToBounds(smoothedPosition);
 
             if (shakeDuration > 0f)
             {
@@ -48,6 +54,18 @@ namespace DungeonEater.Dungeon
             {
                 transform.position = smoothedPosition;
             }
+        }
+
+        private Vector3 ClampToBounds(Vector3 pos)
+        {
+            var cam = GetComponent<Camera>();
+            if (cam == null || !cam.orthographic) return pos;
+
+            float halfH = cam.orthographicSize;
+            float halfW = halfH * cam.aspect;
+            pos.x = halfW * 2f >= worldBounds.width ? worldBounds.center.x : Mathf.Clamp(pos.x, worldBounds.xMin + halfW, worldBounds.xMax - halfW);
+            pos.y = halfH * 2f >= worldBounds.height ? worldBounds.center.y : Mathf.Clamp(pos.y, worldBounds.yMin + halfH, worldBounds.yMax - halfH);
+            return pos;
         }
 
         public void TriggerScreenShake(float duration, float magnitude)

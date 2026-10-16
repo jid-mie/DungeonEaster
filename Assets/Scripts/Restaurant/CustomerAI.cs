@@ -59,26 +59,37 @@ namespace DungeonEater.Restaurant
             }
         }
 
+        /// <summary>Phát ra khi phục vụ thành công: (khách, vàng, danh tiếng, chất lượng món).</summary>
+        public static event System.Action<CustomerAI, int, int, DishQuality> OnServed;
+        /// <summary>Phát ra khi khách hết kiên nhẫn bỏ về.</summary>
+        public static event System.Action<CustomerAI> OnLeftAngry;
+
         public bool TryServe()
         {
             if (isEating) return false;
 
-            if (CookingSystem.Instance != null && CookingSystem.Instance.ConsumePreparedDish(wantedDishId))
+            if (CookingSystem.Instance != null && CookingSystem.Instance.ConsumePreparedDish(wantedDishId, out DishQuality quality))
             {
-                var recipe = CookingSystem.Instance.Recipes.Find(r => r.id == wantedDishId);
+                var recipe = CookingSystem.Instance.GetRecipe(wantedDishId);
                 isEating = true;
 
                 assignedTable.PlaceDish(wantedDishId);
                 SoundManager.Instance?.PlayServeSuccess();
                 SoundManager.Instance?.PlayCoin();
 
-                int goldEarned = recipe != null ? recipe.goldPrice : 25;
-                int repEarned = recipe != null ? recipe.repBonus : 5;
+                int basePrice = recipe != null ? recipe.goldPrice : 25;
+                int baseRep = recipe != null ? recipe.repBonus : 5;
+
+                // Giá theo chất lượng món + tiền boa nếu phục vụ nhanh (còn nhiều kiên nhẫn)
+                int tip = Mathf.RoundToInt(basePrice * 0.2f * PatienceRatio);
+                int goldEarned = Mathf.RoundToInt(basePrice * CookingSystem.GoldMultiplier(quality)) + tip;
+                int repEarned = Mathf.Max(1, Mathf.RoundToInt(baseRep * CookingSystem.RepMultiplier(quality)));
 
                 GameManager.Instance?.AddGold(goldEarned);
                 GameManager.Instance?.AddReputation(repEarned);
+                OnServed?.Invoke(this, goldEarned, repEarned, quality);
 
-                Debug.Log($"✨ [Phục vụ] Bàn {assignedTable.TableId} đã nhận món {wantedDishName}! Thu nhập +{goldEarned} Gold, +{repEarned} Danh tiếng.");
+                Debug.Log($"✨ [Phục vụ] Bàn {assignedTable.TableId} đã nhận món {wantedDishName} ({CookingSystem.QualityName(quality)})! Thu nhập +{goldEarned} Gold (boa {tip}), +{repEarned} Danh tiếng.");
                 return true;
             }
 
@@ -95,9 +106,16 @@ namespace DungeonEater.Restaurant
 
         private void LeaveAngry()
         {
+            if (assignedTable == null)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
             Debug.LogWarning($"💢 [Khách hàng] Quá thất vọng vì đợi lâu và bực tức bỏ về! (-3 Danh tiếng)");
             SoundManager.Instance?.PlayCustomerAngry();
             GameManager.Instance?.ReduceReputation(3);
+            OnLeftAngry?.Invoke(this);
 
             assignedTable.ClearTable();
             Destroy(gameObject);

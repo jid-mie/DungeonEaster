@@ -7,6 +7,8 @@ namespace DungeonEater.Restaurant
         [SerializeField] private int tableId = 1;
         [SerializeField] private Transform customerSeatPoint;
         [SerializeField] private SpriteRenderer dishRenderer;
+        [Tooltip("Vị trí khách ngồi (ghế băng cạnh bàn) khi không gán customerSeatPoint")]
+        [SerializeField] private Vector3 seatOffset = new Vector3(-0.78f, 0.45f, 0f);
 
         [Header("Dish Sprites")]
         [SerializeField] private Sprite skewerPlate;
@@ -21,7 +23,7 @@ namespace DungeonEater.Restaurant
         public void AssignCustomer(CustomerAI customer)
         {
             CurrentCustomer = customer;
-            customer.transform.position = customerSeatPoint != null ? customerSeatPoint.position : transform.position + Vector3.up * 0.5f;
+            customer.transform.position = customerSeatPoint != null ? customerSeatPoint.position : transform.position + seatOffset;
         }
 
         public void ClearTable()
@@ -36,6 +38,14 @@ namespace DungeonEater.Restaurant
             {
                 dishRenderer.enabled = true;
                 dishRenderer.color = Color.white;
+
+                // Ưu tiên ảnh đĩa đã cắt sạch chữ dùng chung với màn Bếp
+                var cleanPlate = DungeonEater.UI.KitchenUIKit.DishSprite(dishId.ToLower());
+                if (cleanPlate != null)
+                {
+                    dishRenderer.sprite = cleanPlate;
+                    return;
+                }
 
                 switch (dishId.ToLower())
                 {
