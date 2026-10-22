@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751c5eedc81a059488cc16a3b878fa29, type: 3}
+  m_Name: Recipe_Steak
+  m_EditorClassIdentifier: 
+  dish: {fileID: 11400000, guid: bd8f2d0966e431548820978e07bdfe7b, type: 2}
+  ingredients:
+  - item: {fileID: 11400000, guid: c3d2527a8178b694aa3a6bda5cd5288a, type: 2}
+    amount: 2
+  - item: {fileID: 11400000, guid: b781b0077b8972040b92a393276cc64c, type: 2}
+    amount: 1
+  outputAmount: 1
+  goldPrice: 85
+  reputation: 15
+  unlocked: 1

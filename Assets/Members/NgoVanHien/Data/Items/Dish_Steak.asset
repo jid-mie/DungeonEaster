@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f70e3f44ad1a1048bae40974e12c6c0, type: 3}
+  m_Name: Dish_Steak
+  m_EditorClassIdentifier: 
+  id: dish_steak
+  displayName: "B\xEDt t\u1EBFt b\xF9ng n\u1ED5"
+  description: "Th\u1ECBt qu\xE1i \xE1p ch\u1EA3o b\u1EB1ng nhi\u1EC7t c\u1EE7a l\xF5i
+    b\u1ECD n\u1ED5, cay t\xEA \u0111\u1EA7u l\u01B0\u1EE1i!"
+  category: 3
+  icon: {fileID: 21300000, guid: f9d395ee46aae2e44bb5c686abca86c3, type: 3}
+  maxStack: 5
