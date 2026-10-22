@@ -8,16 +8,16 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - PlayerAttack
+  - EnemyAttack
+  - Interactable
+  - Obstacle
+  - Loot
+  - Hazard
   - 
   - 
   - 
@@ -40,4 +40,28 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 984373141
+    locked: 0
+  - name: Floor
+    uniqueID: 3691869309
+    locked: 0
+  - name: FloorDecal
+    uniqueID: 3979898627
+    locked: 0
+  - name: Entities
+    uniqueID: 2203890379
+    locked: 0
+  - name: Pickups
+    uniqueID: 2093027551
+    locked: 0
+  - name: Projectiles_VFX
+    uniqueID: 4080723589
+    locked: 0
+  - name: Overhead
+    uniqueID: 2903617137
+    locked: 0
+  - name: UI_World
+    uniqueID: 706208123
     locked: 0

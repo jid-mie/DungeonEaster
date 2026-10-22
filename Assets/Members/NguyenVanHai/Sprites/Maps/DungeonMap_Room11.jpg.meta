@@ -1,0 +1,4364 @@
+fileFormatVersion: 2
+guid: 7d4664d0947c2d7469c6beb53796a4d1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 71
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DungeonMap_Room11_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 825
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a179306d74e6dba458917e9c47743502
+      internalID: 847411312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_1
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 825
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95704ef406c55874da6d6424ef1f91ff
+      internalID: 1188007010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 825
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9200e00ff1a8146be42acb8350c07f
+      internalID: 11907542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_3
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 825
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bfe54a74ee47bb4fa657c14bd4df347
+      internalID: -57946942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_4
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 825
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f0c18a04282d40469c38ba957eedca1
+      internalID: 496912449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_5
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 825
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b1815c4a1e36a14293598f489670a09
+      internalID: 1332039976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_6
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 825
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1483fa7f88174c84ea530fcd4781247b
+      internalID: -211491817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_7
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 825
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81ed011f2befb874281badd0e9accca6
+      internalID: -1633227234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_8
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 825
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eea2914d4c0678340aa6e5eb4b93e235
+      internalID: -282774474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_9
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 825
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b99193ebd1c254b940a30c0daf6e33
+      internalID: 2140431051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_10
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 825
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d76252e091c91849b3ff87009dfb687
+      internalID: 36095434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_11
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 825
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba2f58a83385d69419843e239973433f
+      internalID: 759457216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_12
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 825
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 887b2706fc90bf3458e1fb5820d8b115
+      internalID: -1864547612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_13
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 825
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58359992a10b35e4ca4749f1d8efdbc5
+      internalID: 1895344410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_14
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 825
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7adcb87626abfc4b8c1786e0ad173e4
+      internalID: -860768913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_15
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 825
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68cd0b6c4f3b6d543b6f256fb2c7ed51
+      internalID: -1083304986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 754
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b839b16f57f29124a91236576c68ef7e
+      internalID: -1173725746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_17
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 754
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e8daf6471537af42a87d0e816effb66
+      internalID: -154617241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_18
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 754
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a1c3032cd74a24e998b4374004ea1c
+      internalID: -1721002009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_19
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 754
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c225c63a8ce4d41870c2a8398bcb92
+      internalID: 1969474403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_20
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 754
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43a680f67e859f84fa19c731e3737267
+      internalID: 1992839318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_21
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 754
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed62571f504c4a4c9a53efccd9d614e
+      internalID: -117394743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_22
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 754
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a51f46f120ed5428d3da7afe058241
+      internalID: -163495223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_23
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 754
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb75698c4ad1624469f44e612a8c5041
+      internalID: 836992471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_24
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 754
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c10af89c9ad20d4ba3d4e9144bebefe
+      internalID: -1234858743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_25
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 754
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a9fa93f119b1044d9130851809f3f58
+      internalID: -1323292131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_26
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 754
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fb6346b45ca7154a95a04103f347f17
+      internalID: -2778134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_27
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 754
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d61a0f3bcd8174b8f4a386d4cc505b
+      internalID: 1398523836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_28
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 754
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3768b6bce7bc6ff4ea5e9030ed52f241
+      internalID: -857116767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_29
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 754
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97bcba5672f05174ea43c56b434e78a6
+      internalID: -354315632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_30
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 754
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5742b54c50567334191e0865790ab733
+      internalID: 513018854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_31
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 754
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b6e3d79bc484c448e3ce3573ca018f
+      internalID: 1744235453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 683
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2825577c05cfbe4abb1a6a694ceb3fc
+      internalID: -328664688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_33
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 683
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42cf2731b542e314d8f901ddd9e50a90
+      internalID: 1246055787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_34
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 683
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27f6442a4d71468488e95cfad436f1c1
+      internalID: 1351598843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_35
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 683
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 710ba9d4e7da0bc47999ae474591a43e
+      internalID: -318631590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_36
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 683
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6c3bfb4d49d104886eb6990b660dfe
+      internalID: 48917118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_37
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 683
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ab9edf173053db4095d4cf405d5f401
+      internalID: -1613821072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_38
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 683
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef72fe5d5a0a614aacd92d21f4c9667
+      internalID: 111791953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_39
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 683
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c63f12ec32f30ee479ef1b52fb10d297
+      internalID: -1317194677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_40
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 683
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7199b36187ea36458a6c496439133d3
+      internalID: -692017225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_41
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 683
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d75f897f4b639f41a29898584189c42
+      internalID: 392662570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_42
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 683
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcddcd5a8e34b6e47a76251c215c9746
+      internalID: 355292976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_43
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 683
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cfd134e41d44aa4db111cf886999380
+      internalID: -1228806451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_44
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 683
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6766a8d95ab7d54b92b76d256747140
+      internalID: 842514666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_45
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 683
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa4b571cf2edb742a2b35abf39261f5
+      internalID: -784997816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_46
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 683
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc1096b17c22d84e937d7ee1a27921f
+      internalID: -998671366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_47
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 683
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f45974f4fe7ab944918a00a11aba867
+      internalID: 1747098353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 612
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a60e497849205ec4cb5a2056dba2a02b
+      internalID: -1150621593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_49
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 612
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbaf6c11e618e994da98d2871a4fd466
+      internalID: 992093989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_50
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 612
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44bc79a1a51af7a4881af4c7b31e07d1
+      internalID: -472858499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_51
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 612
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c08a0719761a8d94c9e92c9c690ce9e6
+      internalID: -1135604143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_52
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 612
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb6dda8d4034226468a44670555e02d4
+      internalID: -715047485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_53
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 612
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bde4b2033da0be45a42d7c48499fa5e
+      internalID: 207255124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_54
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 612
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 802ecdc0701b01d4981f3b0c024e9103
+      internalID: 1872212354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_55
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 612
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 067f15f8ead82a24190e1052d2b0815e
+      internalID: 858337942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_56
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 612
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89987441de391db40bfd6b86cae19c33
+      internalID: -447231551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_57
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 612
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd308da6d6d2d6459f1faf32a9ea902
+      internalID: 2073206150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_58
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 612
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd9cb61080615f428acded9e0b0ae2c
+      internalID: -1962675563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_59
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 612
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1529309bb5c4e0043bdabce2342918c8
+      internalID: 765049434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_60
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 612
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6153c6a6eb6fefb4ca64597464d7922e
+      internalID: 1009848666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_61
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 612
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf7ff1f551373564ca49e207d16efc70
+      internalID: -1170152568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_62
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 612
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be9e389c8ac4f354bb461dd0479ea4f0
+      internalID: -675938348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_63
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 612
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d0b47920cc0990429106a314e2cd73b
+      internalID: -797051424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 541
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d33acba361883aa4cadfd85b4ef9771d
+      internalID: -889596729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_65
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 541
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d29fc1909258749aa3ff16fb2a2ad8
+      internalID: -1759719974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_66
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 541
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3a05915fd0676a4b94c1edd10be815d
+      internalID: 74684926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_67
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 541
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c199d319059adbf48b20f9db38c7866f
+      internalID: -989590617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_68
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 541
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f333a9b81e0e704fb5f52e7e893e000
+      internalID: 827973465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_69
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 541
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 394cae7cc9438b044839a7221360eac6
+      internalID: 1691639518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_70
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 541
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 958911951b56f314d9b88ca22b4e725c
+      internalID: -338098345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_71
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 541
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38ea3e8d75d2efe459a8602092fe46e8
+      internalID: 1161482056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_72
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 541
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17257a3d58d642449a189a03a6c464c9
+      internalID: 2112911831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_73
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 541
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3cf3406fff58b74e8fd182e0d059ea1
+      internalID: -1638346795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_74
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 541
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ecaa4d8515ac543b69c471edb6d2d6
+      internalID: -473378474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_75
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 541
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98e246e7e8d66c44299377923ee5773d
+      internalID: 182128554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_76
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 541
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eed08991728b904daddc25dd29cccb3
+      internalID: 1040643086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_77
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 541
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48a33b27e26dbe445a7d313f554f32af
+      internalID: -1313123874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_78
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 541
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 865d16427ffeba845b6302521dc2451b
+      internalID: -1161669089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_79
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 541
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5edc8b5c40f930468825e64aeb9316a
+      internalID: 1825238011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 470
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdcfb1e8abd54004e859a629c71de1bc
+      internalID: -844294996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_81
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 470
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26608945cbd06f647b4b788680280f3a
+      internalID: -1684383123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_82
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 470
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b70987981114954cab33593317096e2
+      internalID: -1355918841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_83
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 470
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9127b686381095c4683358d32912f5aa
+      internalID: 317358074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_84
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 470
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eac4a05264f0814a8e6a1e19d61a0e2
+      internalID: 806932598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_85
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 470
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 456655606bf0d4b498256b3f738dbeb1
+      internalID: -507961776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_86
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 470
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be2114d68c58d5442967a5194ca6f105
+      internalID: -391164143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_87
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 470
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd6c931cd181d5a4dbb4ebf143978ea8
+      internalID: -1560703135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_88
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 470
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c37314e76de663448d17be246769859
+      internalID: -1544821812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_89
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 470
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 421afdd0d8fe4cd45bb656ea500426b2
+      internalID: 1132862197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_90
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 470
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d5972f7e2771314dbe17f1919cb19d7
+      internalID: -1053223651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_91
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 470
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec546be1c5fa8494c9394aebe1f3d841
+      internalID: -420704584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_92
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 470
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b3e75dc5396994fb728aa7d91fe44e
+      internalID: 473964198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_93
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 470
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 398a2aed827db304db5c13ebe014d4d1
+      internalID: 726272920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_94
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 470
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e58bb4609624bb34abd865aa53f3def3
+      internalID: 1957746864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_95
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 470
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a915b17b05d54824fb3d88926dc85298
+      internalID: 849121719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 399
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edece8ab873138e4b875ab439472f452
+      internalID: -1198840576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_97
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 399
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541009c51d3e9844e9e500fd6a3fce6e
+      internalID: 115407632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_98
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 399
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be8c866868ad3474f82ef1d538473f52
+      internalID: -90693743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_99
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 399
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4d6510df0b25014ca3dcd883ece4c0b
+      internalID: 1486566294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_100
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 399
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a3f3b69ecaf3b43bac01aaee0f4a7c
+      internalID: 1711965883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_101
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 399
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fedc5990082f9aa4d92197c458c7bec8
+      internalID: 1969105815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_102
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 399
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2253f908ded4f0f46851781f76f5b3e0
+      internalID: 1054300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_103
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 399
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 625d323b1ae60954ca2a8fa26996f421
+      internalID: 428852341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_104
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 399
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc838ba840e47b043b8b5f1fdd7bb47a
+      internalID: -43109999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_105
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 399
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b28b74b2ee8154695860a5317d377a
+      internalID: -1455957491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_106
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 399
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63f625347e4cb4b41aa649e8ce05cf97
+      internalID: 1186182328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_107
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 399
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fdf261f2faa5ad47aabf4b76dac578d
+      internalID: 1084764175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_108
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 399
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b04f65d1b0d7af40b0c567aa1280a7f
+      internalID: 1960120759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_109
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 399
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e6205f313480cc4e92e9fdee88d6230
+      internalID: 479976674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_110
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 399
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d5cc1b548fcc244d8c98d1223d32af0
+      internalID: 917781467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_111
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 399
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03be7653d2ef68d4c835c2c1ad10e9b6
+      internalID: 1481814379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 328
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c9ccd759896ea94795a19a80a2debb7
+      internalID: -2103432708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_113
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 328
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2820e7415c5ffe044a618ea25d320238
+      internalID: -1524868642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_114
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 328
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86995a87b65efa049b83f048048ee423
+      internalID: -192658778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_115
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 328
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81ad11d0b2d2d904abf768d0891e9931
+      internalID: 2133322865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_116
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 328
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 142e527b673506d46aca6d7f69a3bf28
+      internalID: 692945555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_117
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 328
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ca5bb98c8bc7b48856d4ec091da626
+      internalID: 1435109305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_118
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 328
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e93692c26fe8f94b802396c9147f61f
+      internalID: -197487951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_119
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 328
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19fb50722e7af2e4392874f60eb5c491
+      internalID: 613570368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_120
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 328
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e879b9604e0978d4fb9a33673cd10510
+      internalID: -858015662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_121
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 328
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 547b051fbc702594ca193530c5782441
+      internalID: 891743050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_122
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 328
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1699e93aedfe295439e20213f9d2a252
+      internalID: -757457749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_123
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 328
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f0788f429b7af47971f2ee905b7936
+      internalID: 1070253464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_124
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 328
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f020c03619de43d40b4b0914b551debe
+      internalID: 254786569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_125
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 328
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979346cab345ded4e9027b8e9cd6dbcf
+      internalID: 1964473713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_126
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 328
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27e31143c7f684942ab482224c027505
+      internalID: -1448659672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_127
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 328
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 928c19d8aa0982f48bc24aef93200fb7
+      internalID: 436556598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_128
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 257
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb02fa3f21abc54589de78cb877b2ec
+      internalID: -432337072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_129
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 257
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889932af67eaf5b429aaf10eec74f998
+      internalID: 556520010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_130
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 257
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88cf9d53cb4f3994486a3bc08c793187
+      internalID: -2046290936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_131
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 257
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06e322ea89738d84c97eb4a141ed0ea0
+      internalID: 1246977696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_132
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 257
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca64255a0998cce47bf3158287f82984
+      internalID: 967791351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_133
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 257
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88937966c2398954ca8342ce2a9ddbab
+      internalID: 1243111130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_134
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 257
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d36e77e9187579149b78ae0e09119e9e
+      internalID: -1015005539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_135
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 257
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa1006764dcc37141b0193b4d573586b
+      internalID: 1936067439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_136
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 257
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca20e9156cb85ab43b4bb4e2fb9781b9
+      internalID: -844745294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_137
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 257
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e2ee0711ec5bb4bbb003bd9b349e49
+      internalID: 495591437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_138
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 257
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b199a6b21244104d828a94f71e4d1e0
+      internalID: -635164644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_139
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 257
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 477a06d80223dcc47916e0fd5a7e0d2f
+      internalID: -1526191070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_140
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 257
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a24f150027a56f4da5c5b410a9ab440
+      internalID: -624734132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_141
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 257
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 621a20b35dc945a459f9e52bcc2aba97
+      internalID: -752350930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_142
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 257
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9977d4666c1410d478dd952e6161d6cf
+      internalID: 1660458806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_143
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 257
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f6b4385604c9b4ba09967d1944e20e
+      internalID: 1245435968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_144
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 186
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf1ad975df0a9e54fba6add9526eed4a
+      internalID: 1413974143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_145
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 186
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23ee3439cbc11247871243f7e639a2a
+      internalID: 985222918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_146
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 186
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a63c9b85538f64f42bcd2e40dbd60cba
+      internalID: -1554646344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_147
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 186
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d8572f426160d4d84132bb3fcbc512
+      internalID: -756217352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_148
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 186
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb9bbde1973a344fac7ec0a9b67c279
+      internalID: 2126977039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_149
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 186
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b1f6c464d5d5934a95a3bfe7b1b0943
+      internalID: 1469402478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_150
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 186
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b92d0e07028da4ca261a9bd8fadf64
+      internalID: 619442223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_151
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 186
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26bfa2515f3e12741b0cef3e3a115060
+      internalID: 572477161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_152
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 186
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4428a7fe89f8e5a42b56335c74c518d4
+      internalID: -1855444815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_153
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 186
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88154d08bfc67bf46970421bb73b1028
+      internalID: 1598910614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_154
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 186
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34e705a6c63300d4eba66bbbbf7f82d9
+      internalID: -252690170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_155
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 186
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18e1bcd125f72f2479d691e71bec8e68
+      internalID: -223459771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_156
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 186
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f99259bac66ef74cbc718b0f00db241
+      internalID: 1814061315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_157
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 186
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20446a7ab7466e642a1a5c8be45e7ea0
+      internalID: -1380575155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_158
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 186
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a7762924f3500640abfcdea6e44c871
+      internalID: 1732503084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_159
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 186
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4ef953aee7aa34d868f82b668b61e3
+      internalID: -1476385484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_160
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 115
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6496ab13ae291264f9a1a5a241bda2c5
+      internalID: 1184441499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_161
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 115
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c23fd9d2f73616c4a96cc18b11abbd70
+      internalID: -709681976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_162
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 115
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a03c6ee3eaff834ca586e76b2303efc
+      internalID: 1470345857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_163
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 115
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b63246164adfbb040ab1881a90ef91f2
+      internalID: 261376682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_164
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 115
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d02d366437312478e05c144eb1fa3f
+      internalID: 899148998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_165
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 115
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c1c524cbebf77449a631ce18f3c564b
+      internalID: 232553148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_166
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 115
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbe8e895928940e42bb74b814e927764
+      internalID: 2007753299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_167
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 115
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6dbc635c021a2949a8b99226eeeeec7
+      internalID: -1258844368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_168
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 115
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 346d7b1d54273b947beba1051ab55c5d
+      internalID: 112470280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_169
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 115
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1775a1d76d26da749a1d169b63d05004
+      internalID: -31225544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_170
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 115
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae865b6fde0c4047ba81c18257bc2e4
+      internalID: -537304116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_171
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 115
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: befc3c8a17623ef489833b9e584f3583
+      internalID: 2036250883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_172
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 115
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b48789209e6f0ba4291ae43c691c9ff5
+      internalID: -784846502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_173
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 115
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1c3afd553a682142a930d4b3cc15756
+      internalID: -1439252443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_174
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 115
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a86a536ec88b7394eb60a319eb5f6736
+      internalID: -1938989738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_175
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 115
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87afcb60ae3be04599dae88644f5925
+      internalID: -596059208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_176
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 44
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08eb0d912b380494cb7e762169518e91
+      internalID: 1654516520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_177
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 44
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19e5a5e4d7d6c80429d87f6673f94f24
+      internalID: 1961052477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_178
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 44
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced1bb644d97b1e4cad914887080a878
+      internalID: 170545747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_179
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 44
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57493acc0cfaf8d4c84ba0333ae75aac
+      internalID: 1119475486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_180
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 44
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2809107d9ce903d478cf43bbf8f94095
+      internalID: 996563711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_181
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 44
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08377b6fe13394c49b03f851f6dd799e
+      internalID: -205768100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_182
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 44
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c6afa17eabeeba4f88c13c51a048e49
+      internalID: -2002633394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_183
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 44
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef113395f9acfa47a2b4d9b60da7552
+      internalID: -1595547092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_184
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 44
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2dc7676979cbe64ea2a5bc7ec202ea2
+      internalID: -963294547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_185
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 44
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30401d8e8fbca2f43a7762bb0cba0806
+      internalID: -1202272528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_186
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 44
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a7ef2c29f610ad44aec500075fa7817
+      internalID: 1591099410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_187
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 44
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 641b50e9d9fb4714d98c72763bda2c6c
+      internalID: 936422481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_188
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 44
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71c91db05a0d3384ebc6259fdc9bf8e9
+      internalID: -208111195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_189
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 44
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85e8e8e50d5387d468ec77db58c6a04f
+      internalID: 838017587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_190
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 44
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92bb3e7f51d955041bfb9db6faed068b
+      internalID: -973272238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DungeonMap_Room11_191
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 44
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 575f9e7a50218184798a7daa7d3f4e76
+      internalID: 1044403840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DungeonMap_Room11_0: 847411312
+      DungeonMap_Room11_1: 1188007010
+      DungeonMap_Room11_10: 36095434
+      DungeonMap_Room11_100: 1711965883
+      DungeonMap_Room11_101: 1969105815
+      DungeonMap_Room11_102: 1054300014
+      DungeonMap_Room11_103: 428852341
+      DungeonMap_Room11_104: -43109999
+      DungeonMap_Room11_105: -1455957491
+      DungeonMap_Room11_106: 1186182328
+      DungeonMap_Room11_107: 1084764175
+      DungeonMap_Room11_108: 1960120759
+      DungeonMap_Room11_109: 479976674
+      DungeonMap_Room11_11: 759457216
+      DungeonMap_Room11_110: 917781467
+      DungeonMap_Room11_111: 1481814379
+      DungeonMap_Room11_112: -2103432708
+      DungeonMap_Room11_113: -1524868642
+      DungeonMap_Room11_114: -192658778
+      DungeonMap_Room11_115: 2133322865
+      DungeonMap_Room11_116: 692945555
+      DungeonMap_Room11_117: 1435109305
+      DungeonMap_Room11_118: -197487951
+      DungeonMap_Room11_119: 613570368
+      DungeonMap_Room11_12: -1864547612
+      DungeonMap_Room11_120: -858015662
+      DungeonMap_Room11_121: 891743050
+      DungeonMap_Room11_122: -757457749
+      DungeonMap_Room11_123: 1070253464
+      DungeonMap_Room11_124: 254786569
+      DungeonMap_Room11_125: 1964473713
+      DungeonMap_Room11_126: -1448659672
+      DungeonMap_Room11_127: 436556598
+      DungeonMap_Room11_128: -432337072
+      DungeonMap_Room11_129: 556520010
+      DungeonMap_Room11_13: 1895344410
+      DungeonMap_Room11_130: -2046290936
+      DungeonMap_Room11_131: 1246977696
+      DungeonMap_Room11_132: 967791351
+      DungeonMap_Room11_133: 1243111130
+      DungeonMap_Room11_134: -1015005539
+      DungeonMap_Room11_135: 1936067439
+      DungeonMap_Room11_136: -844745294
+      DungeonMap_Room11_137: 495591437
+      DungeonMap_Room11_138: -635164644
+      DungeonMap_Room11_139: -1526191070
+      DungeonMap_Room11_14: -860768913
+      DungeonMap_Room11_140: -624734132
+      DungeonMap_Room11_141: -752350930
+      DungeonMap_Room11_142: 1660458806
+      DungeonMap_Room11_143: 1245435968
+      DungeonMap_Room11_144: 1413974143
+      DungeonMap_Room11_145: 985222918
+      DungeonMap_Room11_146: -1554646344
+      DungeonMap_Room11_147: -756217352
+      DungeonMap_Room11_148: 2126977039
+      DungeonMap_Room11_149: 1469402478
+      DungeonMap_Room11_15: -1083304986
+      DungeonMap_Room11_150: 619442223
+      DungeonMap_Room11_151: 572477161
+      DungeonMap_Room11_152: -1855444815
+      DungeonMap_Room11_153: 1598910614
+      DungeonMap_Room11_154: -252690170
+      DungeonMap_Room11_155: -223459771
+      DungeonMap_Room11_156: 1814061315
+      DungeonMap_Room11_157: -1380575155
+      DungeonMap_Room11_158: 1732503084
+      DungeonMap_Room11_159: -1476385484
+      DungeonMap_Room11_16: -1173725746
+      DungeonMap_Room11_160: 1184441499
+      DungeonMap_Room11_161: -709681976
+      DungeonMap_Room11_162: 1470345857
+      DungeonMap_Room11_163: 261376682
+      DungeonMap_Room11_164: 899148998
+      DungeonMap_Room11_165: 232553148
+      DungeonMap_Room11_166: 2007753299
+      DungeonMap_Room11_167: -1258844368
+      DungeonMap_Room11_168: 112470280
+      DungeonMap_Room11_169: -31225544
+      DungeonMap_Room11_17: -154617241
+      DungeonMap_Room11_170: -537304116
+      DungeonMap_Room11_171: 2036250883
+      DungeonMap_Room11_172: -784846502
+      DungeonMap_Room11_173: -1439252443
+      DungeonMap_Room11_174: -1938989738
+      DungeonMap_Room11_175: -596059208
+      DungeonMap_Room11_176: 1654516520
+      DungeonMap_Room11_177: 1961052477
+      DungeonMap_Room11_178: 170545747
+      DungeonMap_Room11_179: 1119475486
+      DungeonMap_Room11_18: -1721002009
+      DungeonMap_Room11_180: 996563711
+      DungeonMap_Room11_181: -205768100
+      DungeonMap_Room11_182: -2002633394
+      DungeonMap_Room11_183: -1595547092
+      DungeonMap_Room11_184: -963294547
+      DungeonMap_Room11_185: -1202272528
+      DungeonMap_Room11_186: 1591099410
+      DungeonMap_Room11_187: 936422481
+      DungeonMap_Room11_188: -208111195
+      DungeonMap_Room11_189: 838017587
+      DungeonMap_Room11_19: 1969474403
+      DungeonMap_Room11_190: -973272238
+      DungeonMap_Room11_191: 1044403840
+      DungeonMap_Room11_2: 11907542
+      DungeonMap_Room11_20: 1992839318
+      DungeonMap_Room11_21: -117394743
+      DungeonMap_Room11_22: -163495223
+      DungeonMap_Room11_23: 836992471
+      DungeonMap_Room11_24: -1234858743
+      DungeonMap_Room11_25: -1323292131
+      DungeonMap_Room11_26: -2778134
+      DungeonMap_Room11_27: 1398523836
+      DungeonMap_Room11_28: -857116767
+      DungeonMap_Room11_29: -354315632
+      DungeonMap_Room11_3: -57946942
+      DungeonMap_Room11_30: 513018854
+      DungeonMap_Room11_31: 1744235453
+      DungeonMap_Room11_32: -328664688
+      DungeonMap_Room11_33: 1246055787
+      DungeonMap_Room11_34: 1351598843
+      DungeonMap_Room11_35: -318631590
+      DungeonMap_Room11_36: 48917118
+      DungeonMap_Room11_37: -1613821072
+      DungeonMap_Room11_38: 111791953
+      DungeonMap_Room11_39: -1317194677
+      DungeonMap_Room11_4: 496912449
+      DungeonMap_Room11_40: -692017225
+      DungeonMap_Room11_41: 392662570
+      DungeonMap_Room11_42: 355292976
+      DungeonMap_Room11_43: -1228806451
+      DungeonMap_Room11_44: 842514666
+      DungeonMap_Room11_45: -784997816
+      DungeonMap_Room11_46: -998671366
+      DungeonMap_Room11_47: 1747098353
+      DungeonMap_Room11_48: -1150621593
+      DungeonMap_Room11_49: 992093989
+      DungeonMap_Room11_5: 1332039976
+      DungeonMap_Room11_50: -472858499
+      DungeonMap_Room11_51: -1135604143
+      DungeonMap_Room11_52: -715047485
+      DungeonMap_Room11_53: 207255124
+      DungeonMap_Room11_54: 1872212354
+      DungeonMap_Room11_55: 858337942
+      DungeonMap_Room11_56: -447231551
+      DungeonMap_Room11_57: 2073206150
+      DungeonMap_Room11_58: -1962675563
+      DungeonMap_Room11_59: 765049434
+      DungeonMap_Room11_6: -211491817
+      DungeonMap_Room11_60: 1009848666
+      DungeonMap_Room11_61: -1170152568
+      DungeonMap_Room11_62: -675938348
+      DungeonMap_Room11_63: -797051424
+      DungeonMap_Room11_64: -889596729
+      DungeonMap_Room11_65: -1759719974
+      DungeonMap_Room11_66: 74684926
+      DungeonMap_Room11_67: -989590617
+      DungeonMap_Room11_68: 827973465
+      DungeonMap_Room11_69: 1691639518
+      DungeonMap_Room11_7: -1633227234
+      DungeonMap_Room11_70: -338098345
+      DungeonMap_Room11_71: 1161482056
+      DungeonMap_Room11_72: 2112911831
+      DungeonMap_Room11_73: -1638346795
+      DungeonMap_Room11_74: -473378474
+      DungeonMap_Room11_75: 182128554
+      DungeonMap_Room11_76: 1040643086
+      DungeonMap_Room11_77: -1313123874
+      DungeonMap_Room11_78: -1161669089
+      DungeonMap_Room11_79: 1825238011
+      DungeonMap_Room11_8: -282774474
+      DungeonMap_Room11_80: -844294996
+      DungeonMap_Room11_81: -1684383123
+      DungeonMap_Room11_82: -1355918841
+      DungeonMap_Room11_83: 317358074
+      DungeonMap_Room11_84: 806932598
+      DungeonMap_Room11_85: -507961776
+      DungeonMap_Room11_86: -391164143
+      DungeonMap_Room11_87: -1560703135
+      DungeonMap_Room11_88: -1544821812
+      DungeonMap_Room11_89: 1132862197
+      DungeonMap_Room11_9: 2140431051
+      DungeonMap_Room11_90: -1053223651
+      DungeonMap_Room11_91: -420704584
+      DungeonMap_Room11_92: 473964198
+      DungeonMap_Room11_93: 726272920
+      DungeonMap_Room11_94: 1957746864
+      DungeonMap_Room11_95: 849121719
+      DungeonMap_Room11_96: -1198840576
+      DungeonMap_Room11_97: 115407632
+      DungeonMap_Room11_98: -90693743
+      DungeonMap_Room11_99: 1486566294
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
