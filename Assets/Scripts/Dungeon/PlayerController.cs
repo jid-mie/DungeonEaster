@@ -28,6 +28,15 @@ namespace DungeonEater.Dungeon
         [SerializeField] private float currentStamina = 100f;
         [SerializeField] private float staminaRegenRate = 18f;
 
+        [Header("Collider Fit")]
+        [SerializeField] private bool autoFitCollider = true;
+        [Tooltip("Tỉ lệ chiều rộng sprite dùng làm collider")]
+        [Range(0.3f, 1f)]
+        [SerializeField] private float colliderWidthRatio = 0.85f;
+        [Tooltip("Tỉ lệ chiều cao sprite dùng làm collider, neo ở chân sprite")]
+        [Range(0.2f, 1f)]
+        [SerializeField] private float colliderHeightRatio = 0.5f;
+
         [Header("Weapon & Combat")]
         [SerializeField] private WeaponType currentWeapon = WeaponType.Sword;
         [SerializeField] private WeaponSystem weaponSystem;
@@ -63,6 +72,39 @@ namespace DungeonEater.Dungeon
 
             currentHealth = maxHealth;
             currentStamina = maxStamina;
+
+            if (autoFitCollider) FitColliderToSprite();
+        }
+
+        /// <summary>
+        /// Co collider khớp sprite thật, bất kể prefab/scene đặt scale bao nhiêu.
+        /// ponytail: chỉ fit 1 lần lúc Awake; fit lại khi đổi sprite nếu sau này frame animation chênh kích thước nhiều.
+        /// </summary>
+        private void FitColliderToSprite()
+        {
+            var sr = GetComponentInChildren<SpriteRenderer>();
+            if (sr == null || sr.sprite == null) return;
+
+            var world = sr.bounds;
+            var scale = transform.lossyScale;
+            float sizeX = world.size.x / Mathf.Abs(scale.x) * colliderWidthRatio;
+            float sizeY = world.size.y / Mathf.Abs(scale.y) * colliderHeightRatio;
+            float bottomLocal = transform.InverseTransformPoint(new Vector3(0f, world.min.y, 0f)).y;
+
+            var box = GetComponent<BoxCollider2D>();
+            if (box != null)
+            {
+                box.size = new Vector2(sizeX, sizeY);
+                box.offset = new Vector2(0f, bottomLocal + sizeY * 0.5f);
+                return;
+            }
+
+            var circle = GetComponent<CircleCollider2D>();
+            if (circle != null)
+            {
+                circle.radius = sizeX * 0.5f;
+                circle.offset = new Vector2(0f, bottomLocal + circle.radius);
+            }
         }
 
         private void Start()
