@@ -117,7 +117,10 @@ namespace DungeonEater.TranHuuHau.Player
 
         private void Start()
         {
-            // Đảm bảo các tham số Animator được cache sau khi Animator Controller đã sẵn sàng
+            // 1. Chốt chặn phòng thủ: Khử ngay CameraFollow và Player_HunterChef do SceneAutoBuilder inject ngầm
+            PurgeConflictingAutoBuilderComponents();
+
+            // 2. Đảm bảo các tham số Animator được cache sau khi Animator Controller đã sẵn sàng
             CacheAnimatorParams();
             SnapCameraToCenter();
         }
@@ -134,8 +137,40 @@ namespace DungeonEater.TranHuuHau.Player
         {
             if (Camera.main != null)
             {
+                PurgeConflictingAutoBuilderComponents();
                 Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y + cameraCenterOffsetY, -10f);
                 Camera.main.transform.rotation = Quaternion.identity;
+            }
+        }
+
+        /// <summary>
+        /// Chốt chặn phòng thủ: Tự động phát hiện và loại bỏ triệt để component CameraFollow
+        /// và GameObject giả lập Player_HunterChef do SceneAutoBuilder tự ý inject ngầm khi Play.
+        /// </summary>
+        private void PurgeConflictingAutoBuilderComponents()
+        {
+            if (Camera.main != null)
+            {
+                var dungeonCamFollow = Camera.main.GetComponent<DungeonEater.Dungeon.CameraFollow>();
+                if (dungeonCamFollow != null)
+                {
+                    dungeonCamFollow.enabled = false;
+                    Destroy(dungeonCamFollow);
+                }
+
+                var fallbackFollow = Camera.main.GetComponent("CameraFollow") as MonoBehaviour;
+                if (fallbackFollow != null)
+                {
+                    fallbackFollow.enabled = false;
+                    Destroy(fallbackFollow);
+                }
+            }
+
+            var dummyPlayer = GameObject.Find("Player_HunterChef");
+            if (dummyPlayer != null && dummyPlayer != gameObject)
+            {
+                dummyPlayer.SetActive(false);
+                Destroy(dummyPlayer);
             }
         }
 
@@ -255,6 +290,12 @@ namespace DungeonEater.TranHuuHau.Player
 
         private void LateUpdate()
         {
+            // Chốt chặn phòng thủ liên tục: Đảm bảo CameraFollow không bao giờ tranh chấp điều khiển Camera
+            if (Camera.main != null && Camera.main.GetComponent("CameraFollow") != null)
+            {
+                PurgeConflictingAutoBuilderComponents();
+            }
+
             // 1. Camera theo sát nhân vật CHÍNH GIỮA màn hình:
             // Sử dụng bộ lọc Exponential Decay mượt mà (1 - Exp(-sharpness * dt)),
             // bộ lọc này hoàn toàn không có quán tính (momentum) và không có hiện tượng nảy (overshoot),

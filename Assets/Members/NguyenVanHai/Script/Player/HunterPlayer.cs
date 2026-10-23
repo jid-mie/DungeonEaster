@@ -100,8 +100,10 @@ public class HunterPlayer : MonoBehaviour
     [SerializeField] private string moveYParam = "MoveY";
     [SerializeField] private string isMovingParam = "IsMoving";
     [SerializeField] private string attackTrigger = "Attack";
+    [SerializeField] private string isAttackParam = "IsAttack";
     [SerializeField] private string dashTrigger = "Dash";
     [SerializeField] private string weaponTypeParam = "WeaponType"; // 0: Sword, 1: Bow
+    [SerializeField] private Sprite defaultArrowSprite;
 
     // Runtime States
     private float currentHealth;
@@ -133,6 +135,7 @@ public class HunterPlayer : MonoBehaviour
     private int hashMoveY;
     private int hashIsMoving;
     private int hashAttack;
+    private int hashIsAttack;
     private int hashDash;
     private int hashWeaponType;
 
@@ -140,8 +143,13 @@ public class HunterPlayer : MonoBehaviour
     private bool hasParamMoveY;
     private bool hasParamIsMoving;
     private bool hasParamAttack;
+    private bool hasParamIsAttack;
     private bool hasParamDash;
     private bool hasParamWeaponType;
+
+    private float poisonMarshTimer = 0f;
+    private float slowTimer = 0f;
+    private float originalMoveSpeed;
 
     // Events phục vụ UI (HUD Máu, Thể lực, Vũ khí, Bình máu)
     public event Action<float, float> OnHealthChanged;
@@ -169,8 +177,16 @@ public class HunterPlayer : MonoBehaviour
 
         currentHealth = maxHealth;
         currentStamina = maxStamina;
+        originalMoveSpeed = moveSpeed;
 
         InitializeAnimatorHashes();
+
+        // Khởi tạo hệ thống quản lý Dungeon (HUD, Cửa, Quái, Hòm đồ) nếu chưa có
+        if (FindObjectOfType<NguyenVanHai.Dungeon.DungeonGameManager>() == null)
+        {
+            var mgrGo = new GameObject("DungeonGameManager");
+            mgrGo.AddComponent<NguyenVanHai.Dungeon.DungeonGameManager>();
+        }
     }
 
     private void Start()
@@ -197,6 +213,12 @@ public class HunterPlayer : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             return;
+        }
+
+        if (slowTimer > 0f)
+        {
+            slowTimer -= Time.fixedDeltaTime;
+            if (slowTimer <= 0f) moveSpeed = originalMoveSpeed;
         }
 
         if (combatState == HunterCombatState.Dashing)
@@ -447,35 +469,53 @@ public class HunterPlayer : MonoBehaviour
     }
 
     // --- CUNG ---
+    private Vector2 GetMouseAimDirection()
+    {
+        if (Camera.main != null)
+        {
+            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorld.z = 0f;
+            Vector2 dir = ((Vector2)mouseWorld - (Vector2)transform.position).normalized;
+            if (dir.sqrMagnitude > 0.001f) return dir;
+        }
+        return lastFacingDirection;
+    }
+
     private void PerformBowQuickShot()
     {
         combatState = HunterCombatState.Attacking;
+        Vector2 shootDir = GetMouseAimDirection();
+        lastFacingDirection = shootDir;
         TriggerAttackAnimation();
 
-        SpawnArrow(lastFacingDirection, arrowSpeed, 15f, false);
+        SpawnArrow(shootDir, arrowSpeed, 15f, false);
         StartCoroutine(ResetAttackState(0.3f));
     }
 
     private void PerformBowChargedShot(float chargeTime)
     {
         combatState = HunterCombatState.Attacking;
+        Vector2 shootDir = GetMouseAimDirection();
+        lastFacingDirection = shootDir;
         TriggerAttackAnimation();
 
-        float chargeRatio = chargeTime / maxChargeTime;
+        float chargeRatio = Mathf.Clamp01(chargeTime / maxChargeTime);
         float damage = Mathf.Lerp(20f, 50f, chargeRatio);
         float speed = Mathf.Lerp(arrowSpeed, arrowSpeed * 1.5f, chargeRatio);
 
-        SpawnArrow(lastFacingDirection, speed, damage, chargeRatio >= 0.8f);
+        SpawnArrow(shootDir, speed, damage, chargeRatio >= 0.8f);
         StartCoroutine(ResetAttackState(0.35f));
     }
 
     private void PerformBowSkillPiercingArrow()
     {
         combatState = HunterCombatState.Attacking;
+        Vector2 shootDir = GetMouseAimDirection();
+        lastFacingDirection = shootDir;
         TriggerAttackAnimation();
 
         // Mũi tên phép xuyên thấu
-        SpawnArrow(lastFacingDirection, arrowSpeed * 1.4f, 40f, true);
+        SpawnArrow(shootDir, arrowSpeed * 1.4f, 40f, true);
         StartCoroutine(ResetAttackState(0.4f));
     }
 
@@ -503,7 +543,15 @@ public class HunterPlayer : MonoBehaviour
 
     private void ApplyDamageToTarget(Collider2D targetCollider, float damage)
     {
-        // Gửi damage qua SendMessage hoặc Interface IDamageable
+        // Gây sát thương trực tiếp cho EnemyBase nếu có
+        var enemy = targetCollider.GetComponentInParent<NguyenVanHai.Enemies.EnemyBase>();
+        if (enemy != null && enemy.IsAlive)
+        {
+            Vector2 kb = (targetCollider.transform.position - transform.position).normalized * 2.5f;
+            enemy.TakeDamage(damage, kb);
+            return;
+        }
+
         targetCollider.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
     }
 
@@ -517,12 +565,34 @@ public class HunterPlayer : MonoBehaviour
         if (normalArrowPrefab != null)
         {
             arrowObj = Instantiate(normalArrowPrefab, spawnPos, rot);
-            Rigidbody2D arrowRb = arrowObj.GetComponent<Rigidbody2D>();
-            if (arrowRb != null)
-            {
-                arrowRb.velocity = direction * speed;
-            }
         }
+        else
+        {
+            // Tự động sinh mũi tên runtime nếu chưa gán prefab
+            arrowObj = new GameObject("ArrowProjectile");
+            arrowObj.transform.position = spawnPos;
+            arrowObj.transform.rotation = rot;
+
+            var sr = arrowObj.AddComponent<SpriteRenderer>();
+            sr.sortingOrder = 5100;
+            if (defaultArrowSprite != null)
+            {
+                sr.sprite = defaultArrowSprite;
+            }
+            else
+            {
+                // Fallback nạp sprite tên có sẵn trong dự án
+                sr.sprite = Resources.Load<Sprite>("VFX_Arrow_Normal_0");
+            }
+
+            var col = arrowObj.AddComponent<BoxCollider2D>();
+            col.isTrigger = true;
+            col.size = new Vector2(0.8f, 0.25f);
+        }
+
+        var arrowProj = arrowObj.GetComponent<NguyenVanHai.Combat.ArrowProjectile>();
+        if (arrowProj == null) arrowProj = arrowObj.AddComponent<NguyenVanHai.Combat.ArrowProjectile>();
+        arrowProj.Initialize(direction, damage, speed, isPiercing);
     }
 
     private IEnumerator ResetAttackState(float duration)
@@ -595,6 +665,22 @@ public class HunterPlayer : MonoBehaviour
     }
 
     /// <summary>
+    /// Hiệu ứng dẫm đầm lầy độc (TaiLieu.md mục 5.2): Trừ máu mỗi 2s và làm chậm x2 lần.
+    /// </summary>
+    public void ApplyPoisonMarsh(float dmgPerTick, float interval, float slowMultiplier)
+    {
+        moveSpeed = originalMoveSpeed * slowMultiplier;
+        slowTimer = 0.5f;
+
+        poisonMarshTimer += Time.deltaTime;
+        if (poisonMarshTimer >= interval)
+        {
+            poisonMarshTimer = 0f;
+            TakeDamage(dmgPerTick);
+        }
+    }
+
+    /// <summary>
     /// Sử dụng bình máu (Phím R): Hồi 20 HP theo đặc tả.
     /// </summary>
     public void UseHealthPotion()
@@ -660,9 +746,25 @@ public class HunterPlayer : MonoBehaviour
 
     private void TriggerAttackAnimation()
     {
-        if (animator != null && hasParamAttack)
+        if (animator == null) return;
+
+        if (hasParamIsAttack)
+        {
+            animator.SetBool(hashIsAttack, true);
+            StartCoroutine(ResetIsAttackParam(0.25f));
+        }
+        else if (hasParamAttack)
         {
             animator.SetTrigger(hashAttack);
+        }
+    }
+
+    private IEnumerator ResetIsAttackParam(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (animator != null && hasParamIsAttack)
+        {
+            animator.SetBool(hashIsAttack, false);
         }
     }
 
@@ -674,6 +776,7 @@ public class HunterPlayer : MonoBehaviour
         hashMoveY = Animator.StringToHash(moveYParam);
         hashIsMoving = Animator.StringToHash(isMovingParam);
         hashAttack = Animator.StringToHash(attackTrigger);
+        hashIsAttack = Animator.StringToHash(isAttackParam);
         hashDash = Animator.StringToHash(dashTrigger);
         hashWeaponType = Animator.StringToHash(weaponTypeParam);
 
@@ -683,6 +786,7 @@ public class HunterPlayer : MonoBehaviour
             else if (param.name == moveYParam) hasParamMoveY = true;
             else if (param.name == isMovingParam) hasParamIsMoving = true;
             else if (param.name == attackTrigger) hasParamAttack = true;
+            else if (param.name == isAttackParam) hasParamIsAttack = true;
             else if (param.name == dashTrigger) hasParamDash = true;
             else if (param.name == weaponTypeParam) hasParamWeaponType = true;
         }
