@@ -9,17 +9,13 @@ namespace DungeonEater.Tavern
     /// </summary>
     public class InteractPrompt : MonoBehaviour
     {
-        [SerializeField] private float checkRadius = 0.35f;
-
         private TavernUI owner;
         private RectTransform box;
         private Text label;
-        private int interactableMask;
 
         public void Build(TavernUI ui)
         {
             owner = ui;
-            interactableMask = LayerMask.GetMask("Interactable");
 
             var bg = UIKit.Panel(transform, "Prompt", new Color(0.16f, 0.1f, 0.06f, 0.9f));
             box = bg.rectTransform;
@@ -41,8 +37,7 @@ namespace DungeonEater.Tavern
                 return;
             }
 
-            var hit = Physics2D.OverlapCircle(player.GetInteractionCheckPosition(), checkRadius, interactableMask);
-            var interactable = hit != null ? hit.GetComponent<IInteractable>() : null;
+            var interactable = owner.FindFacingInteractable(out Collider2D hit);
             if (interactable == null)
             {
                 box.gameObject.SetActive(false);

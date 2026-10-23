@@ -26,7 +26,7 @@ namespace DungeonEater.Tavern
         public void Build(TavernUI ui)
         {
             container = UIKit.Rect("Container", transform);
-            UIKit.Place(container, new Vector2(0.5f, 0f), new Vector2(0f, 70f), new Vector2(980f, RowHeight * MaxToasts));
+            UIKit.Place(container, new Vector2(0.5f, 0f), new Vector2(0f, 136f), new Vector2(980f, RowHeight * MaxToasts));
         }
 
         public void Show(string message, Color color, float duration)

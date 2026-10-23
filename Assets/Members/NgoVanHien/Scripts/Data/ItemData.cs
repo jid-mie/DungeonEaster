@@ -27,7 +27,7 @@ namespace DungeonEater.Tavern
         public ItemCategory category;
         public Sprite icon;
         [Tooltip("Số lượng tối đa xếp chồng trong 1 ô hòm đồ")]
-        [Min(1)] public int maxStack = 10;
+        [Min(1)] public int maxStack = 5;
 
         public bool IsDish => category == ItemCategory.Dish;
 

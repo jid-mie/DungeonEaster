@@ -32,7 +32,7 @@ namespace DungeonEater.Tavern
     /// nhận món (trả vàng + danh tiếng, tip nếu phục vụ nhanh) -> ăn -> ra về.
     /// Hết kiên nhẫn: giận dữ bỏ về và trừ danh tiếng (README mục 5).
     /// </summary>
-    public class TavernCustomer : MonoBehaviour
+    public class TavernCustomer : MonoBehaviour, IInteractable
     {
         // Cùng công thức với YSortOrder (base 5000, precision 100) để đứng đúng lớp với bàn/người chơi
         private const int SortBase = 5000;
@@ -121,6 +121,27 @@ namespace DungeonEater.Tavern
             t.Reserve(this);
             State = CustomerState.Entering;
             UpdateSorting();
+
+            // Collider trigger ở layer Interactable -> ChiefPlayer bấm F khi quay mặt vào khách
+            int layer = LayerMask.NameToLayer("Interactable");
+            if (layer >= 0) gameObject.layer = layer;
+            var rb = gameObject.AddComponent<Rigidbody2D>();
+            rb.bodyType = RigidbodyType2D.Kinematic;
+            var col = gameObject.AddComponent<BoxCollider2D>();
+            col.isTrigger = true;
+            float width = p.idleSprite != null ? p.idleSprite.bounds.size.x * visualScale * 0.6f : 0.6f;
+            col.size = new Vector2(width, bodyHeight * 0.8f);
+            col.offset = new Vector2(0f, bodyHeight * 0.45f);
+        }
+
+        public void Interact(ChiefPlayer player)
+        {
+            if (table != null && State != CustomerState.Leaving) table.Interact(player);
+        }
+
+        public string GetInteractPrompt()
+        {
+            return table != null ? table.GetInteractPrompt() : "";
         }
 
         private void Update()
@@ -198,7 +219,8 @@ namespace DungeonEater.Tavern
             bubble.SetPatience(1f);
         }
 
-        public ServeOutcome TryServe(ItemData dish)
+        /// <param name="fromSlot">Ô hòm đồ lấy món ra (-1: lấy ở bất kỳ ô nào có món).</param>
+        public ServeOutcome TryServe(ItemData dish, int fromSlot = -1)
         {
             var outcome = new ServeOutcome();
             if (State != CustomerState.Waiting)
@@ -211,7 +233,9 @@ namespace DungeonEater.Tavern
                 outcome.result = ServeResult.WrongDish;
                 return outcome;
             }
-            if (PlayerInventory.Instance == null || !PlayerInventory.Instance.TryRemove(dish, 1))
+            var inventory = PlayerInventory.Instance;
+            bool removed = inventory != null && (fromSlot >= 0 ? inventory.TryRemoveAt(fromSlot, 1) : inventory.TryRemove(dish, 1));
+            if (!removed)
             {
                 outcome.result = ServeResult.DishNotInInventory;
                 return outcome;

@@ -5,16 +5,16 @@ using UnityEngine.UI;
 namespace DungeonEater.Tavern
 {
     /// <summary>
-    /// Bảng hòm đồ. 2 chế độ:
-    /// - Xem (phím I): xem nguyên liệu/món đang có, vàng, danh tiếng.
+    /// Bảng hòm đồ: 10 ô túi + 5 ô quick item. 2 chế độ:
+    /// - Xem (phím I): bấm 1 ô rồi bấm ô khác để chuyển / gộp / đổi chỗ (vd đưa món xuống quick item).
     /// - Phục vụ (F tại bàn khách): ô chứa món khách gọi được viền vàng, bấm vào món để giao cho khách.
     /// Đặt lệch phải màn hình để không che khách/order (guideline: tránh popup lớn chặn order khi đang ca).
     /// </summary>
     public class InventoryPanel : MonoBehaviour
     {
-        private const int Columns = 4;
-        private const float SlotSize = 100f;
-        private const float SlotGap = 12f;
+        private const int Columns = 5;
+        private const float SlotSize = 88f;
+        private const float SlotGap = 10f;
 
         private TavernUI owner;
         private RectTransform window;
@@ -24,7 +24,6 @@ namespace DungeonEater.Tavern
         private Image serveIcon;
         private Text serveText;
         private Image servePatience;
-        private RectTransform grid;
         private Text infoText;
         private Text goldText;
         private Text repText;
@@ -34,6 +33,7 @@ namespace DungeonEater.Tavern
         private int selectedIndex = -1;
 
         public bool IsOpen => window != null && window.gameObject.activeSelf;
+        public TavernCustomer ServeTarget => serveTarget;
 
         private class SlotView
         {
@@ -48,12 +48,22 @@ namespace DungeonEater.Tavern
             owner = ui;
             var self = (RectTransform)transform;
 
-            int slotCount = PlayerInventory.Instance != null ? PlayerInventory.Instance.SlotCount : 16;
-            int rows = Mathf.CeilToInt(slotCount / (float)Columns);
+            var inv = PlayerInventory.Instance;
+            int bagCount = inv != null ? inv.BagSlotCount : 10;
+            int quickCount = inv != null ? inv.QuickSlotCount : 5;
+            int bagRows = Mathf.CeilToInt(bagCount / (float)Columns);
             float gridWidth = Columns * SlotSize + (Columns - 1) * SlotGap;
-            float gridHeight = rows * SlotSize + (rows - 1) * SlotGap;
+            float bagHeight = bagRows * SlotSize + (bagRows - 1) * SlotGap;
             float width = gridWidth + 64f;
-            float height = 96f + 92f + gridHeight + 24f + 110f + 64f;
+
+            // vị trí từ trên xuống
+            float bagLabelY = -192f;
+            float bagY = bagLabelY - 28f;
+            float quickLabelY = bagY - bagHeight - 14f;
+            float quickY = quickLabelY - 28f;
+            float infoY = quickY - SlotSize - 16f;
+            const float infoHeight = 96f;
+            float height = -infoY + infoHeight + 76f;
 
             window = UIKit.Panel(self, "Window", UIKit.Wood).rectTransform;
             UIKit.Place(window, new Vector2(1f, 0.5f), new Vector2(-40f, 20f), new Vector2(width, height));
@@ -68,7 +78,7 @@ namespace DungeonEater.Tavern
             var close = UIKit.Button(window, "Close", "X", 26, UIKit.ButtonRed, Close);
             UIKit.Place((RectTransform)close.transform, new Vector2(1f, 1f), new Vector2(-20f, -20f), new Vector2(52f, 52f));
 
-            // --- banner phục vụ
+            // --- banner phục vụ / hướng dẫn
             serveBanner = UIKit.Panel(window, "ServeBanner", UIKit.WoodDark).rectTransform;
             UIKit.Place(serveBanner, new Vector2(0.5f, 1f), new Vector2(0f, -100f), new Vector2(gridWidth, 80f));
             serveIcon = UIKit.Icon(serveBanner, "Icon", null);
@@ -83,19 +93,19 @@ namespace DungeonEater.Tavern
             servePatience.rectTransform.pivot = new Vector2(0f, 0.5f);
             servePatience.rectTransform.offsetMin = servePatience.rectTransform.offsetMax = Vector2.zero;
 
-            // --- lưới ô
-            grid = UIKit.Rect("Grid", window);
-            UIKit.Place(grid, new Vector2(0.5f, 1f), new Vector2(0f, -196f), new Vector2(gridWidth, gridHeight));
-            var layout = grid.gameObject.AddComponent<GridLayoutGroup>();
-            layout.cellSize = new Vector2(SlotSize, SlotSize);
-            layout.spacing = new Vector2(SlotGap, SlotGap);
-            layout.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
-            layout.constraintCount = Columns;
-            for (int i = 0; i < slotCount; i++) slotViews.Add(CreateSlot(grid, i));
+            // --- túi đồ
+            SectionLabel("BagLabel", "TÚI ĐỒ", bagLabelY);
+            var bagGrid = CreateGrid("BagGrid", bagY, gridWidth, bagHeight);
+            for (int i = 0; i < bagCount; i++) slotViews.Add(CreateSlot(bagGrid, i, null));
+
+            // --- quick item
+            SectionLabel("QuickLabel", $"QUICK ITEM  <color=#{UIKit.Hex(UIKit.TextDim)}>· phím 1-{quickCount} để giao nhanh</color>", quickLabelY);
+            var quickGrid = CreateGrid("QuickGrid", quickY, gridWidth, SlotSize);
+            for (int k = 0; k < quickCount; k++) slotViews.Add(CreateSlot(quickGrid, bagCount + k, (k + 1).ToString()));
 
             // --- thông tin
             var info = UIKit.Panel(window, "Info", UIKit.WoodDark);
-            UIKit.Place(info.rectTransform, new Vector2(0.5f, 0f), new Vector2(0f, 70f), new Vector2(gridWidth, 110f));
+            UIKit.Place(info.rectTransform, new Vector2(0.5f, 1f), new Vector2(0f, infoY), new Vector2(gridWidth, infoHeight));
             infoText = UIKit.Label(info.transform, "Text", "", 19, UIKit.Text, TextAnchor.UpperLeft);
             UIKit.Stretch(infoText.rectTransform, 14, 8, 14, 10);
 
@@ -104,6 +114,24 @@ namespace DungeonEater.Tavern
             repText = FooterValue(window, owner.ReputationIcon, UIKit.Rep, 32f + gridWidth * 0.5f);
 
             window.gameObject.SetActive(false);
+        }
+
+        private void SectionLabel(string objName, string text, float y)
+        {
+            var label = UIKit.Label(window, objName, text, 19, UIKit.Text, TextAnchor.UpperLeft, FontStyle.Bold);
+            UIKit.Place(label.rectTransform, new Vector2(0f, 1f), new Vector2(32f, y), new Vector2(window.sizeDelta.x - 64f, 24f));
+        }
+
+        private RectTransform CreateGrid(string objName, float y, float width, float height)
+        {
+            var grid = UIKit.Rect(objName, window);
+            UIKit.Place(grid, new Vector2(0.5f, 1f), new Vector2(0f, y), new Vector2(width, height));
+            var layout = grid.gameObject.AddComponent<GridLayoutGroup>();
+            layout.cellSize = new Vector2(SlotSize, SlotSize);
+            layout.spacing = new Vector2(SlotGap, SlotGap);
+            layout.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
+            layout.constraintCount = Columns;
+            return grid;
         }
 
         private static Text FooterValue(RectTransform parent, Sprite icon, Color color, float x)
@@ -115,7 +143,7 @@ namespace DungeonEater.Tavern
             return t;
         }
 
-        private SlotView CreateSlot(RectTransform parent, int index)
+        private SlotView CreateSlot(RectTransform parent, int index, string keyLabel)
         {
             var view = new SlotView();
             var rt = UIKit.Rect("Slot" + index, parent);
@@ -132,10 +160,16 @@ namespace DungeonEater.Tavern
             button.onClick.AddListener(() => OnSlotClicked(captured));
 
             view.icon = UIKit.Icon(rt, "Icon", null);
-            UIKit.Stretch(view.icon.rectTransform, 12, 12, 12, 12);
+            UIKit.Stretch(view.icon.rectTransform, 10, 10, 10, 10);
 
-            view.count = UIKit.Label(rt, "Count", "", 22, UIKit.Text, TextAnchor.LowerRight, FontStyle.Bold);
+            view.count = UIKit.Label(rt, "Count", "", 21, UIKit.Text, TextAnchor.LowerRight, FontStyle.Bold);
             UIKit.Stretch(view.count.rectTransform, 4, 2, 8, 4);
+
+            if (keyLabel != null)
+            {
+                var key = UIKit.Label(rt, "Key", keyLabel, 18, UIKit.Highlight, TextAnchor.UpperLeft, FontStyle.Bold);
+                UIKit.Stretch(key.rectTransform, 8, 4, 4, 4);
+            }
             return view;
         }
 
@@ -162,6 +196,7 @@ namespace DungeonEater.Tavern
         public void Close()
         {
             serveTarget = null;
+            selectedIndex = -1;
             window.gameObject.SetActive(false);
             owner.NotifyModalChanged();
         }
@@ -188,7 +223,7 @@ namespace DungeonEater.Tavern
             ItemData wanted = serving ? serveTarget.Order.dish : null;
 
             title.text = serving ? $"PHỤC VỤ BÀN {serveTarget.Table.TableNumber}" : "HÒM ĐỒ";
-            subtitle.text = $"Đã dùng {inv.UsedSlots}/{inv.SlotCount} ô";
+            subtitle.text = $"Đã dùng {inv.UsedSlots}/{inv.SlotCount} ô · mỗi ô tối đa 5";
 
             servePatience.transform.parent.gameObject.SetActive(serving);
             // chế độ xem không có icon -> kéo chữ sang trái cho gọn
@@ -198,7 +233,7 @@ namespace DungeonEater.Tavern
             if (!serving)
             {
                 serveIcon.enabled = false;
-                serveText.text = $"<color=#{UIKit.Hex(UIKit.TextDim)}>Món nấu ở bếp sẽ vào hòm đồ.\nRa bàn khách bấm <b>F</b> để chọn món phục vụ.</color>";
+                serveText.text = $"<color=#{UIKit.Hex(UIKit.TextDim)}>Món nấu xong tự vào ô quick item.\nTrước bàn khách: bấm <b>F</b> hoặc phím <b>1-5</b> để giao.</color>";
             }
             else
             {
@@ -229,8 +264,9 @@ namespace DungeonEater.Tavern
                 bool dimmed = serving && !empty && !isWanted;
                 view.icon.color = dimmed ? new Color(1f, 1f, 1f, 0.35f) : Color.white;
                 view.highlight.enabled = isWanted || i == selectedIndex;
-                view.highlight.color = isWanted ? new Color(UIKit.Highlight.r, UIKit.Highlight.g, UIKit.Highlight.b, pulse) : UIKit.TextDim;
-                view.frame.color = empty ? new Color(UIKit.Slot.r, UIKit.Slot.g, UIKit.Slot.b, 0.6f) : UIKit.Slot;
+                view.highlight.color = isWanted ? new Color(UIKit.Highlight.r, UIKit.Highlight.g, UIKit.Highlight.b, pulse) : UIKit.Text;
+                Color frameColor = inv.IsQuickSlot(i) ? UIKit.WoodLight : UIKit.Slot;
+                view.frame.color = empty ? new Color(frameColor.r, frameColor.g, frameColor.b, 0.6f) : frameColor;
             }
 
             infoText.text = BuildInfo(inv, serving);
@@ -248,10 +284,11 @@ namespace DungeonEater.Tavern
             if (slot != null && !slot.IsEmpty)
             {
                 var item = slot.item;
-                return $"<b>{item.displayName}</b>  <color=#{UIKit.Hex(UIKit.TextDim)}>· {item.CategoryLabel} · có {inv.Count(item)}</color>\n{item.description}";
+                return $"<b>{item.displayName}</b>  <color=#{UIKit.Hex(UIKit.TextDim)}>· {item.CategoryLabel} · có {inv.Count(item)}</color>\n" +
+                       $"{item.description}\n<color=#{UIKit.Hex(UIKit.Highlight)}>Bấm ô khác để chuyển / đổi chỗ.</color>";
             }
             if (serving) return "Chọn đúng món khách gọi. Các ô mờ là nguyên liệu/món khác, khách không nhận.";
-            return "Bấm vào 1 ô để xem thông tin. Món nấu ở bếp sẽ được cho vào đây, mang ra bàn bấm F để phục vụ.";
+            return "Bấm 1 ô để chọn, rồi bấm ô khác để chuyển, gộp hoặc đổi chỗ (vd đưa món xuống quick item).";
         }
 
         private void OnSlotClicked(int index)
@@ -259,29 +296,32 @@ namespace DungeonEater.Tavern
             var inv = PlayerInventory.Instance;
             if (inv == null || index >= inv.Slots.Count) return;
             var slot = inv.Slots[index];
-            selectedIndex = slot.IsEmpty ? -1 : index;
 
-            if (serveTarget == null || slot.IsEmpty) return;
-
-            var customer = serveTarget;
-            var outcome = customer.TryServe(slot.item);
-            switch (outcome.result)
+            if (serveTarget != null)
             {
-                case ServeResult.Served:
-                    string tip = outcome.tip > 0 ? $" (gồm {outcome.tip} tiền boa)" : "";
-                    owner.ShowToast($"Đã phục vụ {customer.Order.DisplayName} cho bàn {customer.Table.TableNumber}: +{outcome.gold + outcome.tip} vàng{tip}, +{outcome.reputation} danh tiếng.", UIKit.Good);
-                    Close();
-                    break;
-                case ServeResult.WrongDish:
-                    owner.ShowToast($"Khách không gọi {slot.item.displayName}! Khách muốn {customer.Order.DisplayName}.", UIKit.Bad);
-                    break;
-                case ServeResult.DishNotInInventory:
-                    owner.ShowToast("Không còn món này trong hòm đồ.", UIKit.Bad);
-                    break;
-                case ServeResult.NotWaiting:
-                    Close();
-                    break;
+                if (slot.IsEmpty) return;
+                var customer = serveTarget;
+                var outcome = customer.TryServe(slot.item, index);
+                owner.ReportServe(outcome, customer, slot.item);
+                if (outcome.result == ServeResult.Served || outcome.result == ServeResult.NotWaiting) Close();
+                return;
             }
+
+            // chế độ xem: chọn ô nguồn -> bấm ô đích để chuyển / gộp / đổi chỗ
+            if (selectedIndex < 0)
+            {
+                selectedIndex = slot.IsEmpty ? -1 : index;
+            }
+            else if (selectedIndex == index)
+            {
+                selectedIndex = -1;
+            }
+            else
+            {
+                inv.Move(selectedIndex, index);
+                selectedIndex = -1;
+            }
+            Refresh();
         }
     }
 }

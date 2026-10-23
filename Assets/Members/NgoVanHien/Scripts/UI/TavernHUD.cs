@@ -54,11 +54,11 @@ namespace DungeonEater.Tavern
             UIKit.Place(ordersTitle.rectTransform, new Vector2(0f, 1f), new Vector2(16f, -10f), new Vector2(300f, 26f));
             for (int i = 0; i < MaxOrderRows; i++) orderRows.Add(CreateOrderRow(ordersPanel, i));
 
-            // --- Nhắc phím (dưới trái)
+            // --- Nhắc phím (trên phải, chừa chỗ giữa dưới cho thanh quick item)
             var hint = UIKit.Label(self, "Hint",
-                "<b>[WASD]</b> Di chuyển    <b>[F]</b> Tương tác (bếp / bàn khách)    <b>[I]</b> Hòm đồ    <b>[Esc]</b> Đóng",
-                20, UIKit.Text, TextAnchor.LowerLeft);
-            UIKit.Place(hint.rectTransform, new Vector2(0f, 0f), new Vector2(24f, 18f), new Vector2(1100f, 30f));
+                "<b>[WASD]</b> Di chuyển   <b>[F]</b> Tương tác   <b>[I]</b> Hòm đồ   <b>[1-5]</b> Giao nhanh   <b>[Esc]</b> Đóng",
+                20, UIKit.Text, TextAnchor.UpperRight);
+            UIKit.Place(hint.rectTransform, new Vector2(1f, 1f), new Vector2(-24f, -24f), new Vector2(900f, 30f));
         }
 
         private static Text WalletRow(Transform parent, Sprite icon, string caption, Color color, float y)

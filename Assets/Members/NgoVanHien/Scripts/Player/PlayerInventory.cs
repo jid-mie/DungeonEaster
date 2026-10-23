@@ -24,20 +24,28 @@ namespace DungeonEater.Tavern
     /// GDD: "Balo có giới hạn slot; người chơi phải bỏ hoặc ưu tiên loot khi đầy" -> mọi thao tác thêm
     /// đều all-or-nothing, không bao giờ âm thầm xóa đồ.
     /// Chứa cả nguyên liệu lẫn món đã nấu (món nấu xong vào hòm đồ, mang ra bàn phục vụ).
+    /// Gồm 10 ô túi + 5 ô quick item (phím 1-5). Mảng Slots: [0..bag-1] là túi, sau đó là quick item.
+    /// Món ăn ưu tiên vào ô quick item, nguyên liệu ưu tiên vào túi.
     /// </summary>
     [DefaultExecutionOrder(-100)]
     public class PlayerInventory : MonoBehaviour
     {
         public static PlayerInventory Instance { get; private set; }
 
-        [SerializeField, Min(1)] private int slotCount = 16;
+        [SerializeField, Min(1)] private int bagSlotCount = 10;
+        [SerializeField, Min(0)] private int quickSlotCount = 5;
 
         [Header("Đồ có sẵn khi bắt đầu (mock để debug)")]
         [SerializeField] private List<ItemAmount> startingItems = new List<ItemAmount>();
 
         private InventorySlot[] slots;
 
-        public int SlotCount => slotCount;
+        public int BagSlotCount => bagSlotCount;
+        public int QuickSlotCount => quickSlotCount;
+        public int SlotCount => bagSlotCount + quickSlotCount;
+        public bool IsQuickSlot(int index) => index >= bagSlotCount && index < SlotCount;
+        /// <summary>Chỉ số trong Slots của ô quick item thứ k (0-based).</summary>
+        public int QuickSlotIndex(int k) => bagSlotCount + k;
         public IReadOnlyList<InventorySlot> Slots => slots;
         public event Action OnChanged;
 
@@ -51,7 +59,7 @@ namespace DungeonEater.Tavern
             Instance = this;
             if (transform.parent == null) DontDestroyOnLoad(gameObject);
 
-            slots = CreateSlots(slotCount);
+            slots = CreateSlots(SlotCount);
             foreach (var start in startingItems)
             {
                 if (start.item == null) continue;
@@ -97,7 +105,7 @@ namespace DungeonEater.Tavern
         {
             if (item == null || amount <= 0) return false;
             if (SpaceFor(item) < amount) return false;
-            Add(slots, item, amount);
+            Add(slots, item, amount, bagSlotCount);
             OnChanged?.Invoke();
             return true;
         }
@@ -106,7 +114,57 @@ namespace DungeonEater.Tavern
         {
             if (item == null || amount <= 0) return false;
             if (Count(item) < amount) return false;
-            Remove(slots, item, amount);
+            Remove(slots, item, amount, bagSlotCount);
+            OnChanged?.Invoke();
+            return true;
+        }
+
+        /// <summary>Lấy đồ từ đúng 1 ô (vd bấm vào ô để giao món).</summary>
+        public bool TryRemoveAt(int index, int amount)
+        {
+            if (index < 0 || index >= slots.Length || amount <= 0) return false;
+            var s = slots[index];
+            if (s.IsEmpty || s.count < amount) return false;
+            s.count -= amount;
+            if (s.count <= 0) s.Clear();
+            OnChanged?.Invoke();
+            return true;
+        }
+
+        /// <summary>
+        /// Chuyển đồ giữa 2 ô: ô đích trống -> chuyển sang; cùng loại -> gộp tới maxStack (dư giữ lại ô cũ);
+        /// khác loại -> đổi chỗ.
+        /// </summary>
+        public bool Move(int from, int to)
+        {
+            if (from == to || from < 0 || to < 0 || from >= slots.Length || to >= slots.Length) return false;
+            var a = slots[from];
+            var b = slots[to];
+            if (a.IsEmpty) return false;
+
+            if (b.IsEmpty)
+            {
+                b.item = a.item;
+                b.count = a.count;
+                a.Clear();
+            }
+            else if (b.item == a.item)
+            {
+                int put = Mathf.Min(a.count, a.item.maxStack - b.count);
+                if (put <= 0) return false;
+                b.count += put;
+                a.count -= put;
+                if (a.count <= 0) a.Clear();
+            }
+            else
+            {
+                var item = a.item;
+                int count = a.count;
+                a.item = b.item;
+                a.count = b.count;
+                b.item = item;
+                b.count = count;
+            }
             OnChanged?.Invoke();
             return true;
         }
@@ -144,13 +202,13 @@ namespace DungeonEater.Tavern
                 int have = 0;
                 foreach (var s in copy) if (s.item == r.item) have += s.count;
                 if (have < r.amount) return null;
-                Remove(copy, r.item, r.amount);
+                Remove(copy, r.item, r.amount, bagSlotCount);
             }
 
             if (add.item != null && add.amount > 0)
             {
                 if (SpaceFor(copy, add.item) < add.amount) return null;
-                Add(copy, add.item, add.amount);
+                Add(copy, add.item, add.amount, bagSlotCount);
             }
             return copy;
         }
@@ -174,7 +232,7 @@ namespace DungeonEater.Tavern
             return space;
         }
 
-        private static void Add(InventorySlot[] target, ItemData item, int amount)
+        private static void Add(InventorySlot[] target, ItemData item, int amount, int bagCount)
         {
             // Lấp các ô đang chứa cùng loại trước, sau đó mới mở ô trống
             foreach (var s in target)
@@ -185,9 +243,11 @@ namespace DungeonEater.Tavern
                 s.count += put;
                 amount -= put;
             }
-            foreach (var s in target)
+            // Món ăn vào quick item trước (mang ra bàn giao nhanh), nguyên liệu vào túi trước
+            foreach (int i in SlotOrder(target.Length, bagCount, item.IsDish))
             {
                 if (amount <= 0) return;
+                var s = target[i];
                 if (!s.IsEmpty) continue;
                 int put = Mathf.Min(amount, item.maxStack);
                 s.item = item;
@@ -196,17 +256,35 @@ namespace DungeonEater.Tavern
             }
         }
 
-        private static void Remove(InventorySlot[] target, ItemData item, int amount)
+        private static IEnumerable<int> SlotOrder(int total, int bagCount, bool quickFirst)
         {
-            // Lấy từ ô cuối lên để các ô đầu giữ nguyên vị trí
-            for (int i = target.Length - 1; i >= 0 && amount > 0; i--)
+            if (quickFirst)
             {
-                var s = target[i];
-                if (s.item != item) continue;
-                int take = Mathf.Min(amount, s.count);
-                s.count -= take;
-                amount -= take;
-                if (s.count <= 0) s.Clear();
+                for (int i = bagCount; i < total; i++) yield return i;
+                for (int i = 0; i < bagCount; i++) yield return i;
+            }
+            else
+            {
+                for (int i = 0; i < total; i++) yield return i;
+            }
+        }
+
+        private static void Remove(InventorySlot[] target, ItemData item, int amount, int bagCount)
+        {
+            // Lấy trong túi trước (từ ô cuối lên), đồ đã xếp ở quick item lấy sau cùng
+            for (int pass = 0; pass < 2 && amount > 0; pass++)
+            {
+                int from = pass == 0 ? bagCount - 1 : target.Length - 1;
+                int to = pass == 0 ? 0 : bagCount;
+                for (int i = from; i >= to && amount > 0; i--)
+                {
+                    var s = target[i];
+                    if (s.item != item) continue;
+                    int take = Mathf.Min(amount, s.count);
+                    s.count -= take;
+                    amount -= take;
+                    if (s.count <= 0) s.Clear();
+                }
             }
         }
     }

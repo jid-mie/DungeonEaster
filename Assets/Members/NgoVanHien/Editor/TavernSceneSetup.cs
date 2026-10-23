@@ -31,7 +31,13 @@ namespace DungeonEater.Tavern.EditorTools
         private static readonly Vector3 DoorPosition = new Vector3(7f, -6.7f, 0f);
         private static readonly Vector3 InsideDoorPosition = new Vector3(7f, -5.6f, 0f);
         private const float AisleY = -2.75f;
-        private const float ApproachOffsetX = 1.05f;
+        // Khách đứng sát mép phải bàn: khoảng cách từ mép bàn tới chân khách, và độ hạ so với tâm bàn
+        private const float SeatGapX = 0.38f;
+        private const float SeatDropY = 0.55f;
+        // Khách cao hơn đầu bếp một chút cho dễ nhìn
+        private const float CustomerToChefHeight = 1.05f;
+        // Mỗi ô hòm đồ chứa tối đa 5 cái / loại
+        private const int MaxStack = 5;
 
         [MenuItem("Dungeon Eater/Hiến - Quán ăn/Tạo scene Restaurant_Hien (từ map của Hải)")]
         public static void CreateSceneFromMap()
@@ -106,23 +112,23 @@ namespace DungeonEater.Tavern.EditorTools
             };
 
             // Nguyên liệu (README mục 4: loot từ quái)
-            data.items["meat"] = Item("Item_MonsterMeat", "monster_meat", "Thịt quái dã thú", ItemCategory.CommonIngredient, 10, "Icon_MonsterMeat",
+            data.items["meat"] = Item("Item_MonsterMeat", "monster_meat", "Thịt quái dã thú", ItemCategory.CommonIngredient, MaxStack, "Icon_MonsterMeat",
                 "Thịt rơi từ Slime xanh. Nguyên liệu cơ bản của mọi món nướng.");
-            data.items["mushroom"] = Item("Item_CaveMushroom", "cave_mushroom", "Nấm hang sâu", ItemCategory.CommonIngredient, 10, "Icon_CaveMushroom",
+            data.items["mushroom"] = Item("Item_CaveMushroom", "cave_mushroom", "Nấm hang sâu", ItemCategory.CommonIngredient, MaxStack, "Icon_CaveMushroom",
                 "Nấm bào tử phát sáng trong hầm ngục, nấu súp rất thơm.");
-            data.items["bomb"] = Item("Item_BombCore", "bomb_core", "Lõi bọ nổ", ItemCategory.CommonIngredient, 10, "Icon_BombCore",
+            data.items["bomb"] = Item("Item_BombCore", "bomb_core", "Lõi bọ nổ", ItemCategory.CommonIngredient, MaxStack, "Icon_BombCore",
                 "Lõi nhiệt hạch của Bọ cảm tử. Tạo vị cay nổ tung trong miệng.");
-            data.items["rib"] = Item("Item_BossRib", "boss_rib", "Sườn Boss Hoàng Kim", ItemCategory.BossMaterial, 5, "Icon_BossRib",
+            data.items["rib"] = Item("Item_BossRib", "boss_rib", "Sườn Boss Hoàng Kim", ItemCategory.BossMaterial, MaxStack, "Icon_BossRib",
                 "Sườn Vua Lợn Rừng cực hiếm, chỉ rơi khi hạ Boss.");
 
             // Món ăn
-            data.items["skewer"] = Item("Dish_Skewer", "dish_skewer", "Thịt xiên nướng quái thú", ItemCategory.Dish, 5, "Icon_Dish_Skewer",
+            data.items["skewer"] = Item("Dish_Skewer", "dish_skewer", "Thịt xiên nướng quái thú", ItemCategory.Dish, MaxStack, "Icon_Dish_Skewer",
                 "Thịt quái nướng than hồng thơm lừng béo ngậy.");
-            data.items["soup"] = Item("Dish_Soup", "dish_soup", "Bát súp nấm hang sâu", ItemCategory.Dish, 5, "Icon_Dish_Soup",
+            data.items["soup"] = Item("Dish_Soup", "dish_soup", "Bát súp nấm hang sâu", ItemCategory.Dish, MaxStack, "Icon_Dish_Soup",
                 "Nước súp thanh mát từ nấm hầm ngục, ấm bụng dân làng.");
-            data.items["steak"] = Item("Dish_Steak", "dish_steak", "Bít tết bùng nổ", ItemCategory.Dish, 5, "Icon_Dish_Steak",
+            data.items["steak"] = Item("Dish_Steak", "dish_steak", "Bít tết bùng nổ", ItemCategory.Dish, MaxStack, "Icon_Dish_Steak",
                 "Thịt quái áp chảo bằng nhiệt của lõi bọ nổ, cay tê đầu lưỡi!");
-            data.items["feast"] = Item("Dish_Feast", "dish_feast", "Đại tiệc Vua Thú", ItemCategory.Dish, 5, "Icon_Dish_Feast",
+            data.items["feast"] = Item("Dish_Feast", "dish_feast", "Đại tiệc Vua Thú", ItemCategory.Dish, MaxStack, "Icon_Dish_Feast",
                 "Sườn Boss hoàng kim cùng nấm và thịt quái — món đỉnh cao của làng Dun.");
 
             // Công thức + giá theo README mục 5
@@ -201,6 +207,7 @@ namespace DungeonEater.Tavern.EditorTools
             var all = scene.GetRootGameObjects().SelectMany(g => g.GetComponentsInChildren<Transform>(true)).Select(t => t.gameObject).ToList();
 
             SetupTables(all);
+            all.RemoveAll(g => g == null); // bỏ các điểm đường đi cũ vừa xóa
             SetupStove(all);
             SetupPlayer(all);
 
@@ -225,8 +232,6 @@ namespace DungeonEater.Tavern.EditorTools
             var starting = invSo.FindProperty("startingItems");
             starting.ClearArray();
             AddStarting(starting, data.items["meat"], 10);
-            AddStarting(starting, data.items["meat"], 10);
-            AddStarting(starting, data.items["mushroom"], 10);
             AddStarting(starting, data.items["mushroom"], 10);
             AddStarting(starting, data.items["bomb"], 5);
             AddStarting(starting, data.items["rib"], 3);
@@ -264,6 +269,8 @@ namespace DungeonEater.Tavern.EditorTools
             AddProfile(profiles, "Cô gái làng", "Villager", 45f);
             AddProfile(profiles, "Bà lão", "OldLady", 60f);
             AddProfile(profiles, "Lữ khách bí ẩn", "Traveler", 30f);
+            // Scale khách theo chiều cao đầu bếp trong scene (ghi đè giá trị cũ đã lưu trong scene)
+            shiftSo.FindProperty("customerScale").floatValue = ComputeCustomerScale(all, profiles);
             shiftSo.ApplyModifiedPropertiesWithoutUndo();
 
             var ui = GetOrAdd<TavernUI>(systems);
@@ -289,14 +296,15 @@ namespace DungeonEater.Tavern.EditorTools
                 var sr = go.GetComponent<SpriteRenderer>();
                 Bounds b = sr != null ? sr.bounds : go.GetComponent<Collider2D>().bounds;
 
-                // Khách đứng phía sau bàn (bàn che phần chân) -> trông như đang ngồi bàn, đĩa đặt giữa mặt bàn
-                float seatY = b.center.y + 0.05f;
-                var seat = FindOrCreateChild(go.transform, "SeatPoint", new Vector3(b.center.x, seatY, 0f));
+                // Khách đứng sát mép phải bàn, thấy cả người; đĩa đặt giữa mặt bàn
+                float seatX = b.max.x + SeatGapX;
+                float seatY = b.center.y - SeatDropY;
+                var seat = FindOrCreateChild(go.transform, "SeatPoint", new Vector3(seatX, seatY, 0f));
                 var dish = FindOrCreateChild(go.transform, "DishPoint", new Vector3(b.center.x, b.center.y - 0.3f, 0f));
-                // từ lối đi giữa 2 hàng bàn -> khe trống bên phải bàn -> vào chỗ ngồi
-                float sideX = b.center.x + ApproachOffsetX;
-                var approachAisle = FindOrCreateChild(go.transform, "ApproachAisle", new Vector3(sideX, AisleY, 0f));
-                var approachSide = FindOrCreateChild(go.transform, "ApproachSide", new Vector3(sideX, seatY, 0f));
+                // lối đi giữa 2 hàng bàn -> rẽ thẳng vào khe giữa 2 cột bàn -> chỗ đứng (không đi xuyên bàn)
+                var approachAisle = FindOrCreateChild(go.transform, "ApproachAisle", new Vector3(seatX, AisleY, 0f));
+                var oldSide = go.transform.Find("ApproachSide");
+                if (oldSide != null) Object.DestroyImmediate(oldSide.gameObject);
 
                 var so = new SerializedObject(table);
                 so.FindProperty("tableNumber").intValue = number++;
@@ -306,8 +314,6 @@ namespace DungeonEater.Tavern.EditorTools
                 approach.ClearArray();
                 approach.InsertArrayElementAtIndex(0);
                 approach.GetArrayElementAtIndex(0).objectReferenceValue = approachAisle;
-                approach.InsertArrayElementAtIndex(1);
-                approach.GetArrayElementAtIndex(1).objectReferenceValue = approachSide;
                 so.ApplyModifiedPropertiesWithoutUndo();
             }
             Debug.Log($"[TavernSetup] Gắn TavernTable cho {tables.Count} bàn.");
@@ -338,6 +344,61 @@ namespace DungeonEater.Tavern.EditorTools
                 so.ApplyModifiedPropertiesWithoutUndo();
                 PrefabUtility.RecordPrefabInstancePropertyModifications(player);
             }
+        }
+
+        private static float ComputeCustomerScale(List<GameObject> all, SerializedProperty profiles)
+        {
+            float chefHeight = 1.4f;
+            var chef = all.Select(g => g.GetComponent<ChiefPlayer>()).FirstOrDefault(p => p != null);
+            var chefRenderer = chef != null ? chef.GetComponentInChildren<SpriteRenderer>() : null;
+            if (chefRenderer != null && chefRenderer.sprite != null)
+            {
+                // chiều cao phần có hình (bỏ viền trong suốt của frame trong sprite sheet)
+                chefHeight = VisibleHeight(chefRenderer.sprite) * chefRenderer.transform.lossyScale.y;
+            }
+
+            float total = 0f;
+            int count = 0;
+            for (int i = 0; i < profiles.arraySize; i++)
+            {
+                var sprite = profiles.GetArrayElementAtIndex(i).FindPropertyRelative("idleSprite").objectReferenceValue as Sprite;
+                if (sprite == null) continue;
+                total += VisibleHeight(sprite);
+                count++;
+            }
+            if (count == 0) return 0.5f;
+            float scale = chefHeight * CustomerToChefHeight / (total / count);
+            Debug.Log($"[TavernSetup] Đầu bếp cao {chefHeight:0.00}, scale khách = {scale:0.000}");
+            return scale;
+        }
+
+        /// <summary>
+        /// Chiều cao (world, scale 1) của phần pixel không trong suốt trong sprite.
+        /// Đọc thẳng file PNG để không phải đổi import setting (isReadable) của sprite chung.
+        /// </summary>
+        private static float VisibleHeight(Sprite sprite)
+        {
+            var path = AssetDatabase.GetAssetPath(sprite.texture);
+            var tex = new Texture2D(2, 2);
+            if (!File.Exists(path) || !tex.LoadImage(File.ReadAllBytes(path)) ||
+                tex.width != sprite.texture.width || tex.height != sprite.texture.height)
+            {
+                Object.DestroyImmediate(tex);
+                return sprite.bounds.size.y;
+            }
+
+            var rect = sprite.textureRect;
+            int w = (int)rect.width, h = (int)rect.height;
+            var pixels = tex.GetPixels((int)rect.x, (int)rect.y, w, h);
+            Object.DestroyImmediate(tex);
+
+            int top = -1, bottom = -1;
+            for (int y = 0; y < h && bottom < 0; y++)
+                for (int x = 0; x < w; x++) if (pixels[y * w + x].a > 0.1f) { bottom = y; break; }
+            for (int y = h - 1; y >= 0 && top < 0; y--)
+                for (int x = 0; x < w; x++) if (pixels[y * w + x].a > 0.1f) { top = y; break; }
+            if (top < 0 || bottom < 0) return sprite.bounds.size.y;
+            return (top - bottom + 1) / sprite.pixelsPerUnit;
         }
 
         private static void AddStarting(SerializedProperty list, ItemData item, int amount)

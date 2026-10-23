@@ -130,7 +130,7 @@ namespace DungeonEater.Tavern
 
         public string GetInteractPrompt()
         {
-            if (Customer != null && Customer.State == CustomerState.Waiting) return "Phục vụ món";
+            if (Customer != null && Customer.State == CustomerState.Waiting) return "Phục vụ món  ·  1-5 giao nhanh";
             return $"Bàn {tableNumber}";
         }
 
