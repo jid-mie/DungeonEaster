@@ -69,18 +69,33 @@ public class HunterPlayer : MonoBehaviour
     [Tooltip("LayerMask của kẻ địch để gây sát thương")]
     [SerializeField] private LayerMask enemyLayer;
 
-    [Header("Kiếm (Sword Combat)")]
-    [SerializeField] private float swordAttackRange = 1.1f;
-    [SerializeField] private float swordAttackRadius = 0.6f;
+    [Header("Kiếm (Sword Combat - Vùng chém bán nguyệt 180 độ)")]
+    [SerializeField] private float swordAttackRange = 1.3f;
+    [SerializeField] private float swordArcAngle = 180f; // Hình bán nguyệt 180 độ bao quát 4 hướng
     [SerializeField] private float swordLightDamage = 20f;
     [SerializeField] private float swordHeavyDamage = 40f;
     [SerializeField] private float swordSkillDamage = 35f;
     [SerializeField] private float comboResetTime = 0.8f;
+    [Tooltip("4 Sprite vệt chém bán nguyệt từ Assets/Sprites/Detailed/VFX_Slash_Arc_0..3")]
+    [SerializeField] private Sprite[] slashArcSprites;
 
-    [Header("Cung (Bow Combat)")]
+    [Header("Cung (Bow Combat & Visual)")]
+    [Tooltip("Sprite cây cung trạng thái bình thường (weapon_bow.png)")]
+    [SerializeField] private Sprite normalBowSprite;
+    [Tooltip("Sprite cây cung khi giương dây / tụ lực (weapon_bow_2.png)")]
+    [SerializeField] private Sprite drawnBowSprite;
+    [Tooltip("Sprite mũi tên cơ bản (VFX_Arrow_Normal_0.png)")]
+    [SerializeField] private Sprite normalArrowSprite;
+    [Tooltip("Sprite mũi tên phép xuyên thấu (VFX_Arrow_Magic_0.png)")]
+    [SerializeField] private Sprite magicArrowSprite;
+    [Tooltip("Prefab mũi tên thường (tùy chọn - nếu bỏ trống sẽ tự tạo runtime từ sprite)")]
     [SerializeField] private GameObject normalArrowPrefab;
+    [Tooltip("Prefab mũi tên phép (tùy chọn - nếu bỏ trống sẽ tự tạo runtime từ sprite)")]
     [SerializeField] private GameObject magicArrowPrefab;
+    [Tooltip("Transform điểm bắn tên (tự tính theo hướng chuột nếu bỏ trống)")]
     [SerializeField] private Transform firePoint;
+    [Tooltip("Transform cây cung trên tay Player (tự sinh GameObject BowVisual nếu bỏ trống)")]
+    [SerializeField] private Transform bowHolder;
     [SerializeField] private float arrowSpeed = 14f;
     [SerializeField] private float maxChargeTime = 1.2f;
 
@@ -129,6 +144,7 @@ public class HunterPlayer : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private SpriteRenderer bowSpriteRenderer;
 
     // Hashes
     private int hashMoveX;
@@ -174,19 +190,14 @@ public class HunterPlayer : MonoBehaviour
         rb.gravityScale = 0f;
         rb.freezeRotation = true;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        rb.sleepMode = RigidbodySleepMode2D.NeverSleep;
 
         currentHealth = maxHealth;
         currentStamina = maxStamina;
         originalMoveSpeed = moveSpeed;
 
         InitializeAnimatorHashes();
-
-        // Khởi tạo hệ thống quản lý Dungeon (HUD, Cửa, Quái, Hòm đồ) nếu chưa có
-        if (FindObjectOfType<NguyenVanHai.Dungeon.DungeonGameManager>() == null)
-        {
-            var mgrGo = new GameObject("DungeonGameManager");
-            mgrGo.AddComponent<NguyenVanHai.Dungeon.DungeonGameManager>();
-        }
+        InitializeBowVisual();
     }
 
     private void Start()
@@ -205,6 +216,7 @@ public class HunterPlayer : MonoBehaviour
 
         HandleTimers();
         HandleInput();
+        UpdateBowVisual();
     }
 
     private void FixedUpdate()
@@ -423,6 +435,7 @@ public class HunterPlayer : MonoBehaviour
             animator.SetInteger(hashWeaponType, (int)currentWeapon);
         }
 
+        UpdateBowVisual();
         OnWeaponSwapped?.Invoke(currentWeapon);
     }
 
@@ -437,7 +450,7 @@ public class HunterPlayer : MonoBehaviour
 
         // Gây sát thương theo combo hit
         float damage = swordLightDamage + (comboIndex - 1) * 5f;
-        DealMeleeDamage(swordAttackRange, swordAttackRadius, damage);
+        DealMeleeDamage(swordAttackRange, damage, swordArcAngle);
 
         StartCoroutine(ResetAttackState(0.25f));
     }
@@ -447,8 +460,8 @@ public class HunterPlayer : MonoBehaviour
         combatState = HunterCombatState.Attacking;
         TriggerAttackAnimation();
 
-        // Cleave quét hình cung rộng hơn, sát thương lớn
-        DealMeleeDamage(swordAttackRange * 1.3f, swordAttackRadius * 1.4f, swordHeavyDamage);
+        // Cleave quét hình bán nguyệt rộng hơn, sát thương lớn
+        DealMeleeDamage(swordAttackRange * 1.35f, swordHeavyDamage, 200f);
 
         StartCoroutine(ResetAttackState(0.45f));
     }
@@ -459,7 +472,9 @@ public class HunterPlayer : MonoBehaviour
         TriggerAttackAnimation();
 
         // Whirlwind quét tròn 360 độ xung quanh người
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, swordAttackRange * 1.5f, enemyLayer);
+        Collider2D[] hits = enemyLayer.value != 0 
+            ? Physics2D.OverlapCircleAll(transform.position, swordAttackRange * 1.5f, enemyLayer)
+            : Physics2D.OverlapCircleAll(transform.position, swordAttackRange * 1.5f);
         foreach (var hit in hits)
         {
             ApplyDamageToTarget(hit, swordSkillDamage);
@@ -473,12 +488,14 @@ public class HunterPlayer : MonoBehaviour
     {
         if (Camera.main != null)
         {
-            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 mouseScreen = Input.mousePosition;
+            mouseScreen.z = Mathf.Abs(Camera.main.transform.position.z);
+            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(mouseScreen);
             mouseWorld.z = 0f;
             Vector2 dir = ((Vector2)mouseWorld - (Vector2)transform.position).normalized;
             if (dir.sqrMagnitude > 0.001f) return dir;
         }
-        return lastFacingDirection;
+        return lastFacingDirection != Vector2.zero ? lastFacingDirection : Vector2.down;
     }
 
     private void PerformBowQuickShot()
@@ -486,7 +503,7 @@ public class HunterPlayer : MonoBehaviour
         combatState = HunterCombatState.Attacking;
         Vector2 shootDir = GetMouseAimDirection();
         lastFacingDirection = shootDir;
-        TriggerAttackAnimation();
+        UpdateAnimator(shootDir, false); // Quay người theo hướng ngắm chuột, không vung kiếm
 
         SpawnArrow(shootDir, arrowSpeed, 15f, false);
         StartCoroutine(ResetAttackState(0.3f));
@@ -497,7 +514,7 @@ public class HunterPlayer : MonoBehaviour
         combatState = HunterCombatState.Attacking;
         Vector2 shootDir = GetMouseAimDirection();
         lastFacingDirection = shootDir;
-        TriggerAttackAnimation();
+        UpdateAnimator(shootDir, false); // Quay người theo hướng ngắm chuột, không vung kiếm
 
         float chargeRatio = Mathf.Clamp01(chargeTime / maxChargeTime);
         float damage = Mathf.Lerp(20f, 50f, chargeRatio);
@@ -512,7 +529,7 @@ public class HunterPlayer : MonoBehaviour
         combatState = HunterCombatState.Attacking;
         Vector2 shootDir = GetMouseAimDirection();
         lastFacingDirection = shootDir;
-        TriggerAttackAnimation();
+        UpdateAnimator(shootDir, false); // Quay người theo hướng ngắm chuột, không vung kiếm
 
         // Mũi tên phép xuyên thấu
         SpawnArrow(shootDir, arrowSpeed * 1.4f, 40f, true);
@@ -531,18 +548,70 @@ public class HunterPlayer : MonoBehaviour
         }
     }
 
-    private void DealMeleeDamage(float distance, float radius, float damage)
+    private void DealMeleeDamage(float range, float damage, float arcAngle = 180f)
     {
-        Vector2 center = (Vector2)transform.position + (lastFacingDirection * distance);
-        Collider2D[] hits = Physics2D.OverlapCircleAll(center, radius, enemyLayer);
+        Vector2 facing = lastFacingDirection != Vector2.zero ? lastFacingDirection : Vector2.down;
+
+        // Sinh hiệu ứng vệt chém bán nguyệt VFX nếu có sprite
+        SpawnSlashVFX(facing, range);
+
+        Collider2D[] hits = enemyLayer.value != 0 
+            ? Physics2D.OverlapCircleAll(transform.position, range, enemyLayer)
+            : Physics2D.OverlapCircleAll(transform.position, range);
+
         foreach (var hit in hits)
         {
-            ApplyDamageToTarget(hit, damage);
+            if (hit == null || hit.gameObject == gameObject) continue;
+
+            Vector2 toTarget = (Vector2)hit.transform.position - (Vector2)transform.position;
+            // Nếu quái áp sát quá gần đè lên người thì trúng đòn luôn
+            if (toTarget.sqrMagnitude < 0.15f)
+            {
+                ApplyDamageToTarget(hit, damage);
+                continue;
+            }
+
+            // Kiểm tra góc quét hình bán nguyệt (180 độ theo hướng mặt)
+            float angle = Vector2.Angle(facing, toTarget);
+            if (angle <= arcAngle * 0.5f)
+            {
+                ApplyDamageToTarget(hit, damage);
+            }
         }
+    }
+
+    private void SpawnSlashVFX(Vector2 facing, float range)
+    {
+        if (slashArcSprites == null || slashArcSprites.Length == 0) return;
+
+        var vfxGo = new GameObject("SlashArc_VFX");
+        float angle = Mathf.Atan2(facing.y, facing.x) * Mathf.Rad2Deg;
+        vfxGo.transform.position = transform.position + (Vector3)(facing * (range * 0.55f));
+        vfxGo.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+        var sr = vfxGo.AddComponent<SpriteRenderer>();
+        sr.sortingLayerName = "Projectiles_VFX";
+        sr.sortingOrder = 6000;
+
+        StartCoroutine(PlaySlashVfxRoutine(vfxGo, sr));
+    }
+
+    private IEnumerator PlaySlashVfxRoutine(GameObject vfxGo, SpriteRenderer sr)
+    {
+        float frameDuration = 0.035f; // 4 frame x 0.035s = ~0.14s dứt khoát
+        for (int i = 0; i < slashArcSprites.Length; i++)
+        {
+            if (vfxGo == null) yield break;
+            sr.sprite = slashArcSprites[i];
+            yield return new WaitForSeconds(frameDuration);
+        }
+        if (vfxGo != null) Destroy(vfxGo);
     }
 
     private void ApplyDamageToTarget(Collider2D targetCollider, float damage)
     {
+        if (targetCollider == null || targetCollider.gameObject == gameObject) return;
+
         // Gây sát thương trực tiếp cho EnemyBase nếu có
         var enemy = targetCollider.GetComponentInParent<NguyenVanHai.Enemies.EnemyBase>();
         if (enemy != null && enemy.IsAlive)
@@ -557,37 +626,80 @@ public class HunterPlayer : MonoBehaviour
 
     private void SpawnArrow(Vector2 direction, float speed, float damage, bool isPiercing)
     {
-        Vector3 spawnPos = firePoint != null ? firePoint.position : transform.position + (Vector3)(direction * 0.5f);
+        // Vị trí xuất phát dịch ra ngoài tâm nhân vật 0.6m theo hướng bắn để không bị kẹt
+        Vector3 spawnPos = firePoint != null ? firePoint.position : transform.position + (Vector3)(direction * 0.6f);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rot = Quaternion.Euler(0, 0, angle);
 
+        // Fallback nạp prefab từ Resources nếu chưa gán ở Inspector
+        if (isPiercing && magicArrowPrefab == null && magicArrowSprite == null)
+        {
+            magicArrowPrefab = Resources.Load<GameObject>("VFX/Projectile_MagicArrow");
+        }
+        if (!isPiercing && normalArrowPrefab == null && normalArrowSprite == null)
+        {
+            normalArrowPrefab = Resources.Load<GameObject>("VFX/Projectile_Arrow");
+        }
+
         GameObject arrowObj = null;
-        if (normalArrowPrefab != null)
+        if (isPiercing && magicArrowPrefab != null)
+        {
+            arrowObj = Instantiate(magicArrowPrefab, spawnPos, rot);
+        }
+        else if (!isPiercing && normalArrowPrefab != null)
         {
             arrowObj = Instantiate(normalArrowPrefab, spawnPos, rot);
         }
         else
         {
             // Tự động sinh mũi tên runtime nếu chưa gán prefab
-            arrowObj = new GameObject("ArrowProjectile");
+            arrowObj = new GameObject(isPiercing ? "MagicArrowProjectile" : "ArrowProjectile");
             arrowObj.transform.position = spawnPos;
             arrowObj.transform.rotation = rot;
 
             var sr = arrowObj.AddComponent<SpriteRenderer>();
-            sr.sortingOrder = 5100;
-            if (defaultArrowSprite != null)
+            sr.sortingLayerName = "Projectiles_VFX";
+            sr.sortingOrder = 6000;
+
+            Sprite chosenSprite = null;
+            if (isPiercing && magicArrowSprite != null)
             {
-                sr.sprite = defaultArrowSprite;
+                chosenSprite = magicArrowSprite;
             }
+            else if (!isPiercing && normalArrowSprite != null)
+            {
+                chosenSprite = normalArrowSprite;
+            }
+            else if (defaultArrowSprite != null)
+            {
+                chosenSprite = defaultArrowSprite;
+            }
+            #if UNITY_EDITOR
             else
             {
-                // Fallback nạp sprite tên có sẵn trong dự án
-                sr.sprite = Resources.Load<Sprite>("VFX_Arrow_Normal_0");
+                chosenSprite = UnityEditor.AssetDatabase.LoadAssetAtPath<Sprite>(
+                    isPiercing ? "Assets/Sprites/Detailed/VFX_Arrow_Magic_0.png" : "Assets/Sprites/Detailed/VFX_Arrow_Normal_0.png");
             }
+            #endif
+            sr.sprite = chosenSprite;
 
             var col = arrowObj.AddComponent<BoxCollider2D>();
             col.isTrigger = true;
             col.size = new Vector2(0.8f, 0.25f);
+        }
+
+        // Bỏ qua hoàn toàn va chạm giữa Player và Mũi tên vừa bắn ra
+        Collider2D[] playerCols = GetComponentsInChildren<Collider2D>();
+        Collider2D[] arrowCols = arrowObj.GetComponentsInChildren<Collider2D>();
+        foreach (var pCol in playerCols)
+        {
+            foreach (var aCol in arrowCols)
+            {
+                if (pCol != null && aCol != null)
+                {
+                    Physics2D.IgnoreCollision(pCol, aCol, true);
+                }
+            }
         }
 
         var arrowProj = arrowObj.GetComponent<NguyenVanHai.Combat.ArrowProjectile>();
@@ -601,6 +713,91 @@ public class HunterPlayer : MonoBehaviour
         if (combatState == HunterCombatState.Attacking)
         {
             combatState = HunterCombatState.Normal;
+        }
+    }
+
+    #endregion
+
+    #region Bow Visual & Aiming System
+
+    private void InitializeBowVisual()
+    {
+        if (bowHolder == null)
+        {
+            Transform existing = transform.Find("Bow") ?? transform.Find("BowHolder") ?? transform.Find("BowVisual");
+            if (existing != null)
+            {
+                bowHolder = existing;
+            }
+            else
+            {
+                GameObject bowGo = new GameObject("BowVisual");
+                bowGo.transform.SetParent(transform, false);
+                bowHolder = bowGo.transform;
+            }
+        }
+
+        bowSpriteRenderer = bowHolder.GetComponent<SpriteRenderer>();
+        if (bowSpriteRenderer == null)
+        {
+            bowSpriteRenderer = bowHolder.gameObject.AddComponent<SpriteRenderer>();
+        }
+
+        bowSpriteRenderer.sortingLayerName = "Entities";
+        bowSpriteRenderer.sortingOrder = (spriteRenderer != null ? spriteRenderer.sortingOrder : 5000) + 10;
+
+        #if UNITY_EDITOR
+        if (normalBowSprite == null)
+            normalBowSprite = UnityEditor.AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Members/NguyenVanHai/Sprites/Details/weapon_bow.png");
+        if (drawnBowSprite == null)
+            drawnBowSprite = UnityEditor.AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Members/NguyenVanHai/Sprites/Details/weapon_bow_2.png");
+        #endif
+
+        if (normalBowSprite != null)
+        {
+            bowSpriteRenderer.sprite = normalBowSprite;
+        }
+
+        UpdateBowVisual();
+    }
+
+    private void UpdateBowVisual()
+    {
+        if (bowHolder == null) return;
+
+        bool isBowActive = (currentWeapon == WeaponType.Bow && combatState != HunterCombatState.Dead);
+        if (bowHolder.gameObject.activeSelf != isBowActive)
+        {
+            bowHolder.gameObject.SetActive(isBowActive);
+        }
+
+        if (!isBowActive) return;
+
+        // Cập nhật sprite: khi gồng tụ lực dùng drawnBowSprite (weapon_bow_2), bình thường dùng normalBowSprite (weapon_bow)
+        if (bowSpriteRenderer != null)
+        {
+            if (combatState == HunterCombatState.ChargingBow && drawnBowSprite != null)
+            {
+                bowSpriteRenderer.sprite = drawnBowSprite;
+            }
+            else if (normalBowSprite != null)
+            {
+                bowSpriteRenderer.sprite = normalBowSprite;
+            }
+        }
+
+        // Hướng ngắm theo chuột
+        Vector2 aimDir = GetMouseAimDirection();
+        float angle = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg;
+
+        // Vị trí bow nhích nhẹ theo hướng ngắm
+        bowHolder.localPosition = (Vector3)(aimDir * 0.35f);
+        bowHolder.localRotation = Quaternion.Euler(0f, 0f, angle);
+
+        // Lật Y khi nhìn sang bên trái để cây cung không bị lộn ngược
+        if (bowSpriteRenderer != null)
+        {
+            bowSpriteRenderer.flipY = (aimDir.x < 0f);
         }
     }
 
@@ -699,6 +896,7 @@ public class HunterPlayer : MonoBehaviour
     {
         combatState = HunterCombatState.Dead;
         rb.velocity = Vector2.zero;
+        if (bowHolder != null) bowHolder.gameObject.SetActive(false);
 
         // Thông báo Game Loop Manager (Mất 50% nguyên liệu, hồi sinh ở cổng dungeon theo đặc tả)
         SendMessage("OnPlayerDied", SendMessageOptions.DontRequireReceiver);
@@ -799,10 +997,26 @@ public class HunterPlayer : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(interactPos, interactionRadius);
 
-        // Vùng chém cận chiến của Kiếm
-        Vector2 attackPos = (Vector2)transform.position + (lastFacingDirection * swordAttackRange);
+        // Vùng chém cận chiến hình BÁN NGUYỆT 180 độ theo hướng nhìn
+        Vector2 facing = lastFacingDirection != Vector2.zero ? lastFacingDirection : Vector2.down;
+        float baseAngle = Mathf.Atan2(facing.y, facing.x) * Mathf.Rad2Deg;
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos, swordAttackRadius);
+
+        int segments = 16;
+        float halfArc = swordArcAngle * 0.5f; // 90 độ mỗi bên = 180 độ bán nguyệt
+        Vector3 center = transform.position;
+        Vector3 startPoint = center + new Vector3(Mathf.Cos((baseAngle - halfArc) * Mathf.Deg2Rad), Mathf.Sin((baseAngle - halfArc) * Mathf.Deg2Rad), 0f) * swordAttackRange;
+        Gizmos.DrawLine(center, startPoint);
+
+        Vector3 prevPoint = startPoint;
+        for (int i = 1; i <= segments; i++)
+        {
+            float currentAngle = baseAngle - halfArc + ((halfArc * 2f) * i / segments);
+            Vector3 nextPoint = center + new Vector3(Mathf.Cos(currentAngle * Mathf.Deg2Rad), Mathf.Sin(currentAngle * Mathf.Deg2Rad), 0f) * swordAttackRange;
+            Gizmos.DrawLine(prevPoint, nextPoint);
+            prevPoint = nextPoint;
+        }
+        Gizmos.DrawLine(center, prevPoint);
     }
 
     #endregion

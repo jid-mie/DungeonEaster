@@ -12,14 +12,14 @@ namespace NguyenVanHai.Dungeon
     public class DungeonDoor : MonoBehaviour
     {
         [Header("Khoảng cách tương tác")]
-        [SerializeField] private float interactRadius = 2.0f;
+        [SerializeField] private float interactRadius = 1.3f;
         [SerializeField] private KeyCode interactKey = KeyCode.F;
 
         [Header("Sprites mở cửa (nếu có)")]
         [SerializeField] private Sprite[] openFrames;
         [SerializeField] private float frameRate = 0.08f;
 
-        private Transform playerTransform;
+        private HunterPlayer hunter;
         private SpriteRenderer sr;
         private bool isOpening = false;
         private bool isPlayerNearby = false;
@@ -33,15 +33,45 @@ namespace NguyenVanHai.Dungeon
         {
             if (isOpening) return;
 
-            if (playerTransform == null)
+            if (hunter == null)
             {
-                var p = FindObjectOfType<HunterPlayer>();
-                if (p != null) playerTransform = p.transform;
-                if (playerTransform == null) return;
+                hunter = FindObjectOfType<HunterPlayer>();
+                if (hunter == null) return;
             }
 
-            float dist = Vector2.Distance(transform.position, playerTransform.position);
-            isPlayerNearby = (dist <= interactRadius);
+            Vector2 toDoor = (Vector2)transform.position - (Vector2)hunter.transform.position;
+            float dist = toDoor.magnitude;
+
+            if (dist <= interactRadius)
+            {
+                // 1. Kiểm tra hướng nhìn: Player phải quay mặt về phía cánh cửa
+                Vector2 facing = hunter.FacingDirection;
+                float dot = Vector2.Dot(facing.normalized, toDoor.normalized);
+
+                if (dot > 0.4f)
+                {
+                    // 2. Kiểm tra cản tầm nhìn: Nếu có tường (Obstacle/Wall) chắn giữa Player và Cửa thì không hiện
+                    int wallMask = LayerMask.GetMask("Obstacle", "Default");
+                    RaycastHit2D hit = Physics2D.Linecast(hunter.transform.position, transform.position, wallMask);
+                    
+                    if (hit.collider != null && hit.collider.gameObject != gameObject && !hit.collider.isTrigger)
+                    {
+                        isPlayerNearby = false;
+                    }
+                    else
+                    {
+                        isPlayerNearby = true;
+                    }
+                }
+                else
+                {
+                    isPlayerNearby = false;
+                }
+            }
+            else
+            {
+                isPlayerNearby = false;
+            }
 
             if (isPlayerNearby && Input.GetKeyDown(interactKey))
             {

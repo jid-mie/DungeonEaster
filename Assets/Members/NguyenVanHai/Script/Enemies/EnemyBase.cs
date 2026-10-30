@@ -123,13 +123,28 @@ namespace NguyenVanHai.Enemies
             // Gọi clip trúng đòn nếu có
             if (anim != null)
             {
-                anim.Play("attacked", 0, 0f);
+                TrySetAnimBool("IsAttacked", true);
+                TrySetAnimBool("isAttacked", true);
+
+                if (anim.HasState(0, Animator.StringToHash("attacked")))
+                    anim.Play("attacked", 0, 0f);
+                else if (anim.HasState(0, Animator.StringToHash("slimeAttacked")))
+                    anim.Play("slimeAttacked", 0, 0f);
+
+                StartCoroutine(ResetAttackedAnim(0.2f));
             }
 
             if (currentHealth <= 0)
             {
                 Die();
             }
+        }
+
+        private IEnumerator ResetAttackedAnim(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            TrySetAnimBool("IsAttacked", false);
+            TrySetAnimBool("isAttacked", false);
         }
 
         protected virtual void Die()

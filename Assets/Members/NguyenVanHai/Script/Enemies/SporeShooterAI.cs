@@ -17,6 +17,8 @@ namespace NguyenVanHai.Enemies
         [SerializeField] private float maxShootDistance = 8.0f;
         [SerializeField] private float projectileSpeed = 6.0f;
         [SerializeField] private float telegraphDuration = 0.45f;
+        [Tooltip("Gán 4 Sprite từ Assets/Sprites/Detailed/VFX_Poison_Spore_0..3")]
+        [SerializeField] private Sprite[] sporeAnimSprites;
         [SerializeField] private Sprite sporeBulletSprite;
 
         protected override void Awake()
@@ -105,12 +107,24 @@ namespace NguyenVanHai.Enemies
             go.transform.position = transform.position + (Vector3)(dir * 0.4f);
 
             var bulletSr = go.AddComponent<SpriteRenderer>();
-            if (sporeBulletSprite != null) bulletSr.sprite = sporeBulletSprite;
-            bulletSr.color = new Color(0.8f, 0.4f, 1f, 1f); // Tím độc
-            bulletSr.sortingOrder = 4050;
+            if (sporeAnimSprites != null && sporeAnimSprites.Length > 0)
+            {
+                bulletSr.sprite = sporeAnimSprites[0];
+            }
+            else if (sporeBulletSprite != null)
+            {
+                bulletSr.sprite = sporeBulletSprite;
+                bulletSr.color = new Color(0.8f, 0.4f, 1f, 1f); // Tím độc
+            }
+            bulletSr.sortingLayerName = "Projectiles_VFX";
+            bulletSr.sortingOrder = 5500;
+
+            var col = go.AddComponent<CircleCollider2D>();
+            col.radius = 0.35f;
+            col.isTrigger = true;
 
             var proj = go.AddComponent<SporeProjectile>();
-            proj.Initialize(dir, attackDamage, projectileSpeed);
+            proj.Initialize(dir, attackDamage, projectileSpeed, sporeAnimSprites);
         }
     }
 }

@@ -17,24 +17,49 @@ namespace NguyenVanHai.Combat
 
         private Vector2 moveDirection;
         private Rigidbody2D rb;
+        private SpriteRenderer sr;
+        private Sprite[] animSprites;
 
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
             rb.gravityScale = 0f;
+            sr = GetComponent<SpriteRenderer>();
 
             var col = GetComponent<Collider2D>();
             if (col != null) col.isTrigger = true;
         }
 
-        public void Initialize(Vector2 direction, float dmg, float spd = 5.5f)
+        public void Initialize(Vector2 direction, float dmg, float spd = 5.5f, Sprite[] sprites = null)
         {
             moveDirection = direction.normalized;
             damage = dmg;
             speed = spd;
+            animSprites = sprites;
 
             rb.velocity = moveDirection * speed;
+
+            if (animSprites != null && animSprites.Length > 0)
+            {
+                StartCoroutine(AnimateSporeRoutine());
+            }
+
             Destroy(gameObject, lifeTime);
+        }
+
+        private IEnumerator AnimateSporeRoutine()
+        {
+            int index = 0;
+            float frameInterval = 0.08f; // ~12 fps lượn sóng cuộn tròn
+            while (true)
+            {
+                if (sr != null && animSprites != null && animSprites.Length > 0)
+                {
+                    sr.sprite = animSprites[index];
+                    index = (index + 1) % animSprites.Length;
+                }
+                yield return new WaitForSeconds(frameInterval);
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D other)

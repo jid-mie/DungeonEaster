@@ -48,8 +48,10 @@ namespace NguyenVanHai.Combat
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            // Bỏ qua va chạm với Player hoặc đạn khác
-            if (other.CompareTag("Player") || other.GetComponent<ArrowProjectile>() != null)
+            // Bỏ qua va chạm với Player (cả Tag Player lẫn component HunterPlayer) hoặc đạn khác
+            if (other.CompareTag("Player") 
+                || other.GetComponentInParent<HunterPlayer>() != null 
+                || other.GetComponent<ArrowProjectile>() != null)
             {
                 return;
             }

@@ -40,7 +40,7 @@ TextureImporter:
     wrapU: 0
     wrapV: 0
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
@@ -106,6 +106,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -113,9 +126,9 @@ TextureImporter:
       name: Hunter_Walk_Down_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 26
         y: 819
-        width: 170
+        width: 144
         height: 205
       alignment: 9
       pivot: {x: 0.5, y: 0.12}
@@ -220,7 +233,7 @@ TextureImporter:
         serializedVersion: 2
         x: 853
         y: 819
-        width: 171
+        width: 142
         height: 205
       alignment: 9
       pivot: {x: 0.5, y: 0.12}
@@ -239,9 +252,9 @@ TextureImporter:
       name: Hunter_Walk_Up_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 25
         y: 614
-        width: 170
+        width: 144
         height: 205
       alignment: 9
       pivot: {x: 0.5, y: 0.12}
@@ -346,7 +359,7 @@ TextureImporter:
         serializedVersion: 2
         x: 853
         y: 614
-        width: 171
+        width: 142
         height: 205
       alignment: 9
       pivot: {x: 0.5, y: 0.12}
@@ -365,9 +378,9 @@ TextureImporter:
       name: Hunter_Walk_Left_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 25
         y: 409
-        width: 170
+        width: 144
         height: 205
       alignment: 9
       pivot: {x: 0.5, y: 0.12}
@@ -472,7 +485,7 @@ TextureImporter:
         serializedVersion: 2
         x: 853
         y: 409
-        width: 171
+        width: 142
         height: 205
       alignment: 9
       pivot: {x: 0.5, y: 0.12}
@@ -491,9 +504,9 @@ TextureImporter:
       name: Hunter_Walk_Right_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 25
         y: 217
-        width: 170
+        width: 144
         height: 192
       alignment: 9
       pivot: {x: 0.5, y: 0.12}
@@ -598,7 +611,7 @@ TextureImporter:
         serializedVersion: 2
         x: 853
         y: 217
-        width: 171
+        width: 142
         height: 192
       alignment: 9
       pivot: {x: 0.5, y: 0.12}
@@ -700,7 +713,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 23d16151970f1c14983088aa63ee3764
     internalID: 0
     vertices: []
     indices: 
