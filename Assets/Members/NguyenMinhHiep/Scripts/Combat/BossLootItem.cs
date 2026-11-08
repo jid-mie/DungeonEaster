@@ -99,7 +99,7 @@ namespace NguyenMinhHiep.Combat
                 if (p != null) playerTarget = p.transform;
                 else
                 {
-                    var hp = FindObjectOfType<NguyenVanHai.HunterPlayer>();
+                    var hp = FindObjectOfType<HunterPlayer>();
                     if (hp != null) playerTarget = hp.transform;
                 }
             }
@@ -124,19 +124,24 @@ namespace NguyenMinhHiep.Combat
             if (isCollected) return;
             isCollected = true;
 
-            // 1. Thêm vào DungeonInventoryUI nếu có
+            // 1. Thêm vào SharedGameDataManager (Inventory chung toàn game của Hiệp)
+            if (NguyenMinhHiep.Core.SharedGameDataManager.Instance != null)
+            {
+                NguyenMinhHiep.Core.SharedGameDataManager.Instance.AddItem(itemId, amount);
+            }
+
+            // 2. Thêm vào DungeonInventoryUI nếu có
             var dungeonInv = FindObjectOfType<NguyenVanHai.UI.DungeonInventoryUI>();
             if (dungeonInv != null)
             {
                 dungeonInv.AddItem(itemId, itemName, amount, itemIcon);
             }
 
-            // 2. Thêm vào PlayerInventory nếu có
-            var playerInv = FindObjectOfType<NgoVanHien.Player.PlayerInventory>();
+            // 3. Thêm vào PlayerInventory (Tavern) nếu có
+            var playerInv = FindObjectOfType<DungeonEater.Tavern.PlayerInventory>();
             if (playerInv != null)
             {
-                // Thử thêm vào hòm đồ chung
-                Debug.Log($"[BossLoot] Đã nhặt nguyên liệu Boss {itemName} (x{amount}) vào túi đồ.");
+                Debug.Log($"[BossLoot] Đã nhặt nguyên liệu Boss {itemName} (x{amount}) vào túi đồ chung.");
             }
 
             Destroy(gameObject);

@@ -134,18 +134,18 @@ namespace NguyenMinhHiep.Bosses
             }
 
             // Tìm HunterPlayer của Hai
-            var hunter = FindObjectOfType<NguyenVanHai.HunterPlayer>();
+            var hunter = FindObjectOfType<HunterPlayer>();
             if (hunter != null)
             {
                 targetPlayer = hunter.transform;
                 return;
             }
 
-            // Tìm PlayerController
-            var pc = FindObjectOfType<DungeonEater.Dungeon.PlayerController>();
-            if (pc != null)
+            // Tìm ChiefPlayer của Hai / Hien
+            var chiefPlayer = FindObjectOfType<ChiefPlayer>();
+            if (chiefPlayer != null)
             {
-                targetPlayer = pc.transform;
+                targetPlayer = chiefPlayer.transform;
             }
         }
 
