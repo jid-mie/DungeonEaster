@@ -44,6 +44,14 @@ namespace DungeonEater.Tavern
             if (Instance == this) Instance = null;
         }
 
+        /// <summary>Đưa vàng/danh tiếng về giá trị khởi đầu (vd sau khi hệ thống khác đã ghi đè).</summary>
+        public void ResetToStart()
+        {
+            gold = startingGold;
+            reputation = startingReputation;
+            OnChanged?.Invoke();
+        }
+
         public void AddGold(int amount)
         {
             if (amount <= 0) return;

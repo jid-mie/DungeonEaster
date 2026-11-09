@@ -16,6 +16,9 @@ namespace DungeonEater.Tavern
         private Text shiftTitle;
         private Text shiftStats;
         private RectTransform ordersPanel;
+        private GameObject walletPanel;
+        private GameObject hintLabel;
+        private Vector2 ordersHomePosition;
         private readonly List<OrderRow> orderRows = new List<OrderRow>();
 
         private int shownGold = int.MinValue;
@@ -35,6 +38,7 @@ namespace DungeonEater.Tavern
 
             // --- Vàng & danh tiếng (trên trái)
             var wallet = UIKit.Panel(self, "Wallet", UIKit.Wood);
+            walletPanel = wallet.gameObject;
             UIKit.Place(wallet.rectTransform, new Vector2(0f, 1f), new Vector2(24f, -24f), new Vector2(380f, 128f));
             goldText = WalletRow(wallet.transform, owner.GoldIcon, "Vàng", UIKit.Gold, -14f);
             repText = WalletRow(wallet.transform, owner.ReputationIcon, "Danh tiếng", UIKit.Rep, -66f);
@@ -59,6 +63,16 @@ namespace DungeonEater.Tavern
                 "<b>[WASD]</b> Di chuyển   <b>[F]</b> Tương tác   <b>[I]</b> Hòm đồ   <b>[1-5]</b> Giao nhanh   <b>[Esc]</b> Đóng",
                 20, UIKit.Text, TextAnchor.UpperRight);
             UIKit.Place(hint.rectTransform, new Vector2(1f, 1f), new Vector2(-24f, -24f), new Vector2(900f, 30f));
+            hintLabel = hint.gameObject;
+            ordersHomePosition = ordersPanel.anchoredPosition;
+        }
+
+        /// <summary>Bật lại ví, dòng nhắc phím và vị trí bảng order nếu hệ thống khác đã ẩn/dời đi.</summary>
+        public void RestoreLayout()
+        {
+            walletPanel.SetActive(true);
+            hintLabel.SetActive(true);
+            ordersPanel.anchoredPosition = ordersHomePosition;
         }
 
         private static Text WalletRow(Transform parent, Sprite icon, string caption, Color color, float y)

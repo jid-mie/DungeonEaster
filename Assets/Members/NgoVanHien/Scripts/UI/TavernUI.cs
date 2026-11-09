@@ -182,6 +182,13 @@ namespace DungeonEater.Tavern
             if (toast != null) toast.Show(message, color, duration);
         }
 
+        /// <summary>Hiện lại HUD + thanh quick item của quán nếu hệ thống khác đã ẩn đi.</summary>
+        public void RestoreOwnHud()
+        {
+            hud.RestoreLayout();
+            quickBar.gameObject.SetActive(true);
+        }
+
         /// <summary>Các panel gọi khi mở/đóng để khóa/mở di chuyển người chơi.</summary>
         public void NotifyModalChanged()
         {

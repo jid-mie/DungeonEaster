@@ -273,6 +273,8 @@ namespace DungeonEater.Tavern.EditorTools
             shiftSo.FindProperty("customerScale").floatValue = ComputeCustomerScale(all, profiles);
             shiftSo.ApplyModifiedPropertiesWithoutUndo();
 
+            GetOrAdd<TavernStandalone>(systems);
+
             var ui = GetOrAdd<TavernUI>(systems);
             var uiSo = new SerializedObject(ui);
             uiSo.FindProperty("goldIcon").objectReferenceValue = data.goldIcon;

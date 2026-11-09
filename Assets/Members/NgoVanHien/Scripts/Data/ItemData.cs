@@ -15,6 +15,16 @@ namespace DungeonEater.Tavern
     }
 
     /// <summary>
+    /// Phân loại gộp Nguyên liệu / Món ăn, dùng bởi SharedGameDataManager (NguyenMinhHiep)
+    /// khi tạo ItemData lúc chạy từ items_catalog.json.
+    /// </summary>
+    public enum ItemKind
+    {
+        Ingredient,
+        Dish
+    }
+
+    /// <summary>
     /// Dữ liệu 1 loại vật phẩm (nguyên liệu hoặc món ăn). Tạo bằng menu
     /// Create > Dungeon Eater > Tavern > Item, hoặc chạy tool Setup để sinh tự động.
     /// </summary>
@@ -28,8 +38,24 @@ namespace DungeonEater.Tavern
         public Sprite icon;
         [Tooltip("Số lượng tối đa xếp chồng trong 1 ô hòm đồ")]
         [Min(1)] public int maxStack = 5;
+        [Tooltip("Giá bán lại (theo items_catalog.json)")]
+        [Min(0)] public int sellPrice;
 
         public bool IsDish => category == ItemCategory.Dish;
+
+        /// <summary>
+        /// Cách gọi gộp của <see cref="category"/>: gán Dish/Ingredient sẽ đổi category tương ứng
+        /// (nguyên liệu giữ nguyên loại Common/Elite/Boss nếu đã có).
+        /// </summary>
+        public ItemKind kind
+        {
+            get => IsDish ? ItemKind.Dish : ItemKind.Ingredient;
+            set
+            {
+                if (value == ItemKind.Dish) category = ItemCategory.Dish;
+                else if (category == ItemCategory.Dish) category = ItemCategory.CommonIngredient;
+            }
+        }
 
         public string CategoryLabel
         {

@@ -59,6 +59,12 @@ namespace DungeonEater.Tavern
             Instance = this;
             if (transform.parent == null) DontDestroyOnLoad(gameObject);
 
+            ResetToStart();
+        }
+
+        /// <summary>Xóa hòm đồ rồi nạp lại đồ khởi đầu (vd sau khi hệ thống khác đã ghi đè).</summary>
+        public void ResetToStart()
+        {
             slots = CreateSlots(SlotCount);
             foreach (var start in startingItems)
             {
@@ -68,6 +74,7 @@ namespace DungeonEater.Tavern
                     Debug.LogWarning($"[PlayerInventory] Không đủ ô để thêm đồ khởi đầu {start.amount}x {start.item.displayName}.");
                 }
             }
+            OnChanged?.Invoke();
         }
 
         private void OnDestroy()
