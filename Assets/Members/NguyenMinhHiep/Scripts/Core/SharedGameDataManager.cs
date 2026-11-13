@@ -187,72 +187,24 @@ namespace NguyenMinhHiep.Core
             GameItemDatabase.EnsureLoaded();
             InitializeStarterStateIfNeeded();
 
-            SceneManager.sceneLoaded += HandleSceneLoaded;
-            BossBase.OnBossDefeatedGeneric += HandleBossDefeated;
-            NguyenVanHai.Enemies.BossKingBoarAI.OnBossDefeated += HandleKingBoarDefeated;
         }
 
         private void Start()
         {
-            BindSceneSystems();
+            // Data core intentionally has no scene or UI bootstrap logic.
         }
 
         private void OnDestroy()
         {
             if (instance == this)
             {
-                SceneManager.sceneLoaded -= HandleSceneLoaded;
-                BossBase.OnBossDefeatedGeneric -= HandleBossDefeated;
-                NguyenVanHai.Enemies.BossKingBoarAI.OnBossDefeated -= HandleKingBoarDefeated;
-                UnbindSceneSystems();
                 instance = null;
             }
         }
 
         private void Update()
         {
-            if (fullBagWarningCooldown > 0f)
-            {
-                fullBagWarningCooldown -= Time.unscaledDeltaTime;
-            }
-
-            // Đồng bộ liên tục chỉ số sinh tồn từ HunterPlayer nếu đang ở trong Dungeon
-            if (boundHunterPlayer != null)
-            {
-                bool changed = false;
-                if (Mathf.Abs(state.currentHP - boundHunterPlayer.CurrentHealth) > 0.1f)
-                {
-                    state.currentHP = Mathf.Clamp(boundHunterPlayer.CurrentHealth, 0f, state.maxHP);
-                    changed = true;
-                }
-                if (Mathf.Abs(state.currentStamina - boundHunterPlayer.CurrentStamina) > 0.1f)
-                {
-                    state.currentStamina = Mathf.Clamp(boundHunterPlayer.CurrentStamina, 0f, state.maxStamina);
-                    changed = true;
-                }
-                int hunterWeapon = boundHunterPlayer.CurrentWeapon == HunterPlayer.WeaponType.Sword ? 0 : 1;
-                if (state.activeWeaponIndex != hunterWeapon)
-                {
-                    state.activeWeaponIndex = hunterWeapon;
-                    OnWeaponChanged?.Invoke();
-                }
-                if (changed)
-                {
-                    OnVitalsChanged?.Invoke();
-                }
-            }
-            else
-            {
-                // Ở Làng hoặc Nhà hàng: tự hồi thể lực nhẹ nhàng về 100
-                if (state.currentStamina < state.maxStamina)
-                {
-                    state.currentStamina = Mathf.Min(state.maxStamina, state.currentStamina + 15f * Time.deltaTime);
-                    OnVitalsChanged?.Invoke();
-                }
-            }
-
-            // Đồng bộ vật phẩm nhặt được từ LootDrop (qua DungeonInventoryUI) vào kho chung
-            PollDungeonLootBridge();
+            // Intentionally empty. Consumers call the public data API explicitly.
         }
 
         public void InitializeStarterStateIfNeeded()

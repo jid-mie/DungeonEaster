@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using NguyenMinhHiep.UI;
 
 namespace NguyenMinhHiep.Data
 {
@@ -137,6 +136,7 @@ namespace NguyenMinhHiep.Data
         private static ItemCatalogRoot catalog;
         private static readonly Dictionary<string, ItemDefinitionDto> itemByIdOrAlias = new Dictionary<string, ItemDefinitionDto>(StringComparer.OrdinalIgnoreCase);
         private static readonly Dictionary<string, WeaponDefinitionDto> weaponByIdOrType = new Dictionary<string, WeaponDefinitionDto>(StringComparer.OrdinalIgnoreCase);
+        private static readonly Dictionary<string, Sprite> fallbackIcons = new Dictionary<string, Sprite>(StringComparer.OrdinalIgnoreCase);
         private static bool isInitialized;
 
         public static ItemCatalogRoot Catalog
@@ -317,46 +317,56 @@ namespace NguyenMinhHiep.Data
                 sp = UnityEditor.AssetDatabase.LoadAssetAtPath<Sprite>(iconPath);
             }
 #endif
-            // Thử lấy sprite runtime từ HauUITheme nếu có tương ứng
             if (sp == null)
             {
-                sp = TryResolveFromProjectThemes(id);
-            }
-
-            if (sp == null)
-            {
-                sp = HiepSprites.GetOrCreateIconBadge(id, fallbackColorHex, category);
+                sp = CreateFallbackIcon(id, fallbackColorHex, category);
             }
 
             return sp;
         }
 
-        private static Sprite TryResolveFromProjectThemes(string id)
+        private static Sprite CreateFallbackIcon(string id, string hexColor, string category)
         {
-            if (string.IsNullOrEmpty(id)) return null;
-            string lower = id.ToLowerInvariant();
-
-            try
+            string cacheKey = $"{id}_{hexColor}_{category}";
+            if (fallbackIcons.TryGetValue(cacheKey, out var cached) && cached != null)
             {
-                if (lower.Contains("potion") || lower.Contains("heal"))
-                    return DungeonEater.TranHuuHau.Common.HauUITheme.PotionIcon;
-                if (lower.Contains("frag") || lower.Contains("explo") || lower.Contains("fire"))
-                    return DungeonEater.TranHuuHau.Common.HauUITheme.BombIcon;
-                if (lower.Contains("ice") || lower.Contains("snow") || lower.Contains("frozen"))
-                    return DungeonEater.TranHuuHau.Common.HauUITheme.IceIcon;
-                if (lower.Contains("poison") || lower.Contains("slime") || lower.Contains("moss"))
-                    return DungeonEater.TranHuuHau.Common.HauUITheme.PoisonIcon;
-                if (lower.Contains("mushroom"))
-                    return DungeonEater.TranHuuHau.Common.HauUITheme.MushroomIcon;
-                if (lower.Contains("bone"))
-                    return DungeonEater.TranHuuHau.Common.HauUITheme.BoneIcon;
-            }
-            catch
-            {
-                // Bỏ qua nếu chưa khởi tạo
+                return cached;
             }
 
-            return null;
+            if (!ColorUtility.TryParseHtmlString(hexColor, out var baseColor))
+            {
+                baseColor = new Color(0.9f, 0.75f, 0.3f, 1f);
+            }
+
+            const int size = 16;
+            var texture = new Texture2D(size, size, TextureFormat.RGBA32, false)
+            {
+                filterMode = FilterMode.Point,
+                wrapMode = TextureWrapMode.Clamp,
+                name = $"ItemIcon_{id}"
+            };
+            var pixels = new Color32[size * size];
+            var border = new Color(0.12f, 0.08f, 0.06f, 1f);
+            var highlight = Color.Lerp(baseColor, Color.white, 0.45f);
+            var shadow = Color.Lerp(baseColor, Color.black, 0.35f);
+            for (int y = 0; y < size; y++)
+            {
+                for (int x = 0; x < size; x++)
+                {
+                    float dx = x - 7.5f;
+                    float dy = y - 7.5f;
+                    float distance = Mathf.Sqrt(dx * dx + dy * dy);
+                    Color color = distance > 6.8f ? Color.clear : distance > 5.6f ? border :
+                        x + y > 16 && distance < 4.5f ? highlight : x + y < 11 ? shadow : baseColor;
+                    pixels[y * size + x] = color;
+                }
+            }
+            texture.SetPixels32(pixels);
+            texture.Apply();
+            var sprite = Sprite.Create(texture, new Rect(0, 0, size, size), new Vector2(0.5f, 0.5f), 16f);
+            sprite.name = $"ItemIcon_{id}";
+            fallbackIcons[cacheKey] = sprite;
+            return sprite;
         }
     }
 }
