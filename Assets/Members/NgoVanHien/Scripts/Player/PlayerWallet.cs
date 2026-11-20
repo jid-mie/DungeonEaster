@@ -13,9 +13,6 @@ namespace DungeonEater.Tavern
     {
         public static PlayerWallet Instance { get; private set; }
 
-        [Header("Giá trị khởi đầu (mock để debug)")]
-        [SerializeField] private int startingGold = 10000;
-        [SerializeField] private int startingReputation = 1000;
 
         private int gold;
         private int reputation;
@@ -35,8 +32,9 @@ namespace DungeonEater.Tavern
             }
             Instance = this;
             if (transform.parent == null) DontDestroyOnLoad(gameObject);
-            gold = startingGold;
-            reputation = startingReputation;
+            var cfg = RestaurantDatabase.Wallet;
+            gold = cfg.startingGold;
+            reputation = cfg.startingReputation;
         }
 
         private void OnDestroy()
@@ -44,11 +42,12 @@ namespace DungeonEater.Tavern
             if (Instance == this) Instance = null;
         }
 
-        /// <summary>Đưa vàng/danh tiếng về giá trị khởi đầu (vd sau khi hệ thống khác đã ghi đè).</summary>
+        /// <summary>Đưa vàng/danh tiếng về giá trị khởi đầu trong restaurant_config.json.</summary>
         public void ResetToStart()
         {
-            gold = startingGold;
-            reputation = startingReputation;
+            var cfg = RestaurantDatabase.Wallet;
+            gold = cfg.startingGold;
+            reputation = cfg.startingReputation;
             OnChanged?.Invoke();
         }
 

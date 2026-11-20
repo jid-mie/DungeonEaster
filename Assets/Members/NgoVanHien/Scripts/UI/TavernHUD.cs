@@ -11,18 +11,11 @@ namespace DungeonEater.Tavern
     {
         private const int MaxOrderRows = 8;
 
-        private Text goldText;
-        private Text repText;
+        private HudStatusPanel status;
         private Text shiftTitle;
         private Text shiftStats;
         private RectTransform ordersPanel;
-        private GameObject walletPanel;
-        private GameObject hintLabel;
-        private Vector2 ordersHomePosition;
         private readonly List<OrderRow> orderRows = new List<OrderRow>();
-
-        private int shownGold = int.MinValue;
-        private int shownRep = int.MinValue;
 
         private class OrderRow
         {
@@ -36,12 +29,8 @@ namespace DungeonEater.Tavern
         {
             var self = (RectTransform)transform;
 
-            // --- Vàng & danh tiếng (trên trái)
-            var wallet = UIKit.Panel(self, "Wallet", UIKit.Wood);
-            walletPanel = wallet.gameObject;
-            UIKit.Place(wallet.rectTransform, new Vector2(0f, 1f), new Vector2(24f, -24f), new Vector2(380f, 128f));
-            goldText = WalletRow(wallet.transform, owner.GoldIcon, "Vàng", UIKit.Gold, -14f);
-            repText = WalletRow(wallet.transform, owner.ReputationIcon, "Danh tiếng", UIKit.Rep, -66f);
+            // --- Máu, thể lực, vàng & danh tiếng (trên trái) — khung dùng chung 3 scene
+            status = HudStatusPanel.Create(self, true, owner.GoldIcon, owner.ReputationIcon);
 
             // --- Ca phục vụ (giữa trên)
             var shift = UIKit.Panel(self, "Shift", UIKit.Wood);
@@ -51,47 +40,18 @@ namespace DungeonEater.Tavern
             shiftStats = UIKit.Label(shift.transform, "Stats", "", 22, UIKit.TextDim, TextAnchor.MiddleCenter);
             UIKit.Stretch(shiftStats.rectTransform, 12, 8, 12, 50);
 
-            // --- Order đang chờ (trái, dưới ví)
+            // --- Order đang chờ (trái, dưới khung trạng thái)
             ordersPanel = UIKit.Panel(self, "Orders", UIKit.Wood).rectTransform;
-            UIKit.Place(ordersPanel, new Vector2(0f, 1f), new Vector2(24f, -168f), new Vector2(380f, 60f));
+            UIKit.Place(ordersPanel, new Vector2(0f, 1f), new Vector2(HudStatusPanel.Margin, -(status.Bottom + 16f)), new Vector2(HudStatusPanel.Width, 60f));
             var ordersTitle = UIKit.Label(ordersPanel, "Title", "ORDER ĐANG CHỜ", 20, UIKit.TextDim, TextAnchor.UpperLeft, FontStyle.Bold);
             UIKit.Place(ordersTitle.rectTransform, new Vector2(0f, 1f), new Vector2(16f, -10f), new Vector2(300f, 26f));
             for (int i = 0; i < MaxOrderRows; i++) orderRows.Add(CreateOrderRow(ordersPanel, i));
 
             // --- Nhắc phím (trên phải, chừa chỗ giữa dưới cho thanh quick item)
             var hint = UIKit.Label(self, "Hint",
-                "<b>[WASD]</b> Di chuyển   <b>[F]</b> Tương tác   <b>[I]</b> Hòm đồ   <b>[1-5]</b> Giao nhanh   <b>[Esc]</b> Đóng",
+                $"<b>[WASD]</b> Di chuyển   <b>[F]</b> Tương tác   <b>[I]</b> Hòm đồ   <b>[1-{RestaurantDatabase.Inventory.quickSlotCount}]</b> Giao nhanh   <b>[Esc]</b> Đóng",
                 20, UIKit.Text, TextAnchor.UpperRight);
             UIKit.Place(hint.rectTransform, new Vector2(1f, 1f), new Vector2(-24f, -24f), new Vector2(900f, 30f));
-            hintLabel = hint.gameObject;
-            ordersHomePosition = ordersPanel.anchoredPosition;
-        }
-
-        /// <summary>Bật lại ví, dòng nhắc phím và vị trí bảng order nếu hệ thống khác đã ẩn/dời đi.</summary>
-        public void RestoreLayout()
-        {
-            walletPanel.SetActive(true);
-            hintLabel.SetActive(true);
-            ordersPanel.anchoredPosition = ordersHomePosition;
-        }
-
-        private static Text WalletRow(Transform parent, Sprite icon, string caption, Color color, float y)
-        {
-            var img = UIKit.Icon(parent, caption + "Icon", icon);
-            UIKit.Place(img.rectTransform, new Vector2(0f, 1f), new Vector2(14f, y), new Vector2(48f, 48f));
-            if (icon == null)
-            {
-                // không có icon -> chấm màu thay thế
-                img.sprite = TavernSprites.Frame;
-                img.type = Image.Type.Sliced;
-                img.color = color;
-                img.enabled = true;
-            }
-            var cap = UIKit.Label(parent, caption + "Caption", caption, 18, UIKit.TextDim, TextAnchor.UpperLeft);
-            UIKit.Place(cap.rectTransform, new Vector2(0f, 1f), new Vector2(74f, y + 2f), new Vector2(240f, 22f));
-            var value = UIKit.Label(parent, caption + "Value", "0", 28, color, TextAnchor.UpperLeft, FontStyle.Bold);
-            UIKit.Place(value.rectTransform, new Vector2(0f, 1f), new Vector2(74f, y - 18f), new Vector2(240f, 34f));
-            return value;
         }
 
         private static OrderRow CreateOrderRow(RectTransform parent, int index)
@@ -125,19 +85,7 @@ namespace DungeonEater.Tavern
         private void Update()
         {
             var wallet = PlayerWallet.Instance;
-            if (wallet != null)
-            {
-                if (wallet.Gold != shownGold)
-                {
-                    shownGold = wallet.Gold;
-                    goldText.text = UIKit.FormatNumber(shownGold);
-                }
-                if (wallet.Reputation != shownRep)
-                {
-                    shownRep = wallet.Reputation;
-                    repText.text = UIKit.FormatNumber(shownRep);
-                }
-            }
+            if (wallet != null) status.SetWallet(wallet.Gold, wallet.Reputation);
 
             UpdateShift();
             UpdateOrders();

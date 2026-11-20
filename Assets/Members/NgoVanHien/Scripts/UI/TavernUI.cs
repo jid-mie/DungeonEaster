@@ -182,13 +182,6 @@ namespace DungeonEater.Tavern
             if (toast != null) toast.Show(message, color, duration);
         }
 
-        /// <summary>Hiện lại HUD + thanh quick item của quán nếu hệ thống khác đã ẩn đi.</summary>
-        public void RestoreOwnHud()
-        {
-            hud.RestoreLayout();
-            quickBar.gameObject.SetActive(true);
-        }
-
         /// <summary>Các panel gọi khi mở/đóng để khóa/mở di chuyển người chơi.</summary>
         public void NotifyModalChanged()
         {
@@ -206,17 +199,7 @@ namespace DungeonEater.Tavern
 
         private void BuildCanvas()
         {
-            var canvasGo = new GameObject("TavernCanvas", typeof(RectTransform));
-            canvasGo.transform.SetParent(transform, false);
-            var canvas = canvasGo.AddComponent<Canvas>();
-            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            canvas.sortingOrder = 100;
-            var scaler = canvasGo.AddComponent<CanvasScaler>();
-            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-            scaler.referenceResolution = new Vector2(1920f, 1080f);
-            scaler.matchWidthOrHeight = 0.5f;
-            canvasGo.AddComponent<GraphicRaycaster>();
-            root = (RectTransform)canvasGo.transform;
+            root = UIKit.Canvas(transform, "TavernCanvas", 100);
         }
 
         private static void EnsureEventSystem()

@@ -23,6 +23,10 @@ namespace DungeonEater.Tavern
         public static readonly Color ButtonGreen = new Color32(0x4f, 0x8a, 0x34, 0xff);
         public static readonly Color ButtonBrown = new Color32(0x7a, 0x4e, 0x2c, 0xff);
         public static readonly Color ButtonRed = new Color32(0x9a, 0x3a, 0x2c, 0xff);
+        public static readonly Color ButtonBlue = new Color32(0x2f, 0x6a, 0x9a, 0xff);
+        public static readonly Color Health = new Color32(0xd8, 0x3a, 0x34, 0xff);
+        public static readonly Color Stamina = new Color32(0x58, 0xc2, 0x4a, 0xff);
+        public static readonly Color BarBack = new Color32(0x21, 0x14, 0x0d, 0xff);
 
         public static RectTransform Rect(string name, Transform parent)
         {
@@ -123,6 +127,53 @@ namespace DungeonEater.Tavern
         public static Button Button(Transform parent, string name, string label, int fontSize, Color color, Action onClick)
         {
             return Button(parent, name, label, fontSize, color, onClick, out _);
+        }
+
+        /// <summary>Canvas overlay chuẩn 1920x1080 dùng chung cho cả 3 scene (Restaurant / Village / Dungeon).</summary>
+        public static RectTransform Canvas(Transform parent, string name, int sortingOrder)
+        {
+            var go = new GameObject(name, typeof(RectTransform));
+            go.transform.SetParent(parent, false);
+            var canvas = go.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder = sortingOrder;
+            var scaler = go.AddComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1920f, 1080f);
+            scaler.matchWidthOrHeight = 0.5f;
+            go.AddComponent<GraphicRaycaster>();
+            EnsureEventSystem();
+            return (RectTransform)go.transform;
+        }
+
+        /// <summary>uGUI cần 1 EventSystem trong scene để bấm được nút / ô đồ.</summary>
+        public static void EnsureEventSystem()
+        {
+            if (UnityEngine.Object.FindObjectOfType<UnityEngine.EventSystems.EventSystem>() != null) return;
+            var es = new GameObject("EventSystem");
+            es.AddComponent<UnityEngine.EventSystems.EventSystem>();
+            es.AddComponent<UnityEngine.EventSystems.StandaloneInputModule>();
+        }
+
+        /// <summary>Thanh tiến độ: nền tối + phần fill co giãn theo anchorMax.x. Trả về Image fill.</summary>
+        public static Image Bar(Transform parent, string name, Color fillColor, out RectTransform back)
+        {
+            var backImg = Box(parent, name, BarBack);
+            back = backImg.rectTransform;
+            var fill = Box(back, "Fill", fillColor);
+            fill.rectTransform.anchorMin = Vector2.zero;
+            fill.rectTransform.anchorMax = Vector2.one;
+            fill.rectTransform.pivot = new Vector2(0f, 0.5f);
+            fill.rectTransform.offsetMin = Vector2.zero;
+            fill.rectTransform.offsetMax = Vector2.zero;
+            fill.raycastTarget = false;
+            return fill;
+        }
+
+        public static void SetBar(Image fill, float ratio)
+        {
+            if (fill == null) return;
+            fill.rectTransform.anchorMax = new Vector2(Mathf.Clamp01(ratio), 1f);
         }
 
         public static string FormatNumber(int value)

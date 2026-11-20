@@ -38,15 +38,12 @@ namespace DungeonEater.Tavern
         private const int SortBase = 5000;
         private const int SortPrecision = 100;
 
-        [SerializeField] private float moveSpeed = 2.6f;
-        [SerializeField] private float eatDuration = 4f;
-
-        [Header("Thưởng / phạt (giá trị tạm, chờ cân bằng)")]
-        [Tooltip("Còn >= tỉ lệ kiên nhẫn này khi nhận món thì khách boa thêm")]
-        [SerializeField, Range(0f, 1f)] private float tipPatienceThreshold = 0.5f;
-        [Tooltip("Tiền boa = % giá món")]
-        [SerializeField, Range(0f, 1f)] private float tipPercent = 0.2f;
-        [SerializeField] private int angryReputationPenalty = 3;
+        // Tốc độ, thời gian ăn, thưởng / phạt: lấy từ restaurant_config.json (customer)
+        private float moveSpeed;
+        private float eatDuration;
+        private float tipPatienceThreshold;
+        private float tipPercent;
+        private int angryReputationPenalty;
 
         private CustomerProfile profile;
         private RecipeData order;
@@ -85,6 +82,14 @@ namespace DungeonEater.Tavern
             order = o;
             table = t;
             shift = s;
+
+            var cfg = RestaurantDatabase.Customer;
+            moveSpeed = cfg.moveSpeed;
+            eatDuration = cfg.eatDuration;
+            tipPatienceThreshold = Mathf.Clamp01(cfg.tipPatienceThreshold);
+            tipPercent = Mathf.Max(0f, cfg.tipPercent);
+            angryReputationPenalty = Mathf.Max(0, cfg.angryReputationPenalty);
+            if (p.patience <= 0f) p.patience = cfg.defaultPatience;
             patienceLeft = p.patience;
 
             int sortingLayer = t.TableRenderer != null ? t.TableRenderer.sortingLayerID : TavernSprites.SortingLayerOrDefault("Entities");

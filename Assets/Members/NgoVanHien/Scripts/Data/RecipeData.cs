@@ -28,8 +28,9 @@ namespace DungeonEater.Tavern
         public List<ItemAmount> ingredients = new List<ItemAmount>();
         [Tooltip("Số món tạo ra cho mỗi lần nấu")]
         [Min(1)] public int outputAmount = 1;
-        [Min(0)] public int goldPrice = 35;
-        [Min(0)] public int reputation = 5;
+        // Giá bán + danh tiếng: ghi đè từ restaurant_config.json lúc chạy (RestaurantDatabase.ApplyRecipe)
+        [Min(0)] public int goldPrice;
+        [Min(0)] public int reputation;
         [Tooltip("Recipe đã mở khóa chưa (mock: mở hết để debug)")]
         public bool unlocked = true;
 

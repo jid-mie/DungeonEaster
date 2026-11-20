@@ -24,7 +24,7 @@ namespace DungeonEater.Tavern
     /// GDD: "Balo có giới hạn slot; người chơi phải bỏ hoặc ưu tiên loot khi đầy" -> mọi thao tác thêm
     /// đều all-or-nothing, không bao giờ âm thầm xóa đồ.
     /// Chứa cả nguyên liệu lẫn món đã nấu (món nấu xong vào hòm đồ, mang ra bàn phục vụ).
-    /// Gồm 10 ô túi + 5 ô quick item (phím 1-5). Mảng Slots: [0..bag-1] là túi, sau đó là quick item.
+    /// Gồm các ô túi + ô quick item (số ô theo restaurant_config.json). Mảng Slots: [0..bag-1] là túi, sau đó là quick item.
     /// Món ăn ưu tiên vào ô quick item, nguyên liệu ưu tiên vào túi.
     /// </summary>
     [DefaultExecutionOrder(-100)]
@@ -32,10 +32,11 @@ namespace DungeonEater.Tavern
     {
         public static PlayerInventory Instance { get; private set; }
 
-        [SerializeField, Min(1)] private int bagSlotCount = 10;
-        [SerializeField, Min(0)] private int quickSlotCount = 5;
+        // Số ô túi / quick item và đồ khởi đầu: lấy từ restaurant_config.json (RestaurantDatabase)
+        private int bagSlotCount;
+        private int quickSlotCount;
 
-        [Header("Đồ có sẵn khi bắt đầu (mock để debug)")]
+        [Header("Asset ItemData để tra theo id (số lượng khởi đầu lấy từ JSON, bỏ qua amount ở đây)")]
         [SerializeField] private List<ItemAmount> startingItems = new List<ItemAmount>();
 
         private InventorySlot[] slots;
@@ -59,19 +60,35 @@ namespace DungeonEater.Tavern
             Instance = this;
             if (transform.parent == null) DontDestroyOnLoad(gameObject);
 
+            var cfg = RestaurantDatabase.Inventory;
+            bagSlotCount = Mathf.Max(1, cfg.bagSlotCount);
+            quickSlotCount = Mathf.Max(0, cfg.quickSlotCount);
+
             ResetToStart();
         }
 
-        /// <summary>Xóa hòm đồ rồi nạp lại đồ khởi đầu (vd sau khi hệ thống khác đã ghi đè).</summary>
+        /// <summary>Xóa hòm đồ rồi nạp lại đồ khởi đầu theo inventory.startingItems trong restaurant_config.json.</summary>
         public void ResetToStart()
         {
             slots = CreateSlots(SlotCount);
-            foreach (var start in startingItems)
+
+            // Đăng ký các ItemData asset (đồng thời ghi đè số liệu từ JSON) để tra theo id
+            foreach (var known in startingItems) RestaurantDatabase.RegisterItemAsset(known.item);
+            var kitchen = Kitchen.Instance != null ? Kitchen.Instance : FindObjectOfType<Kitchen>();
+            if (kitchen != null) kitchen.ApplyConfig();
+
+            foreach (var start in RestaurantDatabase.Inventory.startingItems)
             {
-                if (start.item == null) continue;
-                if (!TryAdd(start.item, start.amount))
+                if (start == null || start.amount <= 0) continue;
+                var item = RestaurantDatabase.GetItemAsset(start.itemId);
+                if (item == null)
                 {
-                    Debug.LogWarning($"[PlayerInventory] Không đủ ô để thêm đồ khởi đầu {start.amount}x {start.item.displayName}.");
+                    Debug.LogWarning($"[PlayerInventory] Đồ khởi đầu '{start.itemId}' không có ItemData asset tương ứng trong scene.");
+                    continue;
+                }
+                if (!TryAdd(item, start.amount))
+                {
+                    Debug.LogWarning($"[PlayerInventory] Không đủ ô để thêm đồ khởi đầu {start.amount}x {item.displayName}.");
                 }
             }
             OnChanged?.Invoke();

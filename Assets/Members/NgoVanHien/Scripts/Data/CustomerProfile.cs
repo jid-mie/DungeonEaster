@@ -13,7 +13,7 @@ namespace DungeonEater.Tavern
         public string displayName = "Khách";
         public Sprite idleSprite;
         public Sprite eatingSprite;
-        [Tooltip("Số giây khách chờ món trước khi bỏ về (giá trị tạm, chờ cân bằng)")]
-        [Min(5f)] public float patience = 45f;
+        /// <summary>Số giây khách chờ món trước khi bỏ về: lấy từ restaurant_config.json (customerProfiles).</summary>
+        [NonSerialized] public float patience;
     }
 }

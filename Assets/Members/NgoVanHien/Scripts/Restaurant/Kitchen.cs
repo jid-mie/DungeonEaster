@@ -30,9 +30,30 @@ namespace DungeonEater.Tavern
         /// <summary>(recipe, số lần nấu)</summary>
         public event Action<RecipeData, int> OnCooked;
 
+        private bool configApplied;
+
         private void Awake()
         {
             Instance = this;
+            ApplyConfig();
+        }
+
+        /// <summary>
+        /// Ghi đè số liệu của ItemData / RecipeData (tên, mô tả, stack, giá bán, danh tiếng, nguyên liệu)
+        /// bằng dữ liệu trong restaurant_config.json, thay cho giá trị cũ đã lưu trong asset.
+        /// </summary>
+        public void ApplyConfig()
+        {
+            if (configApplied) return;
+            configApplied = true;
+
+            foreach (var recipe in recipes)
+            {
+                if (recipe == null) continue;
+                RestaurantDatabase.RegisterItemAsset(recipe.dish);
+                foreach (var ing in recipe.ingredients) RestaurantDatabase.RegisterItemAsset(ing.item);
+            }
+            foreach (var recipe in recipes) RestaurantDatabase.ApplyRecipe(recipe);
         }
 
         private void OnDestroy()

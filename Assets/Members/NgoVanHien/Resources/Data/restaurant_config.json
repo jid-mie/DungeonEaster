@@ -1,0 +1,161 @@
+{
+  "version": "1.0.0",
+  "description": "Cấu hình scene Quán ăn (Restaurant_Hien) của Ngô Văn Hiến: ví, hòm đồ, ca phục vụ, thực khách, vật phẩm, công thức + giá bán. Bản sync: Resources/Data/restaurant_config.json.",
+  "wallet": {
+    "startingGold": 10000,
+    "startingReputation": 1000
+  },
+  "inventory": {
+    "bagSlotCount": 10,
+    "quickSlotCount": 5,
+    "defaultMaxStack": 5,
+    "startingItems": [
+      { "itemId": "monster_meat", "amount": 10 },
+      { "itemId": "cave_mushroom", "amount": 10 },
+      { "itemId": "bomb_core", "amount": 5 },
+      { "itemId": "boss_rib", "amount": 3 },
+      { "itemId": "dish_soup", "amount": 2 },
+      { "itemId": "dish_skewer", "amount": 2 }
+    ]
+  },
+  "shift": {
+    "startOnPlay": true,
+    "durationSeconds": 600.0,
+    "maxCustomers": 20,
+    "spawnIntervalMin": 6.0,
+    "spawnIntervalMax": 12.0,
+    "firstCustomerDelay": 2.0,
+    "retrySpawnDelay": 1.0
+  },
+  "customer": {
+    "moveSpeed": 2.6,
+    "eatDuration": 4.0,
+    "tipPatienceThreshold": 0.5,
+    "tipPercent": 0.2,
+    "angryReputationPenalty": 3,
+    "defaultPatience": 45.0
+  },
+  "customerProfiles": [
+    { "id": "farmer", "displayName": "Nông dân", "patience": 50.0 },
+    { "id": "merchant", "displayName": "Thương nhân", "patience": 35.0 },
+    { "id": "adventurer", "displayName": "Mạo hiểm gia", "patience": 40.0 },
+    { "id": "villager", "displayName": "Cô gái làng", "patience": 45.0 },
+    { "id": "old_lady", "displayName": "Bà lão", "patience": 60.0 },
+    { "id": "traveler", "displayName": "Lữ khách bí ẩn", "patience": 30.0 }
+  ],
+  "items": [
+    {
+      "id": "monster_meat",
+      "displayName": "Thịt quái dã thú",
+      "category": "CommonIngredient",
+      "maxStack": 5,
+      "sellPrice": 0,
+      "description": "Thịt rơi từ Slime xanh. Nguyên liệu cơ bản của mọi món nướng."
+    },
+    {
+      "id": "cave_mushroom",
+      "displayName": "Nấm hang sâu",
+      "category": "CommonIngredient",
+      "maxStack": 5,
+      "sellPrice": 0,
+      "description": "Nấm bào tử phát sáng trong hầm ngục, nấu súp rất thơm."
+    },
+    {
+      "id": "bomb_core",
+      "displayName": "Lõi bọ nổ",
+      "category": "CommonIngredient",
+      "maxStack": 5,
+      "sellPrice": 0,
+      "description": "Lõi nhiệt hạch của Bọ cảm tử. Tạo vị cay nổ tung trong miệng."
+    },
+    {
+      "id": "boss_rib",
+      "displayName": "Sườn Boss Hoàng Kim",
+      "category": "BossMaterial",
+      "maxStack": 5,
+      "sellPrice": 0,
+      "description": "Sườn Vua Lợn Rừng cực hiếm, chỉ rơi khi hạ Boss."
+    },
+    {
+      "id": "dish_skewer",
+      "displayName": "Thịt xiên nướng quái thú",
+      "category": "Dish",
+      "maxStack": 5,
+      "sellPrice": 0,
+      "description": "Thịt quái nướng than hồng thơm lừng béo ngậy."
+    },
+    {
+      "id": "dish_soup",
+      "displayName": "Bát súp nấm hang sâu",
+      "category": "Dish",
+      "maxStack": 5,
+      "sellPrice": 0,
+      "description": "Nước súp thanh mát từ nấm hầm ngục, ấm bụng dân làng."
+    },
+    {
+      "id": "dish_steak",
+      "displayName": "Bít tết bùng nổ",
+      "category": "Dish",
+      "maxStack": 5,
+      "sellPrice": 0,
+      "description": "Thịt quái áp chảo bằng nhiệt của lõi bọ nổ, cay tê đầu lưỡi!"
+    },
+    {
+      "id": "dish_feast",
+      "displayName": "Đại tiệc Vua Thú",
+      "category": "Dish",
+      "maxStack": 5,
+      "sellPrice": 0,
+      "description": "Sườn Boss hoàng kim cùng nấm và thịt quái — món đỉnh cao của làng Dun."
+    }
+  ],
+  "recipes": [
+    {
+      "id": "recipe_skewer",
+      "dishId": "dish_skewer",
+      "goldPrice": 35,
+      "reputation": 5,
+      "outputAmount": 1,
+      "unlocked": true,
+      "ingredients": [
+        { "itemId": "monster_meat", "amount": 2 }
+      ]
+    },
+    {
+      "id": "recipe_soup",
+      "dishId": "dish_soup",
+      "goldPrice": 45,
+      "reputation": 8,
+      "outputAmount": 1,
+      "unlocked": true,
+      "ingredients": [
+        { "itemId": "cave_mushroom", "amount": 2 }
+      ]
+    },
+    {
+      "id": "recipe_steak",
+      "dishId": "dish_steak",
+      "goldPrice": 85,
+      "reputation": 15,
+      "outputAmount": 1,
+      "unlocked": true,
+      "ingredients": [
+        { "itemId": "monster_meat", "amount": 2 },
+        { "itemId": "bomb_core", "amount": 1 }
+      ]
+    },
+    {
+      "id": "recipe_feast",
+      "dishId": "dish_feast",
+      "goldPrice": 220,
+      "reputation": 35,
+      "outputAmount": 1,
+      "unlocked": true,
+      "ingredients": [
+        { "itemId": "boss_rib", "amount": 1 },
+        { "itemId": "cave_mushroom", "amount": 2 },
+        { "itemId": "monster_meat", "amount": 2 }
+      ]
+    }
+  ]
+}

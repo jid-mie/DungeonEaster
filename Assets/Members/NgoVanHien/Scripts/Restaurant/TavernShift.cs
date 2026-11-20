@@ -5,20 +5,15 @@ using UnityEngine;
 namespace DungeonEater.Tavern
 {
     /// <summary>
-    /// Ca phục vụ (GDD 3.2.2): kéo dài 10 phút, tối đa 20 khách. Spawn khách ở cửa, dẫn tới bàn trống,
+    /// Ca phục vụ (GDD 3.2.2): thời lượng + số khách tối đa theo restaurant_config.json. Spawn khách ở cửa, dẫn tới bàn trống,
     /// gán order ngẫu nhiên trong các recipe đã mở khóa.
     /// </summary>
     public class TavernShift : MonoBehaviour
     {
         public static TavernShift Instance { get; private set; }
 
-        [Header("Ca phục vụ")]
-        [SerializeField] private bool startOnPlay = true;
-        [SerializeField] private float shiftDuration = 600f;
-        [SerializeField] private int maxCustomers = 20;
-        [Tooltip("Khoảng thời gian ngẫu nhiên giữa 2 lượt khách (giây)")]
-        [SerializeField] private Vector2 spawnInterval = new Vector2(6f, 12f);
-        [SerializeField] private float firstCustomerDelay = 2f;
+        // Thông số ca phục vụ (thời lượng, số khách, nhịp spawn): lấy từ restaurant_config.json (shift)
+        private RestaurantShiftConfigDto config = new RestaurantShiftConfigDto();
 
         [Header("Đường đi")]
         [Tooltip("Cửa quán: khách xuất hiện và biến mất ở đây")]
@@ -30,7 +25,7 @@ namespace DungeonEater.Tavern
         [SerializeField] private List<CustomerProfile> profiles = new List<CustomerProfile>();
         [Tooltip("Để trống sẽ tự tìm mọi TavernTable trong scene")]
         [SerializeField] private List<TavernTable> tables = new List<TavernTable>();
-        [SerializeField] private float customerScale = 0.5f;
+        [SerializeField] private float customerScale;
 
         private float timeLeft;
         private float spawnTimer;
@@ -38,7 +33,7 @@ namespace DungeonEater.Tavern
 
         public bool IsRunning { get; private set; }
         public float TimeLeft => Mathf.Max(0f, timeLeft);
-        public int MaxCustomers => maxCustomers;
+        public int MaxCustomers => config.maxCustomers;
         public int SpawnedCount { get; private set; }
         public int ServedCount { get; private set; }
         public int AngryCount { get; private set; }
@@ -52,6 +47,16 @@ namespace DungeonEater.Tavern
         private void Awake()
         {
             Instance = this;
+
+            config = RestaurantDatabase.Shift;
+            // Độ kiên nhẫn từng loại khách: tra theo tên hiển thị của profile trong scene
+            foreach (var profile in profiles)
+            {
+                if (profile == null) continue;
+                var dto = RestaurantDatabase.GetCustomerProfile(profile.displayName);
+                if (dto == null) Debug.LogWarning($"[TavernShift] Loại khách '{profile.displayName}' chưa có trong restaurant_config.json, dùng defaultPatience.");
+                profile.patience = dto != null ? dto.patience : RestaurantDatabase.Customer.defaultPatience;
+            }
         }
 
         private void OnDestroy()
@@ -63,15 +68,15 @@ namespace DungeonEater.Tavern
         {
             if (tables.Count == 0) tables.AddRange(FindObjectsOfType<TavernTable>());
             tables.Sort((a, b) => a.TableNumber.CompareTo(b.TableNumber));
-            if (startOnPlay) StartShift();
+            if (config.startOnPlay) StartShift();
         }
 
         public void StartShift()
         {
             if (IsRunning) return;
             IsRunning = true;
-            timeLeft = shiftDuration;
-            spawnTimer = firstCustomerDelay;
+            timeLeft = config.durationSeconds;
+            spawnTimer = config.firstCustomerDelay;
             SpawnedCount = ServedCount = AngryCount = EarnedGold = EarnedReputation = 0;
             if (TavernUI.Instance != null) TavernUI.Instance.ShowToast("Quán mở cửa! Ca phục vụ bắt đầu.", TavernUI.ColorGood);
             OnStatsChanged?.Invoke();
@@ -102,18 +107,18 @@ namespace DungeonEater.Tavern
                 return;
             }
 
-            if (SpawnedCount >= maxCustomers) return;
+            if (SpawnedCount >= config.maxCustomers) return;
 
             spawnTimer -= Time.deltaTime;
             if (spawnTimer > 0f) return;
 
             if (TrySpawnCustomer())
             {
-                spawnTimer = UnityEngine.Random.Range(spawnInterval.x, spawnInterval.y);
+                spawnTimer = UnityEngine.Random.Range(config.spawnIntervalMin, config.spawnIntervalMax);
             }
             else
             {
-                spawnTimer = 1f; // hết bàn trống / chưa có recipe -> thử lại sau
+                spawnTimer = config.retrySpawnDelay; // hết bàn trống / chưa có recipe -> thử lại sau
             }
         }
 
