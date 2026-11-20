@@ -1707,8 +1707,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 1
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &18703554
 GameObject:
   m_ObjectHideFlags: 0
@@ -2764,8 +2771,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &30749187
 GameObject:
   m_ObjectHideFlags: 0
@@ -2930,8 +2944,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &35200459
 GameObject:
   m_ObjectHideFlags: 0
@@ -4615,8 +4636,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1001 &53658227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4788,6 +4816,148 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeAlpha: 0.35
   fadeSpeed: 8
+--- !u!1 &58092845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 58092846}
+  m_Layer: 0
+  m_Name: Spawnpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &58092846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58092845}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.39, y: -30.19, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2092642724}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &60022497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 60022498}
+  - component: {fileID: 60022500}
+  - component: {fileID: 60022499}
+  m_Layer: 0
+  m_Name: CombatRoomZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &60022498
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60022497}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -32.8, y: -11.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1133150905}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &60022499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60022497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 402446752}
+  - {fileID: 1617910648}
+  - {fileID: 1053173691}
+  detectEnemiesInsideBox: 0
+  explicitEnemies:
+  - {fileID: 1731250835}
+  - {fileID: 35218640}
+  - {fileID: 543129977}
+  - {fileID: 187792816}
+  - {fileID: 1325776581}
+  - {fileID: 2124119248}
+  - {fileID: 2016566730}
+  - {fileID: 361435117}
+  - {fileID: 1378137861}
+  - {fileID: 586699870}
+  - {fileID: 348272116}
+  - {fileID: 916426671}
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &60022500
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60022497}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.14105797, y: 0.17525768}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 12.23769, y: 11.912804}
+  m_EdgeRadius: 0
 --- !u!1 &70927082
 GameObject:
   m_ObjectHideFlags: 0
@@ -4989,6 +5159,7 @@ GameObject:
   - component: {fileID: 71793047}
   - component: {fileID: 71793049}
   - component: {fileID: 71793048}
+  - component: {fileID: 71793050}
   m_Layer: 9
   m_Name: ui_heart_empty (4)
   m_TagString: Untagged
@@ -5081,6 +5252,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &71793050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71793046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21d4097e22999047af530b925376b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomId: 0
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] K\xEDch ho\u1EA1t \u1EA4n K\xFD"
+  arrivalOffset: {x: 0, y: -0.75}
+  visitedTint: {r: 0.55, g: 0.8, b: 1, a: 0.88}
 --- !u!1 &76742062
 GameObject:
   m_ObjectHideFlags: 0
@@ -7118,6 +7307,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &98568187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 98568188}
+  - component: {fileID: 98568190}
+  - component: {fileID: 98568189}
+  m_Layer: 0
+  m_Name: CombatRoomZone1 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &98568188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98568187}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.67, y: 8.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1067989486}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &98568189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98568187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 1422815748}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &98568190
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98568187}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.30611682, y: -4.3102202}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.301351, y: 14.420377}
+  m_EdgeRadius: 0
 --- !u!1 &99205615
 GameObject:
   m_ObjectHideFlags: 0
@@ -7282,8 +7568,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &99619170
 GameObject:
   m_ObjectHideFlags: 0
@@ -37141,6 +37434,7 @@ GameObject:
   - component: {fileID: 120294970}
   - component: {fileID: 120294972}
   - component: {fileID: 120294971}
+  - component: {fileID: 120294973}
   m_Layer: 9
   m_Name: ui_heart_empty
   m_TagString: Untagged
@@ -37233,6 +37527,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &120294973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120294969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6835c37c3dba414c936ad49adf29ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] Nh\u1EB7t Ch\xECa Kh\xF3a"
+  enableFloatAnimation: 1
+  floatAmplitude: 0.08
+  floatSpeed: 3.2
 --- !u!1 &130319438
 GameObject:
   m_ObjectHideFlags: 0
@@ -38658,6 +38970,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8575325, y: 1.1830683}
   m_EdgeRadius: 0
+--- !u!1 &161288918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 161288919}
+  m_Layer: 0
+  m_Name: Spawnpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &161288919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161288918}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.5, y: -32.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2041112998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &161977284
 GameObject:
   m_ObjectHideFlags: 0
@@ -39618,8 +39961,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &173139886
 GameObject:
   m_ObjectHideFlags: 0
@@ -40986,8 +41336,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &213182673
 GameObject:
   m_ObjectHideFlags: 0
@@ -41044,6 +41401,42 @@ Transform:
   - {fileID: 2099572342}
   - {fileID: 109943324}
   m_Father: {fileID: 954765435}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &214475883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 214475884}
+  m_Layer: 0
+  m_Name: CombatRoomZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &214475884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214475883}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 581190992}
+  - {fileID: 740756909}
+  - {fileID: 1388192072}
+  - {fileID: 1320951768}
+  - {fileID: 1229519016}
+  m_Father: {fileID: 2041112998}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &223598604
 GameObject:
@@ -50418,8 +50811,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &292428091
 GameObject:
   m_ObjectHideFlags: 0
@@ -52357,8 +52757,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &343747415
 GameObject:
   m_ObjectHideFlags: 0
@@ -73322,6 +73729,7 @@ GameObject:
   - component: {fileID: 355464289}
   - component: {fileID: 355464291}
   - component: {fileID: 355464290}
+  - component: {fileID: 355464292}
   m_Layer: 9
   m_Name: ui_heart_empty (6)
   m_TagString: Untagged
@@ -73414,6 +73822,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &355464292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355464288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21d4097e22999047af530b925376b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomId: 2
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] K\xEDch ho\u1EA1t \u1EA4n K\xFD"
+  arrivalOffset: {x: 0, y: -0.75}
+  visitedTint: {r: 0.55, g: 0.8, b: 1, a: 0.88}
 --- !u!1 &356384135
 GameObject:
   m_ObjectHideFlags: 0
@@ -73578,8 +74004,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &356534265
 GameObject:
   m_ObjectHideFlags: 0
@@ -73734,8 +74167,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!61 &357981493
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -101521,6 +101961,104 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8575325, y: 1.1830683}
   m_EdgeRadius: 0
+--- !u!1 &394766803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 394766804}
+  - component: {fileID: 394766806}
+  - component: {fileID: 394766805}
+  m_Layer: 0
+  m_Name: CombatRoomZone (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &394766804
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394766803}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25.2, y: 50.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1814995125}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &394766805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394766803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 99205620}
+  - {fileID: 553352872}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &394766806
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394766803}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3.7676582, y: -1.7630539}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 24.11036, y: 20.2192}
+  m_EdgeRadius: 0
 --- !u!1 &395623064
 GameObject:
   m_ObjectHideFlags: 0
@@ -102390,8 +102928,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &403228306
 GameObject:
   m_ObjectHideFlags: 0
@@ -102711,8 +103256,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &416003313
 GameObject:
   m_ObjectHideFlags: 0
@@ -104334,8 +104886,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &443916480
 GameObject:
   m_ObjectHideFlags: 0
@@ -104739,8 +105298,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &457391209
 GameObject:
   m_ObjectHideFlags: 0
@@ -104790,8 +105356,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!61 &457391212
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -105168,6 +105741,7 @@ GameObject:
   - component: {fileID: 464973252}
   - component: {fileID: 464973254}
   - component: {fileID: 464973253}
+  - component: {fileID: 464973255}
   m_Layer: 9
   m_Name: ui_heart_empty (1)
   m_TagString: Untagged
@@ -105260,6 +105834,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &464973255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464973251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21d4097e22999047af530b925376b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomId: 3
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] K\xEDch ho\u1EA1t \u1EA4n K\xFD"
+  arrivalOffset: {x: 0, y: -0.75}
+  visitedTint: {r: 0.55, g: 0.8, b: 1, a: 0.88}
 --- !u!1 &467303172
 GameObject:
   m_ObjectHideFlags: 0
@@ -105309,8 +105901,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!61 &467303175
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -106683,8 +107282,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &474878429
 GameObject:
   m_ObjectHideFlags: 0
@@ -110720,6 +111326,104 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!1 &477456645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 477456646}
+  - component: {fileID: 477456648}
+  - component: {fileID: 477456647}
+  m_Layer: 0
+  m_Name: CombatRoomZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &477456646
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477456645}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9, y: 32.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863151741}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &477456647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477456645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 511299287}
+  - {fileID: 52711695}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &477456648
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477456645}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.8580942, y: -1.1141882}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19.983473, y: 16.204123}
+  m_EdgeRadius: 0
 --- !u!1 &477935674
 GameObject:
   m_ObjectHideFlags: 0
@@ -110895,6 +111599,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &486294213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 486294214}
+  m_Layer: 0
+  m_Name: Spawnpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &486294214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486294213}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.1, y: -2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1972645438}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &491552337
 GameObject:
   m_ObjectHideFlags: 0
@@ -111059,8 +111794,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &494277693
 GameObject:
   m_ObjectHideFlags: 0
@@ -111650,8 +112392,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &505478652
 GameObject:
   m_ObjectHideFlags: 0
@@ -112405,8 +113154,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &517585030
 GameObject:
   m_ObjectHideFlags: 0
@@ -113990,8 +114746,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &552579979
 GameObject:
   m_ObjectHideFlags: 0
@@ -114395,8 +115158,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &562710254
 GameObject:
   m_ObjectHideFlags: 0
@@ -114694,8 +115464,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &567359782
 GameObject:
   m_ObjectHideFlags: 0
@@ -115757,6 +116534,105 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &581190991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 581190992}
+  - component: {fileID: 581190994}
+  - component: {fileID: 581190993}
+  m_Layer: 0
+  m_Name: CombatRoomZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &581190992
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581190991}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -34.09, y: 17.83, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 214475884}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &581190993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581190991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 2031922595}
+  - {fileID: 867790986}
+  - {fileID: 726431640}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &581190994
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581190991}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.3566122, y: -0.30776024}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19.101664, y: 17.048439}
+  m_EdgeRadius: 0
 --- !u!1 &582909329
 GameObject:
   m_ObjectHideFlags: 0
@@ -116007,6 +116883,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &584743561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 584743562}
+  - component: {fileID: 584743564}
+  - component: {fileID: 584743563}
+  m_Layer: 0
+  m_Name: CombatRoomZone (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &584743562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584743561}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5, y: 65.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1863151741}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &584743563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584743561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 776487184}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &584743564
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584743561}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.9128895, y: -1.232235}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 21.120575, y: 16.037834}
+  m_EdgeRadius: 0
 --- !u!1 &586699864
 GameObject:
   m_ObjectHideFlags: 0
@@ -116972,6 +117945,7 @@ GameObject:
   - component: {fileID: 604159211}
   - component: {fileID: 604159213}
   - component: {fileID: 604159212}
+  - component: {fileID: 604159214}
   m_Layer: 9
   m_Name: ui_heart_empty
   m_TagString: Untagged
@@ -117064,6 +118038,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &604159214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604159210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21d4097e22999047af530b925376b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomId: 3
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] K\xEDch ho\u1EA1t \u1EA4n K\xFD"
+  arrivalOffset: {x: 0, y: -0.75}
+  visitedTint: {r: 0.55, g: 0.8, b: 1, a: 0.88}
 --- !u!1 &607147655
 GameObject:
   m_ObjectHideFlags: 0
@@ -117860,8 +118852,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &619633891
 GameObject:
   m_ObjectHideFlags: 0
@@ -120107,6 +121106,104 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashColor: {r: 1, g: 0.3, b: 0.3, a: 1}
   flashDuration: 0.12
+--- !u!1 &635499251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 635499252}
+  - component: {fileID: 635499254}
+  - component: {fileID: 635499253}
+  m_Layer: 0
+  m_Name: CombatRoomZone (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &635499252
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635499251}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 32.4, y: 21.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1814995125}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &635499253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635499251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 1859504487}
+  - {fileID: 503891192}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &635499254
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635499251}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -5.859722, y: -0.2921028}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.058533, y: 15.243332}
+  m_EdgeRadius: 0
 --- !u!1 &640188680
 GameObject:
   m_ObjectHideFlags: 0
@@ -120400,8 +121497,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &640400716
 GameObject:
   m_ObjectHideFlags: 0
@@ -120586,6 +121690,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 640542418}
+  - component: {fileID: 640542419}
   m_Layer: 0
   m_Name: Dungeon4
   m_TagString: Untagged
@@ -120614,8 +121719,34 @@ Transform:
   - {fileID: 2009281958}
   - {fileID: 323305672}
   - {fileID: 388603348}
+  - {fileID: 719607678}
+  - {fileID: 1966644535}
+  - {fileID: 1067989486}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &640542419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640542417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ef6495ba3037744b87aee8c5df1bb0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredButtonsForBossLava:
+  - {fileID: 1037268691}
+  - {fileID: 1801693479}
+  lavaBossObject: {fileID: 223598604}
+  initialInactiveObjects:
+  - {fileID: 619633891}
+  - {fileID: 1922428233}
+  - {fileID: 631441116}
+  initialActiveObjects:
+  - {fileID: 1013066359}
+  - {fileID: 223598604}
 --- !u!1 &652315347
 GameObject:
   m_ObjectHideFlags: 0
@@ -126531,6 +127662,37 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0025138855, y: -0.19668698}
   m_Size: {x: 1.0789614, y: 1.0789616}
   m_Direction: 0
+--- !u!1 &719607677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 719607678}
+  m_Layer: 0
+  m_Name: Spawnpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &719607678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719607677}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.51, y: -19.32, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 640542418}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &719675167
 GameObject:
   m_ObjectHideFlags: 0
@@ -127054,8 +128216,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!61 &726431641
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -127562,8 +128731,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &737271935
 GameObject:
   m_ObjectHideFlags: 0
@@ -128269,6 +129445,105 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.10425186}
   serializedVersion: 2
   m_Radius: 0.5505266
+--- !u!1 &740756908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 740756909}
+  - component: {fileID: 740756911}
+  - component: {fileID: 740756910}
+  m_Layer: 0
+  m_Name: CombatRoomZone (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &740756909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740756908}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.2, y: 47.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 214475884}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &740756910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740756908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 897803284}
+  - {fileID: 796532810}
+  - {fileID: 933345021}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &740756911
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740756908}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3.1284385, y: -3.3434525}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 22.07906, y: 16.242714}
+  m_EdgeRadius: 0
 --- !u!1 &741039375
 GameObject:
   m_ObjectHideFlags: 0
@@ -130644,8 +131919,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &776758012
 GameObject:
   m_ObjectHideFlags: 0
@@ -130890,6 +132172,7 @@ GameObject:
   - component: {fileID: 780272510}
   - component: {fileID: 780272512}
   - component: {fileID: 780272511}
+  - component: {fileID: 780272513}
   m_Layer: 9
   m_Name: ui_heart_empty (1)
   m_TagString: Untagged
@@ -130982,6 +132265,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &780272513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780272509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6835c37c3dba414c936ad49adf29ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] Nh\u1EB7t Ch\xECa Kh\xF3a"
+  enableFloatAnimation: 1
+  floatAmplitude: 0.08
+  floatSpeed: 3.2
 --- !u!1 &781317243
 GameObject:
   m_ObjectHideFlags: 0
@@ -131635,8 +132936,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 1
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &789143604
 GameObject:
   m_ObjectHideFlags: 0
@@ -132609,6 +133917,103 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0025138855, y: -0.19668698}
   m_Size: {x: 1.0789614, y: 1.0789616}
   m_Direction: 0
+--- !u!1 &794757292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 794757293}
+  - component: {fileID: 794757295}
+  - component: {fileID: 794757294}
+  m_Layer: 0
+  m_Name: CombatRoomZone1 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &794757293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794757292}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.1, y: 80.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1814995125}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &794757294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794757292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 788765878}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &794757295
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794757292}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.45292854, y: 2.950882}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 25.049229, y: 20.1026}
+  m_EdgeRadius: 0
 --- !u!1 &796532808
 GameObject:
   m_ObjectHideFlags: 0
@@ -132658,8 +134063,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!61 &796532811
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -133306,6 +134718,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &808065059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 808065060}
+  m_Layer: 0
+  m_Name: Spawnpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &808065060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808065059}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.9, y: -0.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1861357464}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &808969331
 GameObject:
   m_ObjectHideFlags: 0
@@ -134256,8 +135699,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &822518333
 GameObject:
   m_ObjectHideFlags: 0
@@ -136095,6 +137545,7 @@ GameObject:
   - component: {fileID: 842502362}
   - component: {fileID: 842502364}
   - component: {fileID: 842502363}
+  - component: {fileID: 842502365}
   m_Layer: 9
   m_Name: ui_heart_empty (7)
   m_TagString: Untagged
@@ -136187,6 +137638,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &842502365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842502361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21d4097e22999047af530b925376b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomId: 2
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] K\xEDch ho\u1EA1t \u1EA4n K\xFD"
+  arrivalOffset: {x: 0, y: -0.75}
+  visitedTint: {r: 0.55, g: 0.8, b: 1, a: 0.88}
 --- !u!1 &843148327
 GameObject:
   m_ObjectHideFlags: 0
@@ -136834,6 +138303,104 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.10425186}
   serializedVersion: 2
   m_Radius: 0.5505266
+--- !u!1 &844482942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 844482943}
+  - component: {fileID: 844482945}
+  - component: {fileID: 844482944}
+  m_Layer: 0
+  m_Name: CombatRoomZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &844482943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844482942}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -39.1, y: 12.89, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1067989486}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &844482944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844482942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 1343510826}
+  - {fileID: 640223516}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &844482945
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844482942}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.40761375, y: -0.39751244}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.11678, y: 17.227943}
+  m_EdgeRadius: 0
 --- !u!1 &847044061
 GameObject:
   m_ObjectHideFlags: 0
@@ -137684,6 +139251,103 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8575325, y: 1.1830683}
   m_EdgeRadius: 0
+--- !u!1 &854227715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 854227716}
+  - component: {fileID: 854227718}
+  - component: {fileID: 854227717}
+  m_Layer: 0
+  m_Name: CombatRoomZone1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &854227716
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854227715}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 64.1, y: 55.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1067989486}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &854227717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854227715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 1925968592}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &854227718
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854227715}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.47050285, y: -1.2023869}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 16.873417, y: 6.347912}
+  m_EdgeRadius: 0
 --- !u!1 &854795368
 GameObject:
   m_ObjectHideFlags: 0
@@ -138406,8 +140070,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!61 &867790987
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -139711,8 +141382,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!61 &897803285
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140281,6 +141959,7 @@ GameObject:
   - component: {fileID: 908991320}
   - component: {fileID: 908991322}
   - component: {fileID: 908991321}
+  - component: {fileID: 908991323}
   m_Layer: 9
   m_Name: ui_heart_empty (1)
   m_TagString: Untagged
@@ -140373,6 +142052,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &908991323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908991319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21d4097e22999047af530b925376b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomId: 1
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] K\xEDch ho\u1EA1t \u1EA4n K\xFD"
+  arrivalOffset: {x: 0, y: -0.75}
+  visitedTint: {r: 0.55, g: 0.8, b: 1, a: 0.88}
 --- !u!1 &909915533
 GameObject:
   m_ObjectHideFlags: 0
@@ -140537,8 +142234,114 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
+--- !u!1 &912286642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 912286643}
+  - component: {fileID: 912286645}
+  - component: {fileID: 912286644}
+  m_Layer: 0
+  m_Name: CombatRoomZone1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &912286643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912286642}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 55.9, y: 24.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1067989486}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &912286644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912286642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 2112139773}
+  - {fileID: 1751047606}
+  - {fileID: 619515026}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &912286645
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912286642}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.8529282, y: 0.8078804}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19.984802, y: 24.919312}
+  m_EdgeRadius: 0
 --- !u!1 &914712972
 GameObject:
   m_ObjectHideFlags: 0
@@ -141203,8 +143006,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &918190138
 GameObject:
   m_ObjectHideFlags: 0
@@ -141369,8 +143179,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &919562264
 GameObject:
   m_ObjectHideFlags: 0
@@ -142311,8 +144128,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &933345019
 GameObject:
   m_ObjectHideFlags: 0
@@ -142362,8 +144186,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!61 &933345022
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -142878,6 +144709,7 @@ GameObject:
   - component: {fileID: 949085204}
   - component: {fileID: 949085206}
   - component: {fileID: 949085205}
+  - component: {fileID: 949085207}
   m_Layer: 9
   m_Name: ui_heart_empty
   m_TagString: Untagged
@@ -142970,6 +144802,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &949085207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949085203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21d4097e22999047af530b925376b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomId: 1
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] K\xEDch ho\u1EA1t \u1EA4n K\xFD"
+  arrivalOffset: {x: 0, y: -0.75}
+  visitedTint: {r: 0.55, g: 0.8, b: 1, a: 0.88}
 --- !u!1 &951922231
 GameObject:
   m_ObjectHideFlags: 0
@@ -143248,6 +145098,155 @@ Transform:
   - {fileID: 1460085471}
   m_Father: {fileID: 1861357464}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &956170238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 956170239}
+  - component: {fileID: 956170242}
+  - component: {fileID: 956170241}
+  - component: {fileID: 956170240}
+  m_Layer: 10
+  m_Name: Gate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &956170239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956170238}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.95, y: 83.72, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1861357464}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &956170240
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956170238}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.05, y: 1.04}
+    newSize: {x: 1.05, y: 1.04}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.05, y: 1.04}
+  m_EdgeRadius: 0
+--- !u!114 &956170241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956170238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 391e0f2d82f8d3642b30bb82ef1305f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseSortingOrder: 5000
+  precision: 100
+  sortingOrderOffset: 0
+  yOffset: 0
+  sortTarget: {fileID: 0}
+  isStatic: 0
+--- !u!212 &956170242
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956170238}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -2091076917
+  m_SortingLayer: 4
+  m_SortingOrder: -89
+  m_Sprite: {fileID: 21300000, guid: c53e15c0ccb879365ab170728c7ef112, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.05, y: 1.04}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &957300302
 GameObject:
   m_ObjectHideFlags: 0
@@ -154127,8 +156126,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &966318632
 GameObject:
   m_ObjectHideFlags: 0
@@ -154895,6 +156901,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &989932166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 989932167}
+  - component: {fileID: 989932169}
+  - component: {fileID: 989932168}
+  m_Layer: 0
+  m_Name: CombatRoomZone1 (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &989932167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989932166}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.4, y: 62, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1814995125}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &989932168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989932166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 356384140}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &989932169
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989932166}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.35769463, y: -4.533724}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.1981955, y: 13.010586}
+  m_EdgeRadius: 0
 --- !u!1 &990415580
 GameObject:
   m_ObjectHideFlags: 0
@@ -155127,8 +157230,210 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
+--- !u!1 &995912064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 995912065}
+  - component: {fileID: 995912067}
+  - component: {fileID: 995912066}
+  m_Layer: 0
+  m_Name: CombatRoomZone (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &995912065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995912064}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 58.7, y: -5.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1067989486}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &995912066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995912064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 820891946}
+  - {fileID: 1365130930}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &995912067
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995912064}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -5.706909, y: 0.013518572}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 23.985954, y: 15.9564495}
+  m_EdgeRadius: 0
+--- !u!1 &999267988
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 999267989}
+  - component: {fileID: 999267991}
+  - component: {fileID: 999267990}
+  m_Layer: 0
+  m_Name: CombatRoomZone1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &999267989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999267988}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 53, y: 22.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1814995125}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &999267990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999267988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 1711124622}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &999267991
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999267988}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.7222271, y: -1.2023869}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 15.111362, y: 6.347912}
+  m_EdgeRadius: 0
 --- !u!1 &1002488156
 GameObject:
   m_ObjectHideFlags: 0
@@ -155293,8 +157598,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1004258275
 GameObject:
   m_ObjectHideFlags: 0
@@ -157564,6 +159876,7 @@ GameObject:
   - component: {fileID: 1037268690}
   - component: {fileID: 1037268689}
   - component: {fileID: 1037268688}
+  - component: {fileID: 1037268691}
   m_Layer: 9
   m_Name: button_blue_up (2)
   m_TagString: Untagged
@@ -157701,6 +160014,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1037268691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037268686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe0b747ca9de5548b20d0e76e48e86d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] K\xEDch ho\u1EA1t C\xF4ng T\u1EAFc"
+  pressedSprite: {fileID: 0}
+  pressedTint: {r: 0.55, g: 0.85, b: 1, a: 1}
+  objectsToEnable:
+  - {fileID: 1922428233}
+  objectsToDisable: []
+  activatedToastMessage: "\u0110\xE3 k\xEDch ho\u1EA1t c\xF4ng t\u1EAFc n\u01B0\u1EDBc!"
 --- !u!1 &1037271154
 GameObject:
   m_ObjectHideFlags: 0
@@ -158438,6 +160772,105 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!1 &1048997583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1048997584}
+  - component: {fileID: 1048997586}
+  - component: {fileID: 1048997585}
+  m_Layer: 0
+  m_Name: CombatRoomZone (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1048997584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048997583}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.2, y: 45.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1067989486}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1048997585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048997583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 1674181618}
+  - {fileID: 932141817}
+  - {fileID: 1303580698}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &1048997586
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048997583}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3.6679173, y: -1.6633091}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 32.887714, y: 21.116886}
+  m_EdgeRadius: 0
 --- !u!1 &1053173686
 GameObject:
   m_ObjectHideFlags: 0
@@ -158602,8 +161035,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1054427247
 GameObject:
   m_ObjectHideFlags: 0
@@ -160614,6 +163054,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1067989485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1067989486}
+  m_Layer: 0
+  m_Name: CombatRoomZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1067989486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067989485}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 844482943}
+  - {fileID: 1788722629}
+  - {fileID: 1607809152}
+  - {fileID: 1048997584}
+  - {fileID: 995912065}
+  - {fileID: 912286643}
+  - {fileID: 854227716}
+  - {fileID: 98568188}
+  - {fileID: 1948198340}
+  m_Father: {fileID: 640542418}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1080380371
 GameObject:
   m_ObjectHideFlags: 0
@@ -160672,6 +163152,7 @@ GameObject:
   - component: {fileID: 1081492949}
   - component: {fileID: 1081492948}
   - component: {fileID: 1081492947}
+  - component: {fileID: 1081492950}
   m_Layer: 9
   m_Name: button_blue_up
   m_TagString: Untagged
@@ -160809,6 +163290,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1081492950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081492945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe0b747ca9de5548b20d0e76e48e86d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] K\xEDch ho\u1EA1t C\xF4ng T\u1EAFc"
+  pressedSprite: {fileID: 0}
+  pressedTint: {r: 0.55, g: 0.85, b: 1, a: 1}
+  objectsToEnable:
+  - {fileID: 619633891}
+  objectsToDisable:
+  - {fileID: 1013066359}
+  activatedToastMessage: "\u0110\xE3 k\xEDch ho\u1EA1t c\xF4ng t\u1EAFc n\u01B0\u1EDBc!"
 --- !u!1 &1086600327
 GameObject:
   m_ObjectHideFlags: 0
@@ -176217,6 +178720,7 @@ GameObject:
   - component: {fileID: 1103723506}
   - component: {fileID: 1103723508}
   - component: {fileID: 1103723507}
+  - component: {fileID: 1103723509}
   m_Layer: 9
   m_Name: ui_heart_empty (2)
   m_TagString: Untagged
@@ -176309,6 +178813,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1103723509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103723505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6835c37c3dba414c936ad49adf29ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] Nh\u1EB7t Ch\xECa Kh\xF3a"
+  enableFloatAnimation: 1
+  floatAmplitude: 0.08
+  floatSpeed: 3.2
 --- !u!1 &1105003726
 GameObject:
   m_ObjectHideFlags: 0
@@ -176754,6 +179276,7 @@ GameObject:
   - component: {fileID: 1114975979}
   - component: {fileID: 1114975981}
   - component: {fileID: 1114975980}
+  - component: {fileID: 1114975982}
   m_Layer: 9
   m_Name: ui_heart_empty (3)
   m_TagString: Untagged
@@ -176846,6 +179369,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1114975982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114975978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21d4097e22999047af530b925376b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomId: 0
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] K\xEDch ho\u1EA1t \u1EA4n K\xFD"
+  arrivalOffset: {x: 0, y: -0.75}
+  visitedTint: {r: 0.55, g: 0.8, b: 1, a: 0.88}
 --- !u!1 &1128421076
 GameObject:
   m_ObjectHideFlags: 0
@@ -177196,6 +179737,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1133150904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1133150905}
+  m_Layer: 0
+  m_Name: CombatRoomZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1133150905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133150904}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 60022498}
+  - {fileID: 1270316545}
+  - {fileID: 1874805583}
+  - {fileID: 1139832111}
+  - {fileID: 1522681283}
+  - {fileID: 1225634854}
+  - {fileID: 1179473364}
+  m_Father: {fileID: 2092642724}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1134811462
 GameObject:
   m_ObjectHideFlags: 0
@@ -177584,6 +180163,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1139832110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1139832111}
+  - component: {fileID: 1139832113}
+  - component: {fileID: 1139832112}
+  m_Layer: 0
+  m_Name: CombatRoomZone (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1139832111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139832110}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 50.9, y: 6.48, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1133150905}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1139832112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139832110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 1375252590}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &1139832113
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139832110}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -5.7999706, y: 0.5699003}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 12.054356, y: 6.2401977}
+  m_EdgeRadius: 0
 --- !u!1 &1140898631
 GameObject:
   m_ObjectHideFlags: 0
@@ -178656,8 +181332,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1163387432
 GameObject:
   m_ObjectHideFlags: 0
@@ -179965,6 +182648,103 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.10425186}
   serializedVersion: 2
   m_Radius: 0.5505266
+--- !u!1 &1179473363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1179473364}
+  - component: {fileID: 1179473366}
+  - component: {fileID: 1179473365}
+  m_Layer: 0
+  m_Name: CombatRoomZone1 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1179473364
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179473363}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.8, y: 49.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1133150905}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1179473365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179473363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 18013674}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &1179473366
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179473363}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.237009, y: 0.69272995}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 14.950279, y: 11.320908}
+  m_EdgeRadius: 0
 --- !u!1 &1180895651
 GameObject:
   m_ObjectHideFlags: 0
@@ -181991,6 +184771,105 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashColor: {r: 1, g: 0.3, b: 0.3, a: 1}
   flashDuration: 0.12
+--- !u!1 &1225634853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1225634854}
+  - component: {fileID: 1225634856}
+  - component: {fileID: 1225634855}
+  m_Layer: 0
+  m_Name: CombatRoomZone1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1225634854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225634853}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 29.77, y: 22.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1133150905}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1225634855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225634853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 2084408570}
+  - {fileID: 1445571567}
+  - {fileID: 1942617944}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &1225634856
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225634853}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.1975069, y: -0.22909355}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 16.95083, y: 15.988861}
+  m_EdgeRadius: 0
 --- !u!1 &1226015160
 GameObject:
   m_ObjectHideFlags: 0
@@ -182829,6 +185708,102 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.8575325, y: 1.1830683}
+  m_EdgeRadius: 0
+--- !u!1 &1229519015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1229519016}
+  - component: {fileID: 1229519018}
+  - component: {fileID: 1229519017}
+  m_Layer: 0
+  m_Name: CombatRoomZone1 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1229519016
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229519015}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.9, y: 73.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 214475884}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1229519017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229519015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors: []
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &1229519018
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229519015}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.74096584, y: 2.950882}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 26.20138, y: 20.1026}
   m_EdgeRadius: 0
 --- !u!1 &1234355018
 GameObject:
@@ -185836,6 +188811,103 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8575325, y: 1.1830683}
   m_EdgeRadius: 0
+--- !u!1 &1270316544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1270316545}
+  - component: {fileID: 1270316547}
+  - component: {fileID: 1270316546}
+  m_Layer: 0
+  m_Name: CombatRoomZone (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1270316545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270316544}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.6, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1133150905}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1270316546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270316544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 207936334}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &1270316547
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270316544}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.4048481, y: -2.3481064}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.207466, y: 12.138292}
+  m_EdgeRadius: 0
 --- !u!1 &1272807188
 GameObject:
   m_ObjectHideFlags: 0
@@ -186664,8 +189736,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1277648365
 GameObject:
   m_ObjectHideFlags: 0
@@ -204694,6 +207773,7 @@ GameObject:
   - component: {fileID: 1286701416}
   - component: {fileID: 1286701418}
   - component: {fileID: 1286701417}
+  - component: {fileID: 1286701419}
   m_Layer: 9
   m_Name: ui_heart_empty (8)
   m_TagString: Untagged
@@ -204786,6 +207866,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1286701419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286701415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21d4097e22999047af530b925376b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomId: 2
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] K\xEDch ho\u1EA1t \u1EA4n K\xFD"
+  arrivalOffset: {x: 0, y: -0.75}
+  visitedTint: {r: 0.55, g: 0.8, b: 1, a: 0.88}
 --- !u!1 &1287969329
 GameObject:
   m_ObjectHideFlags: 0
@@ -205533,8 +208631,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1295413349
 GameObject:
   m_ObjectHideFlags: 0
@@ -206620,8 +209725,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1306931996
 GameObject:
   m_ObjectHideFlags: 0
@@ -207222,6 +210334,104 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1320951767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1320951768}
+  - component: {fileID: 1320951770}
+  - component: {fileID: 1320951769}
+  m_Layer: 0
+  m_Name: CombatRoomZone1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1320951768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320951767}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4, y: -20, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 214475884}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1320951769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320951767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 457391211}
+  - {fileID: 1669735099}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &1320951770
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320951767}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.4890747, y: -0.49566746}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19.233356, y: 11.263861}
+  m_EdgeRadius: 0
 --- !u!1 &1321403556
 GameObject:
   m_ObjectHideFlags: 0
@@ -207371,6 +210581,104 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1325114610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1325114611}
+  - component: {fileID: 1325114613}
+  - component: {fileID: 1325114612}
+  m_Layer: 0
+  m_Name: CombatRoomZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1325114611
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325114610}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -21.6, y: 21.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1814995125}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1325114612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325114610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 1428720920}
+  - {fileID: 491552342}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &1325114613
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325114610}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.33581066, y: -0.30776024}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.978403, y: 17.048439}
+  m_EdgeRadius: 0
 --- !u!1 &1325776576
 GameObject:
   m_ObjectHideFlags: 0
@@ -208067,8 +211375,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1346731522
 GameObject:
   m_ObjectHideFlags: 0
@@ -208652,6 +211967,103 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0025138855, y: -0.19668698}
   m_Size: {x: 1.0789614, y: 1.0789616}
   m_Direction: 0
+--- !u!1 &1354497673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1354497674}
+  - component: {fileID: 1354497676}
+  - component: {fileID: 1354497675}
+  m_Layer: 0
+  m_Name: CombatRoomZone (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1354497674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354497673}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -41.2, y: 21.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1814995125}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1354497675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354497673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 1161498204}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &1354497676
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354497673}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.1485577, y: -2.4678836}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 13.793385, y: 6.229266}
+  m_EdgeRadius: 0
 --- !u!1 &1355188048
 GameObject:
   m_ObjectHideFlags: 0
@@ -209580,8 +212992,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1367885472
 GameObject:
   m_ObjectHideFlags: 0
@@ -210707,8 +214126,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1375539923
 GameObject:
   m_ObjectHideFlags: 0
@@ -211294,6 +214720,7 @@ GameObject:
   - component: {fileID: 1383566230}
   - component: {fileID: 1383566232}
   - component: {fileID: 1383566231}
+  - component: {fileID: 1383566233}
   m_Layer: 9
   m_Name: ui_heart_empty (5)
   m_TagString: Untagged
@@ -211386,6 +214813,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1383566233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383566229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21d4097e22999047af530b925376b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomId: 0
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] K\xEDch ho\u1EA1t \u1EA4n K\xFD"
+  arrivalOffset: {x: 0, y: -0.75}
+  visitedTint: {r: 0.55, g: 0.8, b: 1, a: 0.88}
 --- !u!1 &1386281190
 GameObject:
   m_ObjectHideFlags: 0
@@ -211636,6 +215081,105 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashColor: {r: 1, g: 0.3, b: 0.3, a: 1}
   flashDuration: 0.12
+--- !u!1 &1388192071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1388192072}
+  - component: {fileID: 1388192074}
+  - component: {fileID: 1388192073}
+  m_Layer: 0
+  m_Name: CombatRoomZone (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1388192072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388192071}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 47.89, y: 14.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 214475884}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1388192073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388192071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 467303174}
+  - {fileID: 357981492}
+  - {fileID: 1732381683}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &1388192074
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388192071}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -5.909651, y: -1.1658568}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 19.75468, y: 20.88528}
+  m_EdgeRadius: 0
 --- !u!1 &1400996085
 GameObject:
   m_ObjectHideFlags: 0
@@ -211909,6 +215453,155 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashColor: {r: 1, g: 0.3, b: 0.3, a: 1}
   flashDuration: 0.12
+--- !u!1 &1416675982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1416675983}
+  - component: {fileID: 1416675986}
+  - component: {fileID: 1416675985}
+  - component: {fileID: 1416675984}
+  m_Layer: 10
+  m_Name: Gate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1416675983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416675982}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.8, y: 76.4, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2041112998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1416675984
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416675982}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.05, y: 1.04}
+    newSize: {x: 1.05, y: 1.04}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.05, y: 1.04}
+  m_EdgeRadius: 0
+--- !u!114 &1416675985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416675982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 391e0f2d82f8d3642b30bb82ef1305f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseSortingOrder: 5000
+  precision: 100
+  sortingOrderOffset: 0
+  yOffset: 0
+  sortTarget: {fileID: 0}
+  isStatic: 0
+--- !u!212 &1416675986
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416675982}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -2091076917
+  m_SortingLayer: 4
+  m_SortingOrder: -89
+  m_Sprite: {fileID: 21300000, guid: c53e15c0ccb879365ab170728c7ef112, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.05, y: 1.04}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1422815743
 GameObject:
   m_ObjectHideFlags: 0
@@ -212073,8 +215766,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1428720915
 GameObject:
   m_ObjectHideFlags: 0
@@ -212239,8 +215939,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1429654434
 GameObject:
   m_ObjectHideFlags: 0
@@ -213420,8 +217127,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1445627906
 GameObject:
   m_ObjectHideFlags: 0
@@ -213825,8 +217539,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1453384838
 GameObject:
   m_ObjectHideFlags: 0
@@ -214954,8 +218675,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1476942336
 GameObject:
   m_ObjectHideFlags: 0
@@ -216365,6 +220093,105 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashColor: {r: 1, g: 0.3, b: 0.3, a: 1}
   flashDuration: 0.12
+--- !u!1 &1522681282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1522681283}
+  - component: {fileID: 1522681285}
+  - component: {fileID: 1522681284}
+  m_Layer: 0
+  m_Name: CombatRoomZone1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1522681283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522681282}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 38.7, y: -10.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1133150905}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1522681284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522681282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 918032745}
+  - {fileID: 171257165}
+  - {fileID: 958627777}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &1522681285
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522681282}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.1975069, y: 0.1752572}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 16.95083, y: 13.943328}
+  m_EdgeRadius: 0
 --- !u!1 &1524409501
 GameObject:
   m_ObjectHideFlags: 0
@@ -219782,8 +223609,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1584312920
 GameObject:
   m_ObjectHideFlags: 0
@@ -220812,6 +224646,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1607809151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1607809152}
+  - component: {fileID: 1607809154}
+  - component: {fileID: 1607809153}
+  m_Layer: 0
+  m_Name: CombatRoomZone (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1607809152
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607809151}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -53.2, y: 73.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1067989486}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1607809153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607809151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 2069340600}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &1607809154
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607809151}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 3.668272, y: -3.4874382}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 16.832813, y: 5.9599533}
+  m_EdgeRadius: 0
 --- !u!1 &1614116507
 GameObject:
   m_ObjectHideFlags: 0
@@ -220976,8 +224907,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1615092005
 GameObject:
   m_ObjectHideFlags: 0
@@ -221817,8 +225755,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1618350565
 GameObject:
   m_ObjectHideFlags: 0
@@ -278493,6 +282438,155 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1646057498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1646057499}
+  - component: {fileID: 1646057502}
+  - component: {fileID: 1646057501}
+  - component: {fileID: 1646057500}
+  m_Layer: 10
+  m_Name: Gate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1646057499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646057498}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.22, y: 50.89, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2092642724}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1646057500
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646057498}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.05, y: 1.04}
+    newSize: {x: 1.05, y: 1.04}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.05, y: 1.04}
+  m_EdgeRadius: 0
+--- !u!114 &1646057501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646057498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 391e0f2d82f8d3642b30bb82ef1305f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseSortingOrder: 5000
+  precision: 100
+  sortingOrderOffset: 0
+  yOffset: 0
+  sortTarget: {fileID: 0}
+  isStatic: 0
+--- !u!212 &1646057502
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646057498}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -2091076917
+  m_SortingLayer: 4
+  m_SortingOrder: -89
+  m_Sprite: {fileID: 21300000, guid: c53e15c0ccb879365ab170728c7ef112, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.05, y: 1.04}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1647015453
 GameObject:
   m_ObjectHideFlags: 0
@@ -278743,6 +282837,7 @@ GameObject:
   - component: {fileID: 1647661550}
   - component: {fileID: 1647661552}
   - component: {fileID: 1647661551}
+  - component: {fileID: 1647661553}
   m_Layer: 9
   m_Name: ui_heart_empty (1)
   m_TagString: Untagged
@@ -278835,6 +282930,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1647661553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647661549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6835c37c3dba414c936ad49adf29ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] Nh\u1EB7t Ch\xECa Kh\xF3a"
+  enableFloatAnimation: 1
+  floatAmplitude: 0.08
+  floatSpeed: 3.2
 --- !u!1 &1652247934
 GameObject:
   m_ObjectHideFlags: 0
@@ -279148,8 +283261,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1658604936
 GameObject:
   m_ObjectHideFlags: 0
@@ -279613,8 +283733,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!61 &1669735100
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -280716,8 +284843,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1674740817
 GameObject:
   m_ObjectHideFlags: 0
@@ -280904,6 +285038,7 @@ GameObject:
   - component: {fileID: 1697597948}
   - component: {fileID: 1697597950}
   - component: {fileID: 1697597949}
+  - component: {fileID: 1697597951}
   m_Layer: 9
   m_Name: ui_heart_empty
   m_TagString: Untagged
@@ -280996,6 +285131,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1697597951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697597947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6835c37c3dba414c936ad49adf29ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] Nh\u1EB7t Ch\xECa Kh\xF3a"
+  enableFloatAnimation: 1
+  floatAmplitude: 0.08
+  floatSpeed: 3.2
 --- !u!1 &1702513656
 GameObject:
   m_ObjectHideFlags: 0
@@ -281160,8 +285313,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1702553773
 GameObject:
   m_ObjectHideFlags: 0
@@ -281559,8 +285719,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1714789544
 GameObject:
   m_ObjectHideFlags: 0
@@ -282804,8 +286971,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!61 &1732381684
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -284973,8 +289147,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1755475481
 GameObject:
   m_ObjectHideFlags: 0
@@ -311296,6 +315477,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashColor: {r: 1, g: 0.3, b: 0.3, a: 1}
   flashDuration: 0.12
+--- !u!1 &1781975984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1781975985}
+  m_Layer: 0
+  m_Name: 'BossRoomSpawnPoint '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1781975985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781975984}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.9, y: 68.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2041112998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1782254095
 GameObject:
   m_ObjectHideFlags: 0
@@ -320504,6 +324716,104 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1788722628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1788722629}
+  - component: {fileID: 1788722631}
+  - component: {fileID: 1788722630}
+  m_Layer: 0
+  m_Name: CombatRoomZone (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1788722629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788722628}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1067989486}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1788722630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788722628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 283520711}
+  - {fileID: 27851372}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &1788722631
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788722628}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.55337906, y: -1.4470267}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 21.839596, y: 15.128915}
+  m_EdgeRadius: 0
 --- !u!1 &1792025659
 GameObject:
   m_ObjectHideFlags: 0
@@ -320668,8 +324978,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1798350804
 GameObject:
   m_ObjectHideFlags: 0
@@ -321346,6 +325663,7 @@ GameObject:
   - component: {fileID: 1801693478}
   - component: {fileID: 1801693477}
   - component: {fileID: 1801693476}
+  - component: {fileID: 1801693479}
   m_Layer: 9
   m_Name: button_blue_up (1)
   m_TagString: Untagged
@@ -321483,6 +325801,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1801693479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801693474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe0b747ca9de5548b20d0e76e48e86d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] K\xEDch ho\u1EA1t C\xF4ng T\u1EAFc"
+  pressedSprite: {fileID: 0}
+  pressedTint: {r: 0.55, g: 0.85, b: 1, a: 1}
+  objectsToEnable:
+  - {fileID: 631441116}
+  objectsToDisable: []
+  activatedToastMessage: "\u0110\xE3 k\xEDch ho\u1EA1t c\xF4ng t\u1EAFc n\u01B0\u1EDBc!"
 --- !u!1 &1802636881
 GameObject:
   m_ObjectHideFlags: 0
@@ -322437,8 +326776,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
+--- !u!1 &1814995124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1814995125}
+  m_Layer: 0
+  m_Name: CombatRoomZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1814995125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814995124}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1325114611}
+  - {fileID: 1354497674}
+  - {fileID: 394766804}
+  - {fileID: 635499252}
+  - {fileID: 1915588211}
+  - {fileID: 999267989}
+  - {fileID: 989932167}
+  - {fileID: 794757293}
+  m_Father: {fileID: 1861357464}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1817989724
 GameObject:
   m_ObjectHideFlags: 0
@@ -324442,8 +328827,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1841606215
 GameObject:
   m_ObjectHideFlags: 0
@@ -325728,8 +330120,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1861357463
 GameObject:
   m_ObjectHideFlags: 0
@@ -325739,6 +330138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1861357464}
+  - component: {fileID: 1861357465}
   m_Layer: 0
   m_Name: Dungeon2
   m_TagString: Untagged
@@ -325759,6 +330159,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 808065060}
   - {fileID: 1524409502}
   - {fileID: 1169030889}
   - {fileID: 954765435}
@@ -325767,8 +330168,29 @@ Transform:
   - {fileID: 339252309}
   - {fileID: 130319439}
   - {fileID: 1012491139}
+  - {fileID: 956170239}
+  - {fileID: 1814995125}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1861357465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861357463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6600448dd187584292824eaf869755b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLabel: "T\u1EA7ng 2"
+  floorKeys:
+  - {fileID: 1697597951}
+  - {fileID: 780272513}
+  - {fileID: 2043003289}
+  bossDoor: {fileID: 788765878}
+  autoOpenBossDoorOnComplete: 0
 --- !u!1 &1862971486
 GameObject:
   m_ObjectHideFlags: 0
@@ -326019,6 +330441,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashColor: {r: 1, g: 0.3, b: 0.3, a: 1}
   flashDuration: 0.12
+--- !u!1 &1863151740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1863151741}
+  m_Layer: 0
+  m_Name: CombatRoomZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1863151741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863151740}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 477456646}
+  - {fileID: 584743562}
+  m_Father: {fileID: 1972645438}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1864840997
 GameObject:
   m_ObjectHideFlags: 0
@@ -326183,8 +330638,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1864974513
 GameObject:
   m_ObjectHideFlags: 0
@@ -330467,6 +334929,103 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1874805582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1874805583}
+  - component: {fileID: 1874805585}
+  - component: {fileID: 1874805584}
+  m_Layer: 0
+  m_Name: CombatRoomZone (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1874805583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874805582}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.8, y: 6.48, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1133150905}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1874805584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874805582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 1451003283}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &1874805585
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1874805582}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3.8300047, y: -1.9388611}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.269602, y: 5.196283}
+  m_EdgeRadius: 0
 --- !u!1 &1875495026
 GameObject:
   m_ObjectHideFlags: 0
@@ -332283,6 +336842,104 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!1 &1915588210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1915588211}
+  - component: {fileID: 1915588213}
+  - component: {fileID: 1915588212}
+  m_Layer: 0
+  m_Name: CombatRoomZone1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1915588211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915588210}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 38.7, y: 43.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1814995125}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1915588212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915588210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 1292948999}
+  - {fileID: 909915538}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &1915588213
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915588210}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.1404619, y: -0.10334301}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 15.06492, y: 14.500528}
+  m_EdgeRadius: 0
 --- !u!1 &1919311188
 GameObject:
   m_ObjectHideFlags: 0
@@ -333423,8 +338080,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1929311085
 GameObject:
   m_ObjectHideFlags: 0
@@ -334184,8 +338848,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1943478806
 GameObject:
   m_ObjectHideFlags: 0
@@ -334822,8 +339493,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &1946400180
 GameObject:
   m_ObjectHideFlags: 0
@@ -334953,6 +339631,104 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1948198339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1948198340}
+  - component: {fileID: 1948198342}
+  - component: {fileID: 1948198341}
+  m_Layer: 0
+  m_Name: CombatRoomZone1 (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1948198340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948198339}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.3, y: 80.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1067989486}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1948198341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948198339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0325228c4a63e3a4c8b1b758936d6dc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors:
+  - {fileID: 1470616097}
+  - {fileID: 1792025664}
+  detectEnemiesInsideBox: 1
+  explicitEnemies: []
+  openDoorsOnClear: 1
+  roomDisplayName: 
+  showStatusToast: 1
+--- !u!61 &1948198342
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948198339}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.2800479, y: -0.43429184}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 32.015434, y: 19.01934}
+  m_EdgeRadius: 0
 --- !u!1 &1951140532
 GameObject:
   m_ObjectHideFlags: 0
@@ -335292,7 +340068,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2091076917
   m_SortingLayer: 4
-  m_SortingOrder: -1460
+  m_SortingOrder: 6010
   m_Sprite: {fileID: -2931386236869399594, guid: 25bb286d978567c4e977a30d85bb08d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -335313,7 +340089,7 @@ Transform:
   m_GameObject: {fileID: 1959094097}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 64.6, z: 0}
+  m_LocalPosition: {x: -21.2, y: -10.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -335413,7 +340189,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0058951974, y: 0.69057155}
+  m_Offset: {x: 0.0058951974, y: 0.22410822}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.12}
@@ -335424,7 +340200,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6972002, y: 1.4722667}
+  m_Size: {x: 0.6972002, y: 0.53934}
   m_EdgeRadius: 0
 --- !u!1 &1959902870
 GameObject:
@@ -335601,6 +340377,155 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1966644534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1966644535}
+  - component: {fileID: 1966644538}
+  - component: {fileID: 1966644537}
+  - component: {fileID: 1966644536}
+  m_Layer: 10
+  m_Name: Gate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1966644535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966644534}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.1, y: 48.2, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 640542418}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1966644536
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966644534}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.05, y: 1.04}
+    newSize: {x: 1.05, y: 1.04}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.05, y: 1.04}
+  m_EdgeRadius: 0
+--- !u!114 &1966644537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966644534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 391e0f2d82f8d3642b30bb82ef1305f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseSortingOrder: 5000
+  precision: 100
+  sortingOrderOffset: 0
+  yOffset: 0
+  sortTarget: {fileID: 0}
+  isStatic: 0
+--- !u!212 &1966644538
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966644534}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -2091076917
+  m_SortingLayer: 4
+  m_SortingOrder: 180
+  m_Sprite: {fileID: 21300000, guid: c53e15c0ccb879365ab170728c7ef112, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.05, y: 1.04}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1968323079
 GameObject:
   m_ObjectHideFlags: 0
@@ -335755,6 +340680,155 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1969560236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1969560237}
+  - component: {fileID: 1969560240}
+  - component: {fileID: 1969560239}
+  - component: {fileID: 1969560238}
+  m_Layer: 10
+  m_Name: Gate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1969560237
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969560236}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.1, y: 63.2, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1972645438}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1969560238
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969560236}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.05, y: 1.04}
+    newSize: {x: 1.05, y: 1.04}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.05, y: 1.04}
+  m_EdgeRadius: 0
+--- !u!114 &1969560239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969560236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 391e0f2d82f8d3642b30bb82ef1305f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseSortingOrder: 5000
+  precision: 100
+  sortingOrderOffset: 0
+  yOffset: 0
+  sortTarget: {fileID: 0}
+  isStatic: 0
+--- !u!212 &1969560240
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969560236}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -2091076917
+  m_SortingLayer: 4
+  m_SortingOrder: -89
+  m_Sprite: {fileID: 21300000, guid: c53e15c0ccb879365ab170728c7ef112, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.05, y: 1.04}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1972645437
 GameObject:
   m_ObjectHideFlags: 0
@@ -335788,6 +340862,9 @@ Transform:
   - {fileID: 1838801675}
   - {fileID: 1400996086}
   - {fileID: 951922232}
+  - {fileID: 1969560237}
+  - {fileID: 486294214}
+  - {fileID: 1863151741}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1977549221
@@ -336226,6 +341303,7 @@ GameObject:
   - component: {fileID: 1978923980}
   - component: {fileID: 1978923982}
   - component: {fileID: 1978923981}
+  - component: {fileID: 1978923983}
   m_Layer: 9
   m_Name: ui_heart_empty (2)
   m_TagString: Untagged
@@ -336318,6 +341396,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1978923983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978923979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21d4097e22999047af530b925376b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomId: 3
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] K\xEDch ho\u1EA1t \u1EA4n K\xFD"
+  arrivalOffset: {x: 0, y: -0.75}
+  visitedTint: {r: 0.55, g: 0.8, b: 1, a: 0.88}
 --- !u!1 &1980749573
 GameObject:
   m_ObjectHideFlags: 0
@@ -336818,6 +341914,7 @@ GameObject:
   - component: {fileID: 1985222212}
   - component: {fileID: 1985222214}
   - component: {fileID: 1985222213}
+  - component: {fileID: 1985222215}
   m_Layer: 9
   m_Name: ui_heart_empty (2)
   m_TagString: Untagged
@@ -336910,6 +342007,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1985222215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985222211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21d4097e22999047af530b925376b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomId: 1
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] K\xEDch ho\u1EA1t \u1EA4n K\xFD"
+  arrivalOffset: {x: 0, y: -0.75}
+  visitedTint: {r: 0.55, g: 0.8, b: 1, a: 0.88}
 --- !u!1 &1986012041
 GameObject:
   m_ObjectHideFlags: 0
@@ -338707,8 +343822,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!61 &2031922596
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -339525,6 +344647,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2041112998}
+  - component: {fileID: 2041112999}
   m_Layer: 0
   m_Name: Dungeon3
   m_TagString: Untagged
@@ -339553,8 +344676,41 @@ Transform:
   - {fileID: 995821695}
   - {fileID: 2040751049}
   - {fileID: 1732623805}
+  - {fileID: 161288919}
+  - {fileID: 1416675983}
+  - {fileID: 214475884}
+  - {fileID: 1781975985}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2041112999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041112997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6744a1daf865a9346b78f8632b112c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allKeys:
+  - {fileID: 604159214}
+  - {fileID: 464973255}
+  - {fileID: 1978923983}
+  - {fileID: 1114975982}
+  - {fileID: 71793050}
+  - {fileID: 1383566233}
+  - {fileID: 949085207}
+  - {fileID: 908991323}
+  - {fileID: 1985222215}
+  - {fileID: 355464292}
+  - {fileID: 842502365}
+  - {fileID: 1286701419}
+  bossRoomSpawnPoint: {fileID: 1781975985}
+  bossPortalCount: 3
+  teleportCooldown: 0.65
+  logMappingToConsole: 1
 --- !u!1 &2043003285
 GameObject:
   m_ObjectHideFlags: 0
@@ -339566,6 +344722,7 @@ GameObject:
   - component: {fileID: 2043003286}
   - component: {fileID: 2043003288}
   - component: {fileID: 2043003287}
+  - component: {fileID: 2043003289}
   m_Layer: 9
   m_Name: ui_heart_empty (2)
   m_TagString: Untagged
@@ -339658,6 +344815,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2043003289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043003285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6835c37c3dba414c936ad49adf29ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactRadius: 1.4
+  interactKey: 102
+  promptText: "Nh\u1EA5n [F] Nh\u1EB7t Ch\xECa Kh\xF3a"
+  enableFloatAnimation: 1
+  floatAmplitude: 0.08
+  floatSpeed: 3.2
 --- !u!1 &2043311908
 GameObject:
   m_ObjectHideFlags: 0
@@ -340655,8 +345830,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &2074276868
 GameObject:
   m_ObjectHideFlags: 0
@@ -341537,8 +346719,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &2085833854
 GameObject:
   m_ObjectHideFlags: 0
@@ -342251,6 +347440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2092642724}
+  - component: {fileID: 2092642725}
   m_Layer: 0
   m_Name: Dungeon1
   m_TagString: Untagged
@@ -342279,8 +347469,30 @@ Transform:
   - {fileID: 567305982}
   - {fileID: 359644059}
   - {fileID: 272992832}
+  - {fileID: 58092846}
+  - {fileID: 1646057499}
+  - {fileID: 1133150905}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2092642725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092642723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6600448dd187584292824eaf869755b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floorLabel: "T\u1EA7ng 1"
+  floorKeys:
+  - {fileID: 120294973}
+  - {fileID: 1647661553}
+  - {fileID: 1103723509}
+  bossDoor: {fileID: 18013674}
+  autoOpenBossDoorOnComplete: 0
 --- !u!1 &2094059573
 GameObject:
   m_ObjectHideFlags: 0
@@ -343348,8 +348560,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRadius: 2
   interactKey: 102
+  requireFacingDoor: 1
+  lockedUntilUnlocked: 0
+  lockedPromptMessage: "C\u1EA7n \u0111\u1EE7 Ch\xECa Kh\xF3a \u0111\u1EC3 m\u1EDF!"
+  sealedPromptMessage: "Di\u1EC7t h\u1EBFt qu\xE1i \u0111\u1EC3 m\u1EDF c\u1EEDa!"
   openFrames: []
   frameRate: 0.08
+  hideSpriteWhenOpen: 1
+  lockedTintColor: {r: 1, g: 0.82, b: 0.35, a: 1}
+  sealedTintColor: {r: 1, g: 0.32, b: 0.32, a: 1}
 --- !u!1 &2115056799
 GameObject:
   m_ObjectHideFlags: 0
@@ -344223,7 +349442,7 @@ Transform:
   m_GameObject: {fileID: 2124119243}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.15, y: -8.35, z: 0}
+  m_LocalPosition: {x: -29.55, y: -8.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -344287,7 +349506,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2091076917
   m_SortingLayer: 4
-  m_SortingOrder: 5835
+  m_SortingOrder: 5805
   m_Sprite: {fileID: -2021140417, guid: 7a1bc13ce279481409fc592b27383073, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
