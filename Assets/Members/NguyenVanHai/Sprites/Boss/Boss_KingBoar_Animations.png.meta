@@ -1,0 +1,800 @@
+fileFormatVersion: 2
+guid: 50176dacd72a0be4ab0a29ea1db7fb71
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 2124
+        width: 234
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cc707ea33c1c4c4a99f4035b2a9cbe9
+      internalID: -1904840920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_1
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 2124
+        width: 243
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b8d291e535e02f4886cb7ec2df588d4
+      internalID: -2014926222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_2
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 2124
+        width: 245
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a15d808c7235ac1438b76388ed5d9d30
+      internalID: -923343212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_3
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 2143
+        width: 228
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f05f290c14cd9c46879e50a8ccba98e
+      internalID: -876360498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_4
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1804
+        width: 224
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 830b7c831167d0f47a60a98dec12f452
+      internalID: 45934884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_5
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 1804
+        width: 243
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a2d033824f0654b9f7db731eca058d
+      internalID: -692872795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_6
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 1804
+        width: 238
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8be630dee46f634b9b05ad84b3d654c
+      internalID: 2020562995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_7
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 1804
+        width: 246
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2512c3da7c3681b4ca652a8e0b1181df
+      internalID: 2069044433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_8
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 1678
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe1c10bf16bb1b6458395c48e7f091de
+      internalID: 2097308973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_9
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1484
+        width: 238
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbd24a76fcf35e4e8c0b5c8bdb7ddcd
+      internalID: 884997045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_10
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 1504
+        width: 251
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 193d352cb44742f4d8e9cc5b6172e82b
+      internalID: -1259799199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_11
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 1486
+        width: 251
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc1d0e29293fe0d4ca23681482d1df41
+      internalID: 523801658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_12
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 1484
+        width: 248
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0846c4f0e8c438f478bd260cd99caee4
+      internalID: -501392800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_13
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 1177
+        width: 233
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7364a85a3d1374543b887573ce66207d
+      internalID: 625700067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_14
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 1177
+        width: 244
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7db2047d93be444aa31b43d3ec20b28
+      internalID: -796931342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_15
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 1177
+        width: 246
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2848680ff751e1478d63c72ab182da9
+      internalID: -121783140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_16
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1195
+        width: 228
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aa776fc4cc4b7b429c385ce1239439f
+      internalID: -1669434654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_17
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 846
+        width: 228
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5acca300a82a5774abd32171ce797f5c
+      internalID: -449177283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_18
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 827
+        width: 245
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e8af046e07d404ba594ba32b30412d
+      internalID: 1529820481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_19
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 827
+        width: 244
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2432381bc1b04a844acc0770d20f2ecc
+      internalID: -178082033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_20
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 827
+        width: 234
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e620ecad60f47ea4f9cc1eefe404bd3a
+      internalID: 661928781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_21
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 506
+        width: 247
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e12037edefd91540a6a161a25c30812
+      internalID: -888804300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_22
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 506
+        width: 238
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 312c84e096807e746ad391fa7f760655
+      internalID: 1502706263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_23
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 506
+        width: 244
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be321788a3541df40816a3be0269e1f1
+      internalID: -1742156867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_24
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 506
+        width: 224
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8530ceb36e29b74bba3248ed0a45fec
+      internalID: 896491602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_25
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 197
+        width: 248
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6bdf2a38bcfca41ad1258a772487df
+      internalID: -599790817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_26
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 187
+        width: 251
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e795138faef9d47aa26db81982e4be
+      internalID: -1966505563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_27
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 207
+        width: 251
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90710560b02089744aa830ac9e9f8630
+      internalID: 621697715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_28
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 187
+        width: 238
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 164676c688bd2ce45afcaa31cab1af9e
+      internalID: 1967715352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_KingBoar_Animations_29
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 187
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235aab2201bd27e4c9233f6edb018045
+      internalID: 389747019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b7d9e370f6d5bde4bbddf12808c5b817
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Boss_KingBoar_Animations_0: -1904840920
+      Boss_KingBoar_Animations_1: -2014926222
+      Boss_KingBoar_Animations_10: -1259799199
+      Boss_KingBoar_Animations_11: 523801658
+      Boss_KingBoar_Animations_12: -501392800
+      Boss_KingBoar_Animations_13: 625700067
+      Boss_KingBoar_Animations_14: -796931342
+      Boss_KingBoar_Animations_15: -121783140
+      Boss_KingBoar_Animations_16: -1669434654
+      Boss_KingBoar_Animations_17: -449177283
+      Boss_KingBoar_Animations_18: 1529820481
+      Boss_KingBoar_Animations_19: -178082033
+      Boss_KingBoar_Animations_2: -923343212
+      Boss_KingBoar_Animations_20: 661928781
+      Boss_KingBoar_Animations_21: -888804300
+      Boss_KingBoar_Animations_22: 1502706263
+      Boss_KingBoar_Animations_23: -1742156867
+      Boss_KingBoar_Animations_24: 896491602
+      Boss_KingBoar_Animations_25: -599790817
+      Boss_KingBoar_Animations_26: -1966505563
+      Boss_KingBoar_Animations_27: 621697715
+      Boss_KingBoar_Animations_28: 1967715352
+      Boss_KingBoar_Animations_29: 389747019
+      Boss_KingBoar_Animations_3: -876360498
+      Boss_KingBoar_Animations_4: 45934884
+      Boss_KingBoar_Animations_5: -692872795
+      Boss_KingBoar_Animations_6: 2020562995
+      Boss_KingBoar_Animations_7: 2069044433
+      Boss_KingBoar_Animations_8: 2097308973
+      Boss_KingBoar_Animations_9: 884997045
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

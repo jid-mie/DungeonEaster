@@ -27,7 +27,8 @@ namespace NguyenVanHai.UI
         private GameObject bossBarPanel;
         private Image bossBarFill;
         private Text bossNameText;
-        private BossKingBoarAI activeBoss;
+        private EnemyBase activeBoss;
+        private EnemyBase secondaryBoss;
 
         private void Awake()
         {
@@ -50,8 +51,21 @@ namespace NguyenVanHai.UI
                 UpdatePotion(player.PotionCount);
             }
 
-            BossKingBoarAI.OnBossSpawned += ShowBossBar;
+            BossGiantSnakeAI.OnBossSpawned += HandleSnakeSpawned;
+            BossGiantSnakeAI.OnBossDefeated += HideBossBar;
+
+            BossKingBoarAI.OnBossSpawned += HandleBoarSpawned;
             BossKingBoarAI.OnBossDefeated += HideBossBar;
+
+            BossStoneGolemAI.OnBossSpawned += HandleGolemSpawned;
+            BossStoneGolemAI.OnBossDefeated += HideBossBar;
+
+            BossSwordKnightAI.OnBossSpawned += HandleSwordKnightSpawned;
+            BossSpearKnightAI.OnBossSpawned += HandleSpearKnightSpawned;
+            BossSwordKnightAI.OnDualBossDefeated += HideBossBar;
+
+            BossGwynAI.OnBossSpawned += HandleGwynSpawned;
+            BossGwynAI.OnBossDefeated += HideBossBar;
         }
 
         private void OnDestroy()
@@ -64,15 +78,47 @@ namespace NguyenVanHai.UI
                 player.OnPotionCountChanged -= UpdatePotion;
             }
 
-            BossKingBoarAI.OnBossSpawned -= ShowBossBar;
+            BossGiantSnakeAI.OnBossSpawned -= HandleSnakeSpawned;
+            BossGiantSnakeAI.OnBossDefeated -= HideBossBar;
+
+            BossKingBoarAI.OnBossSpawned -= HandleBoarSpawned;
             BossKingBoarAI.OnBossDefeated -= HideBossBar;
+
+            BossStoneGolemAI.OnBossSpawned -= HandleGolemSpawned;
+            BossStoneGolemAI.OnBossDefeated -= HideBossBar;
+
+            BossSwordKnightAI.OnBossSpawned -= HandleSwordKnightSpawned;
+            BossSpearKnightAI.OnBossSpawned -= HandleSpearKnightSpawned;
+            BossSwordKnightAI.OnDualBossDefeated -= HideBossBar;
+
+            BossGwynAI.OnBossSpawned -= HandleGwynSpawned;
+            BossGwynAI.OnBossDefeated -= HideBossBar;
         }
 
         private void Update()
         {
-            if (activeBoss != null && activeBoss.IsAlive && bossBarFill != null)
+            if (bossBarFill == null || bossBarPanel == null || !bossBarPanel.activeSelf) return;
+
+            if (activeBoss != null && secondaryBoss != null)
             {
-                bossBarFill.fillAmount = Mathf.Lerp(bossBarFill.fillAmount, activeBoss.HealthPercent, Time.deltaTime * 5f);
+                if (!activeBoss.IsAlive && !secondaryBoss.IsAlive)
+                {
+                    HideBossBar();
+                    return;
+                }
+                float p1 = activeBoss.IsAlive ? activeBoss.HealthPercent : 0f;
+                float p2 = secondaryBoss.IsAlive ? secondaryBoss.HealthPercent : 0f;
+                float combined = (p1 + p2) * 0.5f;
+                bossBarFill.fillAmount = Mathf.Lerp(bossBarFill.fillAmount, combined, Time.deltaTime * 6f);
+            }
+            else if (activeBoss != null)
+            {
+                if (!activeBoss.IsAlive)
+                {
+                    HideBossBar();
+                    return;
+                }
+                bossBarFill.fillAmount = Mathf.Lerp(bossBarFill.fillAmount, activeBoss.HealthPercent, Time.deltaTime * 6f);
             }
         }
 
@@ -111,15 +157,44 @@ namespace NguyenVanHai.UI
             }
         }
 
-        private void ShowBossBar(BossKingBoarAI boss)
+        private void HandleSnakeSpawned(BossGiantSnakeAI boss) => ActivateSingleBossBar(boss, "👑 RẮN KHỔNG LỒ - CHÚA TỂ HANG TỐI");
+        private void HandleBoarSpawned(BossKingBoarAI boss) => ActivateSingleBossBar(boss, "👑 KING BOAR - BÁ CHỦ ĐẦM LẦY");
+        private void HandleGolemSpawned(BossStoneGolemAI boss) => ActivateSingleBossBar(boss, "👑 NGƯỜI ĐÁ KHỔNG LỒ - HỘ VỆ BĂNG NGUYÊN");
+        private void HandleGwynSpawned(BossGwynAI boss) => ActivateSingleBossBar(boss, "👑 GWYN - THẦN SÁNG TẠO");
+
+        private void HandleSwordKnightSpawned(BossSwordKnightAI sword)
+        {
+            var spear = FindObjectOfType<BossSpearKnightAI>();
+            ActivateDualBossBar(sword, spear, "⚔️ ĐÔI HIỆP SĨ - SONG KIẾM CẤM VỆ");
+        }
+
+        private void HandleSpearKnightSpawned(BossSpearKnightAI spear)
+        {
+            var sword = FindObjectOfType<BossSwordKnightAI>();
+            ActivateDualBossBar(sword != null ? (EnemyBase)sword : spear, sword != null ? spear : null, "⚔️ ĐÔI HIỆP SĨ - SONG KIẾM CẤM VỆ");
+        }
+
+        private void ActivateSingleBossBar(EnemyBase boss, string title)
         {
             activeBoss = boss;
+            secondaryBoss = null;
+            if (bossNameText != null) bossNameText.text = title;
+            if (bossBarFill != null && boss != null) bossBarFill.fillAmount = boss.HealthPercent;
+            if (bossBarPanel != null) bossBarPanel.SetActive(true);
+        }
+
+        private void ActivateDualBossBar(EnemyBase primary, EnemyBase secondary, string title)
+        {
+            activeBoss = primary;
+            secondaryBoss = secondary;
+            if (bossNameText != null) bossNameText.text = title;
             if (bossBarPanel != null) bossBarPanel.SetActive(true);
         }
 
         private void HideBossBar()
         {
             activeBoss = null;
+            secondaryBoss = null;
             if (bossBarPanel != null) bossBarPanel.SetActive(false);
         }
 

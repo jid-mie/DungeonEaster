@@ -192,12 +192,46 @@ public class HunterPlayer : MonoBehaviour
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         rb.sleepMode = RigidbodySleepMode2D.NeverSleep;
 
+        LoadStatsFromJson();
+
         currentHealth = maxHealth;
         currentStamina = maxStamina;
         originalMoveSpeed = moveSpeed;
 
         InitializeAnimatorHashes();
         InitializeBowVisual();
+    }
+
+    private void LoadStatsFromJson()
+    {
+        var cfg = NguyenVanHai.Data.DungeonCombatDatabase.GetPlayerConfig();
+        if (cfg == null) return;
+
+        maxHealth = cfg.maxHealth;
+        maxStamina = cfg.maxStamina;
+        dashStaminaCost = cfg.dashStaminaCost;
+        staminaRegenRate = cfg.staminaRegenRate;
+        staminaRegenDelay = cfg.staminaRegenDelay;
+
+        moveSpeed = cfg.moveSpeed;
+        dashSpeed = cfg.dashSpeed;
+        dashDuration = cfg.dashDuration;
+        dashCooldown = cfg.dashCooldown;
+
+        swordAttackRange = cfg.swordAttackRange;
+        swordArcAngle = cfg.swordArcAngle;
+        swordLightDamage = cfg.swordLightDamage;
+        swordHeavyDamage = cfg.swordHeavyDamage;
+        swordSkillDamage = cfg.swordSkillDamage;
+        comboResetTime = cfg.comboResetTime;
+
+        arrowSpeed = cfg.arrowSpeed;
+        maxChargeTime = cfg.maxChargeTime;
+
+        potionCount = cfg.potionCount;
+        potionHealAmount = cfg.potionHealAmount;
+        interactionDistance = cfg.interactionDistance;
+        interactionRadius = cfg.interactionRadius;
     }
 
     private void Start()
@@ -505,7 +539,10 @@ public class HunterPlayer : MonoBehaviour
         lastFacingDirection = shootDir;
         UpdateAnimator(shootDir, false); // Quay người theo hướng ngắm chuột, không vung kiếm
 
-        SpawnArrow(shootDir, arrowSpeed, 15f, false);
+        var cfg = NguyenVanHai.Data.DungeonCombatDatabase.GetPlayerConfig();
+        float quickDmg = cfg != null ? cfg.bowQuickDamage : 15f;
+
+        SpawnArrow(shootDir, arrowSpeed, quickDmg, false);
         StartCoroutine(ResetAttackState(0.3f));
     }
 
@@ -516,8 +553,12 @@ public class HunterPlayer : MonoBehaviour
         lastFacingDirection = shootDir;
         UpdateAnimator(shootDir, false); // Quay người theo hướng ngắm chuột, không vung kiếm
 
+        var cfg = NguyenVanHai.Data.DungeonCombatDatabase.GetPlayerConfig();
+        float minChargeDmg = cfg != null ? cfg.bowChargeMinDamage : 20f;
+        float maxChargeDmg = cfg != null ? cfg.bowChargeMaxDamage : 50f;
+
         float chargeRatio = Mathf.Clamp01(chargeTime / maxChargeTime);
-        float damage = Mathf.Lerp(20f, 50f, chargeRatio);
+        float damage = Mathf.Lerp(minChargeDmg, maxChargeDmg, chargeRatio);
         float speed = Mathf.Lerp(arrowSpeed, arrowSpeed * 1.5f, chargeRatio);
 
         SpawnArrow(shootDir, speed, damage, chargeRatio >= 0.8f);
@@ -531,8 +572,11 @@ public class HunterPlayer : MonoBehaviour
         lastFacingDirection = shootDir;
         UpdateAnimator(shootDir, false); // Quay người theo hướng ngắm chuột, không vung kiếm
 
+        var cfg = NguyenVanHai.Data.DungeonCombatDatabase.GetPlayerConfig();
+        float skillDmg = cfg != null ? cfg.bowSkillDamage : 40f;
+
         // Mũi tên phép xuyên thấu
-        SpawnArrow(shootDir, arrowSpeed * 1.4f, 40f, true);
+        SpawnArrow(shootDir, arrowSpeed * 1.4f, skillDmg, true);
         StartCoroutine(ResetAttackState(0.4f));
     }
 

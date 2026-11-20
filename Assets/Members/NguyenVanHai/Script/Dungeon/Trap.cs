@@ -54,6 +54,23 @@ public class Trap : MonoBehaviour
 
         contactFilter = new ContactFilter2D();
         contactFilter.useTriggers = true;
+
+        LoadStatsFromJson();
+    }
+
+    private void LoadStatsFromJson()
+    {
+        var cfg = NguyenVanHai.Data.DungeonCombatDatabase.GetTrapConfig();
+        if (cfg == null) return;
+
+        spikeDamage = cfg.spikeDamage;
+        spikeCycleTime = cfg.spikeCycleTime;
+        spikeActiveTime = cfg.spikeActiveTime;
+        standingTickInterval = cfg.standingTickInterval;
+
+        poisonDamagePerTick = cfg.poisonDamagePerTick;
+        poisonTickInterval = cfg.poisonTickInterval;
+        slowMultiplier = cfg.slowMultiplier;
     }
 
     private void Start()

@@ -4,36 +4,46 @@ using UnityEngine;
 namespace NguyenVanHai.Enemies
 {
     /// <summary>
-    /// AI Slime Nhầy (Đột kích / Nhảy vồ) theo bảng cân bằng 7.3 TaiLieu.md:
+    /// AI Slime Nhầy (Đột kích / Nhảy vồ):
     /// - Máu 40, Tốc độ 2.5, Sát thương 8.
-    /// - Nhảy chồm về phía người chơi khi vào cự ly 2 units, có báo hiệu telegraph 0.4s.
-    /// - 100% rơi: Chất nhầy dẻo.
+    /// - Trước khi nhảy vồ: Đứng yên hóa Đỏ Rực Cảnh Báo trong 0.80s.
+    /// - Sau khi nhảy vồ: Đứng nghỉ tại chỗ 1.25s rồi mới truy đuổi tiếp.
     /// </summary>
     public class SlimeAI : EnemyBase
     {
         [Header("--- Cơ chế Nhảy vồ (Lunge) ---")]
-        [SerializeField] private float lungeSpeed = 7.5f;
-        [SerializeField] private float lungeDuration = 0.25f;
-        [SerializeField] private float telegraphTime = 0.4f;
+        [SerializeField] private float lungeSpeed = 7.0f;
+        [SerializeField] private float lungeDuration = 0.28f;
+        [SerializeField] private float telegraphTime = 0.80f;
+        [SerializeField] private float restAfterAttack = 1.25f;
 
         protected override void Awake()
         {
-            maxHealth = 40f;
-            moveSpeed = 2.5f;
-            attackDamage = 8f;
-            attackRange = 2.0f;
-            attackCooldown = 1.0f;
-
-            dropItemId = "slime_gel";
-            dropItemName = "Chất nhầy dẻo";
-            dropCount = 1;
+            isBoss = false;
+            var cfg = NguyenVanHai.Data.DungeonCombatDatabase.GetEnemy("slime");
+            if (cfg != null)
+            {
+                maxHealth = cfg.maxHealth;
+                moveSpeed = cfg.moveSpeed;
+                attackDamage = cfg.attackDamage;
+                detectRange = cfg.detectRange;
+                attackRange = cfg.attackRange;
+                attackCooldown = cfg.attackCooldown;
+                telegraphTime = cfg.telegraphTime;
+                restAfterAttack = cfg.restAfterAttack;
+                lungeSpeed = cfg.lungeSpeed;
+                lungeDuration = cfg.lungeDuration;
+                dropItemId = cfg.dropItemId;
+                dropItemName = cfg.dropItemName;
+                dropCount = cfg.dropCount;
+            }
 
             base.Awake();
         }
 
         protected override void UpdateAI(float distanceToPlayer)
         {
-            if (isAttacking) return;
+            if (isAttacking || Time.time < postAttackRestUntil) return;
 
             if (distanceToPlayer <= attackRange && Time.time >= lastAttackTime + attackCooldown)
             {
@@ -61,26 +71,21 @@ namespace NguyenVanHai.Enemies
             Vector2 targetPos = targetPlayer.transform.position;
             Vector2 lungeDir = (targetPos - (Vector2)transform.position).normalized;
 
-            // Telegraph 0.4s: Xẹp người xuống nén lực (Squash) + đổi màu báo hiệu
-            Vector3 originalScale = transform.localScale;
-            transform.localScale = new Vector3(originalScale.x * 1.25f, originalScale.y * 0.7f, originalScale.z);
-
-            // Bật anim attack nếu có
             TrySetAnimBool("IsAttack", true);
             if (anim != null) anim.Play("slimeattack", 0, 0f);
 
-            yield return new WaitForSeconds(telegraphTime);
+            // 1. Cảnh báo Đỏ Rực theo thời gian telegraphTime từ JSON
+            yield return StartCoroutine(PlayRedWarningRoutine(telegraphTime, 1.18f));
 
-            // Phóng chồm tới (Lunge)
-            transform.localScale = originalScale;
-            rb.velocity = lungeDir * lungeSpeed;
-
+            // 2. Phóng chồm tới (Lunge)
             float timer = 0f;
             bool hitPlayer = false;
 
-            while (timer < lungeDuration)
+            while (timer < lungeDuration && IsAlive)
             {
                 timer += Time.deltaTime;
+                rb.velocity = lungeDir * lungeSpeed;
+
                 if (!hitPlayer && targetPlayer != null)
                 {
                     float dist = Vector2.Distance(transform.position, targetPlayer.transform.position);
@@ -95,15 +100,14 @@ namespace NguyenVanHai.Enemies
 
             rb.velocity = Vector2.zero;
             TrySetAnimBool("IsAttack", false);
-            lastAttackTime = Time.time;
-            isAttacking = false;
-            currentState = AIState.Idle;
+
+            // 3. Quãng nghỉ bắt buộc theo restAfterAttack từ JSON
+            yield return StartCoroutine(EnterPostAttackRestRoutine(restAfterAttack));
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            // Sát thương va chạm phụ khi đang phóng tới
-            if (isAttacking && collision.gameObject.CompareTag("Player"))
+            if (isAttacking && Time.time >= postAttackRestUntil && collision.gameObject.CompareTag("Player"))
             {
                 var p = collision.gameObject.GetComponent<HunterPlayer>();
                 if (p != null) p.TakeDamage(attackDamage);
